@@ -17,6 +17,7 @@ import matplotlib.pyplot as plt
 from scipy.signal import find_peaks
 from collections import defaultdict
 # import argparse
+import gc
 
 class Arguments():
     def __init__(self, input_fn, output_fd, ms2_mass_list, min_height, threshold, charge, charge_range, polarity, ppm_ms1, ppm_ms2, cpd, adduct, addon_mass, min_matched_cnt_ms2, note, min_mass, max_mass, min_rt, max_rt, flex_mode, debug_mode, max_aligned_record_ms2):
@@ -1125,7 +1126,7 @@ def extrac_dataset_info(input_path, fn="ms_list.csv", dataset_format="mzXML"):
             # filter the invalied ms2 mass in the ms2_mass_list
             ms2_mass_temp_list = []
             for elem in ms2_mass_list:
-                if elem != "N/A":
+                if elem != "N/A" and elem != '':
                     ms2_mass_temp_list.append(elem)
             # merge the ms2_mass_temp_list into a single sequence
             ms2_mass = " ".join(ms2_mass_temp_list)
@@ -1378,6 +1379,7 @@ if __name__ == "__main__":
 
             # os.system("python3 align_peaks_matchms_batch.py " + config + " | tee " + output_fd + "/debug.log")
             align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, precMZ_spectID_dict)
+            plt.close('all')
 
             # read Glycan_isomers.csv for each cpd_addon
             with open(output_fd + "/Glycan_isomers.csv", "r") as f:
@@ -1402,6 +1404,15 @@ if __name__ == "__main__":
                     # subtype
                     note_tot_h_ms1_dict[note] += float(row[5])
                     note_tot_h_ms2_dict[note] += float(row[6])
+        
+        # delete ms data
+        # print("freeing MS data...")
+        del spectrums_ms1_all_list
+        del spectrums_ms1_list
+        del spectrums_ms2_all_list
+        del spectrums_ms2_list
+        del precMZ_spectID_dict
+        gc.collect()
 
         # generate isomers form
         with open(output_path + "/" + dataset + "/Glycan_isomers.csv", "w") as f:
