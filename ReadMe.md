@@ -10,7 +10,7 @@ Glycosylation is a prevalent feature of disease progression, reported in cases o
 
 ## Requirements
 
-- Recommended OS: macOS (>= 10.13), Linux (e.g. Ubuntu >= 18.04), and Windows (>= 10)
+- Recommended OS: macOS (>= 10.13), Linux (e.g. Ubuntu >= 18.04), or Windows (>= 10)
 - Python3 (3.7 or higher is supported)
 - Pip3
 - Python dependencies: numpy, scipy, matchms
