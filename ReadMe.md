@@ -69,11 +69,20 @@ Here are the explaination on the parameters in config.ini:
 
 3. Execute GlycanDIA Finder using the following code:
 
+If the dependencies are installed via package manager
 ```
+cd <the path of GlycanDIAFinder.py>
 python3 GlycanDIAFinder.py
 ```
 
-4. The results will be generated under the path defined in the **output_path** of config.ini (e.g., ExampleDataset/Results/ in this example). It contains the individual results of each compound and MS data file, combined results of all the compounds and each MS data file, and combined results of all the compounds and MS data files.
+If the dependencies are installed by Conda
+```
+conda activate matchms
+cd <the path of GlycanDIAFinder.py>
+python3 GlycanDIAFinder.py
+```
+
+1. The results will be generated under the path defined in the **output_path** of config.ini (e.g., ExampleDataset/Results/ in this example). It contains the individual results of each compound and MS data file, combined results of all the compounds and each MS data file, and combined results of all the compounds and MS data files.
 
 
 
