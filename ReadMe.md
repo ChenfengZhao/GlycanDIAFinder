@@ -23,7 +23,7 @@ In order to use GlycanDIA Finder, you can install the dependent libraries either
 ### Install via package
 
 ```
-pip3 install scipy numpy matchms[chemistry], pyyaml
+pip3 install scipy numpy matchms[chemistry] pyyaml
 ```
 
 ### Install via Conda
