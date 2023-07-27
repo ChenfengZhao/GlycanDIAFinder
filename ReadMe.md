@@ -13,7 +13,7 @@ Glycosylation is a prevalent feature of disease progression, reported in cases o
 - Recommended OS: macOS (>= 10.13), Linux (e.g. Ubuntu >= 18.04), or Windows (>= 10)
 - Python3 (3.7 or higher is supported)
 - Pip3
-- Python dependencies: numpy, scipy, matchms
+- Python dependencies: numpy, scipy, matchms, pyyaml
 - Conda (optional): Miniconda or Anaconda
 
 ## Installation Guide
@@ -23,7 +23,7 @@ In order to use GlycanDIA Finder, you can install the dependent libraries either
 ### Install via package
 
 ```
-pip3 install scipy numpy matchms[chemistry]
+pip3 install scipy numpy matchms[chemistry], pyyaml
 ```
 
 ### Install via Conda
@@ -92,6 +92,6 @@ python3 GlycanDIAFinder.py
 The source code of this project is released under the [Apache 2.0 License][Apache_2.0_license].
 
 ## Citation
-It you think GlycanDIA Finder is helpful for your research, please cite the following paper:
+If you think GlycanDIA Finder is helpful for your research, please cite the following paper:
 
 [Removed to preserve anonymity]
