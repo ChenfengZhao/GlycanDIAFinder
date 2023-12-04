@@ -1,4 +1,4 @@
-Subtype,Height (MS1)_Data File stagger_NglycanSTD,Relative Height (MS1 %)_Data Filestagger_NglycanSTD,Height (MS2)_Data File stagger_NglycanSTD,Relative Height (MS2 %)_Data Filestagger_NglycanSTD
-Sialylated,46234291.350507565,83.25788394520856,27325232.311925266,65.8978099298296
-Neutral,239350.1316290222,0.4310174309878496,1846692.14884834,4.453501687910895
-Sialofucosyalted,9057785.885071099,16.311098623803584,12294146.021723721,29.648688382259504
+Subtype,Height (MS1)_Data File stagger_Nglycan_ExampleData,Relative Height (MS1 %)_Data Filestagger_Nglycan_ExampleData,Height (MS2)_Data File stagger_Nglycan_ExampleData,Relative Height (MS2 %)_Data Filestagger_Nglycan_ExampleData,Max Cov. Sequence (%) stagger_Nglycan_ExampleData,Avg Cov. Sequence (%) stagger_Nglycan_ExampleData,Max Cov. Int (%) stagger_Nglycan_ExampleData,Avg Cov. Int (%) stagger_Nglycan_ExampleData
+Sialylated,46234291.350507565,83.25788394520856,42109667.89766658,69.6348123308583
+Neutral,239350.1316290222,0.4310174309878496,2098902.9986855034,3.470858919365634
+Sialofucosyalted,9057785.885071099,16.311098623803584,16263578.71983336,26.89432874977607
