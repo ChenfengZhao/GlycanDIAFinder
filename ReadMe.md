@@ -13,7 +13,7 @@ Glycosylation is a prevalent feature of disease progression, reported in cases o
 - Recommended OS: macOS (>= 10.13), Linux (e.g. Ubuntu >= 18.04), or Windows (>= 10)
 - Python3 (3.7 or higher is supported)
 - Pip3
-- Python dependencies: numpy, scipy, matchms, pyyaml
+- Python dependencies: numpy, scipy, matchms
 - Conda (optional): Miniconda or Anaconda
 
 ## Installation Guide
@@ -23,7 +23,7 @@ In order to use GlycanDIA Finder, you can install the dependent libraries either
 ### Install via package
 
 ```
-pip3 install scipy numpy matchms[chemistry] pyyaml
+pip3 install scipy numpy matchms[chemistry]
 ```
 
 ### Install via Conda
@@ -46,6 +46,7 @@ The github repository is composed of the following parts:
 - **GlycanLibrary_list.csv** contains the supplementary information of data, such as the compounds and their notes, add-on masses, and MS2 masses (i.e. fragments) for each compound.
 
 Here are the explaination on the parameters in config.ini:
+- **decoy_mode**: iterative decoy searching to assess the false discovery rate (FDR)
 - **input_path**: folder contains MS data files (.mzXML)
 - **output_path**: folder to save the GlycanDIA search results (.mzXML)
 - **ms_list_name**: glycan library that used for searching
