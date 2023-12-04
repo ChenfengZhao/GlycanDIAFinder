@@ -13,10 +13,7 @@ from collections import defaultdict
 # import argparse
 import gc
 from function import *
-<<<<<<< HEAD
 
-=======
->>>>>>> upstream/FDR
 
 
 #%%
@@ -57,7 +54,7 @@ if __name__ == "__main__":
     ### generate decoy library
     decoy = cfg_dict["decoy_mode"]
     if decoy:
-        print('generating decoy library, this may be up to 100x slower...'')
+        print('generating decoy library, this may be up to 100x slower...')
         target_seq_score = []
         decoy_seq_score = []
         target_int_score = []

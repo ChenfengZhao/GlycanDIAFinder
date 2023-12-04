@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> upstream/FDR
 from collections import defaultdict
 import os
 from statistics import mean
@@ -24,11 +20,7 @@ from collections import defaultdict
 import gc
 
 class Arguments():
-<<<<<<< HEAD
     def __init__(self, input_fn, output_fd, ms2_mass_list, min_height, threshold, charge, charge_range, polarity, ppm_ms1, ppm_ms2, cpd, adduct, addon_mass, min_matched_cnt_ms2, note, min_mass, max_mass, min_rt, max_rt, flex_mode, debug_mode, max_aligned_record_ms2, align_delta):
-=======
-    def __init__(self, input_fn, output_fd, ms2_mass_list, min_height, threshold, charge, charge_range, polarity, ppm_ms1, ppm_ms2, cpd, adduct, addon_mass, min_matched_cnt_ms2, note, min_mass, max_mass, min_rt, max_rt, flex_mode, debug_mode, max_aligned_record_ms2):
->>>>>>> upstream/FDR
         """Align peaks of MS1 data and MS2 data
 
         Parameters
@@ -77,11 +69,8 @@ class Arguments():
             if exists, print info for debugging.
         max_aligned_record_ms2 : int
             maximum aligned MS2 peak number recored for stats
-<<<<<<< HEAD
         align_delta : int
             alignment tolerance (in the unit of scan number) when aligning MS1 and MS2
-=======
->>>>>>> upstream/FDR
         
 
         """
@@ -107,10 +96,7 @@ class Arguments():
         self.flex_mode = flex_mode
         self.debug_mode = bool(debug_mode)
         self.max_aligned_record_ms2 = max_aligned_record_ms2 # format has been converted previously
-<<<<<<< HEAD
         self.align_delta = int(align_delta)
-=======
->>>>>>> upstream/FDR
 
         assert(polarity in ["positive", "negative"])
         assert(adduct in ["H", "Na", "K", "NH4"])
@@ -345,7 +331,6 @@ def extract_info_ms2(df_ms2_list, delta_mz_ms2_list, spec_ms2_idx_list, spectrum
 
         # check how many df are located in the same spectrum
         # record existed df and the associated df_idx in a spectrum
-<<<<<<< HEAD
         # df_idx_dict = defaultdict(int) # df : df_idx
         df_idx_dict = defaultdict(list) # df : df_idx
         for i, df in enumerate(df_ms2_list):
@@ -358,17 +343,6 @@ def extract_info_ms2(df_ms2_list, delta_mz_ms2_list, spec_ms2_idx_list, spectrum
             else:
                 # df_idx_dict[df] = -100
                 df_idx_dict[df].append(-100)
-=======
-        df_idx_dict = defaultdict(int) # df : df_idx
-        for i, df in enumerate(df_ms2_list):
-            df_idx_arr = np.where(abs(df - mz_array) <= delta_mz_ms2_list[i])[0]
-            if len(df_idx_arr) != 0:
-                assert(len(df_idx_arr) == 1)
-                df_idx_dict[df] = df_idx_arr[0]
-            # If df doesn't exit, df_idx < 0.
-            else:
-                df_idx_dict[df] = -100
->>>>>>> upstream/FDR
 
         # if these are less than df_cnt_min df in the same spectrum, continue processing next spectrum
         if len(df_idx_dict) < df_cnt_min:
@@ -376,33 +350,20 @@ def extract_info_ms2(df_ms2_list, delta_mz_ms2_list, spec_ms2_idx_list, spectrum
 
         # record rt, scan_num of this spectrum and intensity of dfs
         for df in df_idx_dict.keys():
-<<<<<<< HEAD
             # df_idx = df_idx_dict[df]
             df_idx_list = df_idx_dict[df]
             # if df_idx >= 0:
             if df_idx_list[0] >= 0:
                 # df_intensity_dict[df].append(spectrum_ms2.peaks.intensities[df_idx])
                 df_intensity_dict[df].append(np.sum([spectrum_ms2.peaks.intensities[df_idx] for df_idx in df_idx_list]))
-=======
-            df_idx = df_idx_dict[df]
-            if df_idx >= 0:
-                df_intensity_dict[df].append(spectrum_ms2.peaks.intensities[df_idx])
->>>>>>> upstream/FDR
                 df_rt_dict[df].append(spectrum_ms2.metadata["retention_time"])
                 df_scan_num_dict[df].append(int(spectrum_ms2.metadata["scan_number"]))
             # if df not exit, df_idx < 0
             else:
-<<<<<<< HEAD
                 df_intensity_dict[df].append(1)
                 df_rt_dict[df].append(spectrum_ms2.metadata["retention_time"])
                 df_scan_num_dict[df].append(int(spectrum_ms2.metadata["scan_number"]))
                 # pass
-=======
-                # df_intensity_dict[df].append(1)
-                # df_rt_dict[df].append(spectrum_ms2.metadata["retention_time"])
-                # df_scan_num_dict[df].append(int(spectrum_ms2.metadata["scan_number"]))
-                pass
->>>>>>> upstream/FDR
 
     return df_intensity_dict, df_rt_dict, df_scan_num_dict
 
@@ -477,24 +438,11 @@ def find_aligned_peaks(args, df_peak_idx_ms1_list, df_peak_scan_num_ms1_list, df
                     # accumulate intensity of aligned ms2 peak
                     # aligned_peak_tot_intenisty_ms2_dict[df_peak_idx_ms1] += df_peak_intensity_ms2
                     aligned_peak_intensity_list_dict[df_peak_idx_ms1].append(df_peak_intensity_ms2)
-<<<<<<< HEAD
-=======
-
-
->>>>>>> upstream/FDR
                     aligned_peak_ms1_2_dict[df_peak_idx_ms1].append(df_peak_idx_ms2)
 
         # accumulate intensity of aligned ms2 peak
         aligned_peak_intensity_list = aligned_peak_intensity_list_dict[df_peak_idx_ms1]
-<<<<<<< HEAD
         aligned_peak_tot_intenisty_ms2_dict[df_peak_idx_ms1] = sum(aligned_peak_intensity_list)
-=======
-        if len(aligned_peak_intensity_list) > args.max_aligned_record_ms2:
-            aligned_peak_intensity_list.sort(reverse=True)
-            aligned_peak_tot_intenisty_ms2_dict[df_peak_idx_ms1] = sum(aligned_peak_intensity_list[0:args.max_aligned_record_ms2])
-        else:
-            aligned_peak_tot_intenisty_ms2_dict[df_peak_idx_ms1] = sum(aligned_peak_intensity_list)
->>>>>>> upstream/FDR
 
 
         if args.debug_mode:
@@ -659,7 +607,6 @@ def search_ms1(args, spectrums_ms1_list, z, cpd_list, adduct_mass):
 
                 if len(df1_idx_arr) != 1:
                     print("WARNING: %d df1 is found!" % len(df1_idx_arr), "df1:", [spectrum_ms1.peaks.mz[x] for x in df1_idx_arr])
-<<<<<<< HEAD
                 
                 # df1_idx = df1_idx_arr[0]
                 # df1_intensity = spectrum_ms1.peaks.intensities[df1_idx]
@@ -668,15 +615,6 @@ def search_ms1(args, spectrums_ms1_list, z, cpd_list, adduct_mass):
 
                 if args.debug_mode:
                     print("df1", df1_idx_arr, [spectrum_ms1.peaks.mz[df1_idx] for df1_idx in df1_idx_arr], df1_intensity)
-=======
-                # for df1_idx in df1_idx_arr:
-                df1_idx = df1_idx_arr[0]
-                df1_intensity = spectrum_ms1.peaks.intensities[df1_idx]
-                df1_intensity_list.append(df1_intensity)
-
-                if args.debug_mode:
-                    print("df1", df1_idx, spectrum_ms1.peaks.mz[df1_idx], df1_intensity)
->>>>>>> upstream/FDR
             
             else:
                 # record RT
@@ -714,7 +652,6 @@ def search_ms1(args, spectrums_ms1_list, z, cpd_list, adduct_mass):
 
                 if len(df1_idx_arr) != 1:
                     print("WARNING: %d df1 is found!" % len(df1_idx_arr), "df1:", [spectrum_ms1.peaks.mz[x] for x in df1_idx_arr])
-<<<<<<< HEAD
                 
                 # df1_idx = df1_idx_arr[0]
                 # df1_intensity = spectrum_ms1.peaks.intensities[df1_idx]
@@ -723,20 +660,10 @@ def search_ms1(args, spectrums_ms1_list, z, cpd_list, adduct_mass):
 
                 if args.debug_mode:
                     print("df1", df1_idx_arr, [spectrum_ms1.peaks.mz[df1_idx] for df1_idx in df1_idx_arr], df1_intensity)
-=======
-                # for df1_idx in df1_idx_arr:
-                df1_idx = df1_idx_arr[0]
-                df1_intensity = spectrum_ms1.peaks.intensities[df1_idx]
-                df1_intensity_list.append(df1_intensity)
-
-                if args.debug_mode:
-                    print("df1", df1_idx, spectrum_ms1.peaks.mz[df1_idx], df1_intensity)
->>>>>>> upstream/FDR
 
                 if len(df2_idx_arr) != 1:
                     print("WARNING: %d df2 is found!" % len(df2_idx_arr), "df2:", [spectrum_ms1.peaks.mz[x] for x in df2_idx_arr])
 
-<<<<<<< HEAD
                 
                 # df2_idx = df2_idx_arr[0]
                 # df2_intensity = spectrum_ms1.peaks.intensities[df2_idx]
@@ -756,25 +683,6 @@ def search_ms1(args, spectrums_ms1_list, z, cpd_list, adduct_mass):
 
                 if args.debug_mode:
                     print("df3", df3_idx_arr, [spectrum_ms1.peaks.mz[df3_idx] for df3_idx in df3_idx_arr], df3_intensity)
-=======
-                # for df2_idx in df2_idx_arr:
-                df2_idx = df2_idx_arr[0]
-                df2_intensity = spectrum_ms1.peaks.intensities[df2_idx]
-                df2_intensity_list.append(df2_intensity)
-
-                if args.debug_mode:
-                    print("df2", df2_idx, spectrum_ms1.peaks.mz[df2_idx], df2_intensity)
-                
-                if len(df3_idx_arr) != 1:
-                    print("WARNING: %d df3 is found!" % len(df3_idx_arr), "df3:", [spectrum_ms1.peaks.mz[x] for x in df3_idx_arr])
-                # for df3_idx in df3_idx_arr:
-                df3_idx = df3_idx_arr[0]
-                df3_intensity = spectrum_ms1.peaks.intensities[df3_idx]
-                df3_intensity_list.append(df3_intensity)
-
-                if args.debug_mode:
-                    print("df3", df3_idx, spectrum_ms1.peaks.mz[df3_idx], df3_intensity)
->>>>>>> upstream/FDR
             
             else:
                 # record RT
@@ -793,27 +701,6 @@ def search_ms1(args, spectrums_ms1_list, z, cpd_list, adduct_mass):
 
 def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, precMZ_spectID_dict):
 
-<<<<<<< HEAD
-=======
-    # parser = argparse.ArgumentParser()
-    # add_option(parser)
-    # args = parser.parse_args()
-
-    # # chech the for the type of parameters
-    # assert(isinstance(input_fn, str))
-    # assert(isinstance(output_path, str))
-    # assert(isinstance(ms2_mass_list, list))
-    # assert(isinstance(min_height, float))
-    # assert(isinstance(threshold, float))
-    # assert(isinstance(charge, int) or isinstance(charge_range, str))
-    # assert(polarity in ["positive", "negative"])
-    # assert(isinstance(ppm_ms1, float))
-    # assert(isinstance(ppm_ms2, float))
-    # assert(isinstance(cpd, str))
-    # assert(adduct in ["H", "Na", "K", "NH4"])
-    # assert(isinstance(addon_mass, str))
-
->>>>>>> upstream/FDR
 
 
     file_name = args.input_fn
@@ -827,35 +714,6 @@ def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, prec
         print("time range:", args.min_rt, args.max_rt)
 
     z = 3
-<<<<<<< HEAD
-=======
-    # delta_mz = 1e-2
-    # df1 = 966.8511
-    # df2 = 967.3527
-    # df3 = 967.8541
-
-    # df1 = 618.2240
-    # df2 = 618.7257
-    # df3 = 619.2269
-
-    # df1 = args.ms1_df1
-    # df2 = args.ms1_df2
-    # df3 = args.ms1_df3
-
-    # assert(df1 is not None)
-
-    # print("df1:", df1, type(df1))
-    # print("df2:", df2, type(df2))
-    # print("df3:", df3, type(df3))
-
-    # delta_mz1 = 10 * df1 / 1e6
-    # delta_mz2 = 10 * df2 / 1e6
-    # delta_mz3 = 10 * df3 / 1e6
-
-    # print("delta_mz1:", delta_mz1)
-    # print("delta_mz2:", delta_mz2)
-    # print("delta_mz3:", delta_mz3)
->>>>>>> upstream/FDR
 
     sigma = 1.0
     delta=0.2
@@ -866,14 +724,7 @@ def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, prec
         print("minimum height:", min_height, "minimum relative height:", threshold)
 
 
-<<<<<<< HEAD
     
-=======
-    # df_ms2_list = [425.1766, 528.1923, 587.2294, 690.2451, 731.2717, 749.2822, 819.2877, 893.3245, 911.3351, 1055.3773, 1114.4144, 1258.4567, 1276.4673]
-
-    # df_ms2_list = [911.3351, 749.2822, 731.2717, 690.2451, 587.2294, 569.2188, 528.1923, 425.1766, 407.1660, 366.1395, 325.1129, 222.0972, 204.0866, 186.0761, 163.0601, 145.0495, 127.0390]
-
->>>>>>> upstream/FDR
     df_ms2_list = args.ms2_mass_list
     if args.debug_mode:
         print("ms2_mass_list:", df_ms2_list)
@@ -882,41 +733,11 @@ def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, prec
     if args.debug_mode:
         print("minimum matched count in ms2:", df_cnt_min)
 
-<<<<<<< HEAD
     # delta_peak_scan_num = 100 # margin of peak alignment between MS1 and MS2
-=======
-    delta_peak_scan_num = 100 # margin of peak alignment between MS1 and MS2
->>>>>>> upstream/FDR
 
     # create output path if it doesn't exsit
     creat_path(out_path)
 
-<<<<<<< HEAD
-=======
-    # # processing the input file
-    # if args.debug_mode:
-    #     print("starting processing the input file:", file_name)
-    # # extract the format of the input file
-    # fn_list = file_name.split(".")
-    # fn_format = fn_list[-1]
-    
-    # # processing the MS1 file
-    # print("processing MS1...")
-    # if fn_format == "mzXML":
-    #     spectrums_ms1_all_list = list(load_from_mzxml(file_name, ms_level=1))
-    # else:
-    #     raise("Unsupported file format.")
-    
-    # # filter the spectrum_ms1 by rention time range
-    # spectrums_ms1_list = []
-    # for spectrum_ms1 in spectrums_ms1_all_list:
-    #     rt_spec_all_ms1 = spectrum_ms1.metadata["retention_time"]
-    #     if rt_spec_all_ms1 >= args.min_rt and rt_spec_all_ms1 <= args.max_rt:
-    #         spectrums_ms1_list.append(spectrum_ms1)
-
-    # if args.debug_mode:
-    #     print("Number of spectrums in MS1:", len(spectrums_ms1_list))
->>>>>>> upstream/FDR
 
     # generate cpd list
     cpd_list = args.cpd.split("_")
@@ -1003,22 +824,6 @@ def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, prec
 
     
 
-<<<<<<< HEAD
-=======
-    
-    # # save the debugging df1_ms1 info to csv (only used for debugging)
-    # with open(out_path + "/all_df1_rt_mz_ms1.csv", 'w') as f:
-    #     writer = csv.writer(f)
-    #     rt_df1_list.insert(0, "rt")
-    #     df1_mz_all_list.insert(0, "df1")
-    #     df2_mz_all_list.insert(0, "df2")
-    #     df3_mz_all_list.insert(0, "df3")
-    #     writer.writerow(rt_df1_list)
-    #     writer.writerow(df1_mz_all_list)
-    #     writer.writerow(df2_mz_all_list)
-    #     writer.writerow(df3_mz_all_list)
-
->>>>>>> upstream/FDR
 
     # find peaks and filter invalid peaks for df1
     df1_peak_idx_ms1_list, df1_intensity_filt_arr, df1_peak_baseline_list = find_filter_peaks(args, rt_list, df1_intensity_list, sigma, min_height, threshold, delta)
@@ -1067,11 +872,8 @@ def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, prec
         plt.scatter(df3_rt_peak_list, filtered_df3_peak_intensity_list)
         plt.savefig(out_path + "/rt_intensity_ms1.png")
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> upstream/FDR
     # find the nearest precursor_mz to df
     precursor_mz_list = find_nearest_precursor_mz(df1, precMZ_spectID_dict)
 
@@ -1132,7 +934,6 @@ def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, prec
             plt.plot(df_rt_dict[df], df_intensity_filt_dict[df]) # all the points of a specific df
         
         plt.savefig(out_path + "/rt_intensity_ms2.png")
-<<<<<<< HEAD
 
         ### for FDR
         aligned_all_ms1_2_dict, aligned_all_tot_intenisty_ms2_dict, aligned_peak_intensity_list_dict, aligned_peak_mz_list_dict\
@@ -1160,21 +961,6 @@ def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, prec
         #         line_list = [rt_list[peak_idx_ms1], df1_intensity_filt_arr[peak_idx_ms1], df1_intensity_filt_arr[peak_idx_ms1] - df1_peak_baseline_list[i], len(aligned_peak_ms1_2_dict[peak_idx_ms1])]
 
         #         writer.writerow(line_list)
-=======
-        ### for FDR
-        aligned_all_ms1_2_dict, aligned_all_tot_intenisty_ms2_dict, aligned_peak_intensity_list_dict, aligned_peak_mz_list_dict\
-              = get_all_ms2(args, spec_ms2_idx_list, spectrums_ms2_list,df1_peak_idx_ms1_list, df1_peak_scan_num_ms1_list)
-
-        ###
-        # check aligned peaks between MS1 and MS2
-        aligned_peak_ms1_2_dict, aligned_peak_tot_intenisty_ms2_dict = find_aligned_peaks(args, df1_peak_idx_ms1_list, df1_peak_scan_num_ms1_list, df_peak_idx_ms2_dict, df_peak_scan_num_ms2_dict, df_peak_intensity_dict, delta_peak_scan_num)
-
-        # print the number of aligned peaks in MS2 for all the peaks in MS1
-        for peak_idx_ms1 in df1_peak_idx_ms1_list:
-            print("peak_idx_ms1:", peak_idx_ms1, "aligned peak# in MS2:", len(aligned_peak_ms1_2_dict[peak_idx_ms1]), "all peak# in MS2:", len(aligned_all_ms1_2_dict[peak_idx_ms1]))
-        
-
->>>>>>> upstream/FDR
         
         # write results to CSV file
         with open(out_path + "/Glycan_isomers.csv", 'w') as f:
@@ -1186,14 +972,8 @@ def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, prec
             for i, peak_idx_ms1 in enumerate(df1_peak_idx_ms1_list):
                 line_list = [args.cpd + "-" + args.addon_mass + "(%d)" % i, args.note, rt_list[peak_idx_ms1], df1, z_fin, df1_intensity_filt_arr[peak_idx_ms1], aligned_peak_tot_intenisty_ms2_dict[peak_idx_ms1] ,len(aligned_peak_ms1_2_dict[peak_idx_ms1]), str(len(aligned_peak_ms1_2_dict[peak_idx_ms1])/len(df_ms2_list)*100) + "%",
                      str(aligned_peak_tot_intenisty_ms2_dict[peak_idx_ms1]/aligned_all_tot_intenisty_ms2_dict[peak_idx_ms1]*100)+"%"]
-<<<<<<< HEAD
                 
                 writer.writerow(line_list)
-=======
-
-                writer.writerow(line_list)
-
->>>>>>> upstream/FDR
         # write ms2 results to mgf file
         with open(out_path + "/Glycan_isomers.mgf", 'w') as f:
             for i, peak_idx_ms1 in enumerate(df1_peak_idx_ms1_list):
@@ -1207,10 +987,6 @@ def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, prec
                     f.write("%f %f\n" % (aligned_peak_mz_list_dict[peak_idx_ms1][j], aligned_peak_intensity_list_dict[peak_idx_ms1][j]))
                 f.write("END IONS\n\n")
 
-<<<<<<< HEAD
-=======
-
->>>>>>> upstream/FDR
 def extrac_dataset_info(input_path, fn="ms_list.csv", dataset_format="mzXML"):
     """extract pre-defined information (i.e. a csv file and dataset list) from input path
 
@@ -1345,11 +1121,7 @@ def merge_intensity_array(mz_array, intensity_array, delta_mz=0.2):
     spectrums = centroid_spec(spectrums, ms2_da=0.2)
     return spectrums[:,0], spectrums[:,1]
 
-<<<<<<< HEAD
 def extract_info_ms2_all(spec_ms2_idx_list, spectrums_ms2_list,top_n=0):
-=======
-def extract_info_ms2_all(spec_ms2_idx_list, spectrums_ms2_list,top_n=50):
->>>>>>> upstream/FDR
     """extract top 50 ms2 fragments from specturms in all ms2
 
     Parameters
@@ -1376,12 +1148,9 @@ def extract_info_ms2_all(spec_ms2_idx_list, spectrums_ms2_list,top_n=50):
 
     # merge intensity array based on mz_array within delta_mz
     mz_array_new, intensity_array_new = merge_intensity_array(mz_array, intensity_array)
-<<<<<<< HEAD
     # only keep intensity larger than 1
     mz_array_new = mz_array_new[intensity_array_new > 10000]
     intensity_array_new = intensity_array_new[intensity_array_new > 10000]
-=======
->>>>>>> upstream/FDR
     # get index of top 50 intensity ms2 fragments
     mz_array_index = intensity_array_new.argsort()[-top_n:][::-1]
     all_ms2_list = np.sort(mz_array_new[mz_array_index])[::-1]
@@ -1512,15 +1281,7 @@ def find_aligned_peaks_all(args, df_peak_idx_ms1_list, df_peak_scan_num_ms1_list
 
         # accumulate intensity of aligned ms2 peak
         aligned_peak_intensity_list = aligned_peak_intensity_list_dict[df_peak_idx_ms1]
-<<<<<<< HEAD
         aligned_peak_tot_intenisty_ms2_dict[df_peak_idx_ms1] = sum(aligned_peak_intensity_list)
-=======
-        if len(aligned_peak_intensity_list) > args.max_aligned_record_ms2:
-            aligned_peak_intensity_list.sort(reverse=True)
-            aligned_peak_tot_intenisty_ms2_dict[df_peak_idx_ms1] = sum(aligned_peak_intensity_list[0:args.max_aligned_record_ms2])
-        else:
-            aligned_peak_tot_intenisty_ms2_dict[df_peak_idx_ms1] = sum(aligned_peak_intensity_list)
->>>>>>> upstream/FDR
 
 
         if args.debug_mode:
@@ -1529,20 +1290,12 @@ def find_aligned_peaks_all(args, df_peak_idx_ms1_list, df_peak_scan_num_ms1_list
     return aligned_peak_ms1_2_dict, aligned_peak_tot_intenisty_ms2_dict, aligned_peak_intensity_list_dict,aligned_peak_mz_list_dict    
 
 
-<<<<<<< HEAD
 def get_all_ms2(args, spec_ms2_idx_list, spectrums_ms2_list,df1_peak_idx_ms1_list, df1_peak_scan_num_ms1_list,top_n=0,df_cnt_min=3,sigma=1.0, delta=0.2):
-=======
-def get_all_ms2(args, spec_ms2_idx_list, spectrums_ms2_list,df1_peak_idx_ms1_list, df1_peak_scan_num_ms1_list,top_n=50,df_cnt_min=3,sigma=1.0, delta=0.2):
->>>>>>> upstream/FDR
     """get all the ms2 fragments in all the ms2 data return aligned all ms2 fragments and intensity
 
 
     """
-<<<<<<< HEAD
     all_ms2_list = extract_info_ms2_all(spec_ms2_idx_list, spectrums_ms2_list,top_n)
-=======
-    all_ms2_list = extract_info_ms2_all(spec_ms2_idx_list, spectrums_ms2_list,top_n=50)
->>>>>>> upstream/FDR
 
 
     # extract top 50 ms2 fragments from specturms in all ms2
@@ -1580,7 +1333,6 @@ def get_all_ms2(args, spec_ms2_idx_list, spectrums_ms2_list,df1_peak_idx_ms1_lis
                                                                                     all_peak_scan_num_ms2_dict, all_peak_intensity_dict, args.align_delta)
     return aligned_all_ms1_2_dict, aligned_all_tot_intenisty_ms2_dict, aligned_peak_intensity_list_dict, aligned_peak_mz_list_dict
 
-<<<<<<< HEAD
 #%% FDR calculation
 
 def get_target_decoy_scores(args, spectrums_ms1_list, spectrums_ms2_list, precMZ_spectID_dict,decoy_spectra,cpd_addon):
@@ -1857,5 +1609,3 @@ def add_random_mass_shifts(spectrum, mass_shift_range):
     # convert np.array to list
         
     return decoy_spectrum.tolist()
-=======
->>>>>>> upstream/FDR
