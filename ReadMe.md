@@ -96,6 +96,7 @@ The source code of this project is released under the [Apache 2.0 License][Apach
 If you think GlycanDIA Finder is helpful for your research, please cite the following paper:
 
 <!--[Removed to preserve anonymity]-->
+```
 @article{xie2024development,
   title={Development and application of GlycanDIA workflow for glycomic analysis},
   author={Xie, Yixuan and Liu, Xingyu and Zhao, Chenfeng and Chen, Siyu and Wang, Shunyang and Lin, Zongtao and Robison, Faith M and George, Benson M and Flynn, Ryan A and Lebrilla, Carlito B and others},
@@ -103,3 +104,4 @@ If you think GlycanDIA Finder is helpful for your research, please cite the foll
   year={2024},
   publisher={Cold Spring Harbor Laboratory}
 }
+```
