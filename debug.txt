@@ -1,0 +1,3659 @@
+cfg_dict {'input_path': './ExampleDataset/Data', 'output_path': './ExampleDataset/Results', 'ms_list_name': 'GlycanLibrary_list.csv', 'polarity': 'positive', 'max_charge': '3', 'adduct': 'H', 'ms1_mass_error_ppm': '10', 'ms2_mass_error_ppm': '20', 'min_rel_height': '0.0005', 'min_height': '10000', 'min_mass': '600', 'max_mass': 'inf', 'min_time_min': '0', 'max_time_min': '60', 'min_matched_counts': '5', 'max_aligned_record_ms2': '5', 'align_tolerance_snum': '100', 'decoy_mode': 'True', 'fdr_threshold': '0.02', 'debug_mode': 'False'}
+dataset_list ['stagger_Nglycan_ExampleData']
+cpdAddon_note_list [('5_4_0_1-0', 'Sialylated'), ('5_2_0_0-0', 'HighMannose'), ('2_2_0_0-0', 'Neutral'), ('5_4_0_0-0', 'Neutral'), ('3_4_1_0-0', 'Fucosyalted'), ('5_4_1_1-0', 'Sialofucosyalted')]
+note_cpdAddon_list_dict defaultdict(<class 'list'>, {'Sialylated': ['5_4_0_1-0'], 'HighMannose': ['5_2_0_0-0'], 'Neutral': ['2_2_0_0-0', '5_4_0_0-0'], 'Fucosyalted': ['3_4_1_0-0'], 'Sialofucosyalted': ['5_4_1_1-0']})
+ms2_mass_dict defaultdict(<class 'str'>, {'5_4_0_1-0': '1276.4673 1258.4567 1096.4039 1055.3773 911.3351 893.3245 819.2877 749.2822 731.2717 690.2451 657.2349 587.2294 528.1923 292.1027 186.0761', '5_2_0_0-0': '911.3351 749.2822 731.2717 690.2451 587.2294 569.2188 528.1923 425.1766 407.166 366.1395 325.1129 222.0972 204.0866 186.0761 163.0601', '2_2_0_0-0': '587.2294 569.2188 546.2029 528.1923 425.1766 407.166 384.15 366.1395 348.1289 343.1235 325.1129 222.0972 204.0866 186.0761 163.0601', '5_4_0_0-0': '1258.4567 1096.4039 1055.3773 911.3351 893.3245 749.2822 731.2717 690.2451 587.2294 569.2188 528.1923 425.1766 366.1395 222.0972 204.0866', '3_4_1_0-0': '1039.3824 911.3351 895.3401 893.3245 836.303 749.2822 731.2717 690.2451 674.2502 587.2294 528.1923 425.1766 366.1395 350.1446 222.0972', '5_4_1_1-0': '1201.4352 1057.393 1055.3773 1039.3824 911.3351 895.3401 893.3245 749.2822 690.2451 657.2349 528.1923 512.1974 366.1395 292.1027 204.0866'})
+generating decoy library, this may be up to 100x slower...
+debug_mode False
+starting processing the input file: ./ExampleDataset/Data/stagger_Nglycan_ExampleData.mzXML
+processing MS1...
+Number of spectrums in MS1: 71
+processing MS2...
+Number of spectrums in MS2: 7612
+# of unique precursor_mz 108
+***************looking for compound*********************
+cpd_addon 5_4_0_1-0
+path exists: ./ExampleDataset/Results/stagger_Nglycan_ExampleData/5_4_0_1-0
+input file name: ./ExampleDataset/Data/stagger_Nglycan_ExampleData.mzXML
+output path: ./ExampleDataset/Results/stagger_Nglycan_ExampleData/5_4_0_1-0
+mass range: 600.0 inf
+time range: 0.0 60.0
+ms2_mass_list: [1276.4673, 1258.4567, 1096.4039, 1055.3773, 911.3351, 893.3245, 819.2877, 749.2822, 731.2717, 690.2451, 657.2349, 587.2294, 528.1923, 292.1027, 186.0761]
+minimum matched count in ms2: 5
+path exists: ./ExampleDataset/Results/stagger_Nglycan_ExampleData/5_4_0_1-0
+----processing Spectrum----
+specturm MS1 idx: 0
+spectrum RT: 25.556333333333335
+spectrum scan num: 39204
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.854248046875] 504386.15625
+df2 [967.3563232421875] 428153.1875
+df3 [967.8570556640625] 229890.703125
+----processing Spectrum----
+specturm MS1 idx: 1
+spectrum RT: 25.628
+spectrum scan num: 39313
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.853759765625] 421429.65625
+df2 [967.3555908203125] 388069.75
+df3 [967.8569946289062] 189821.546875
+----processing Spectrum----
+specturm MS1 idx: 2
+spectrum RT: 25.697166666666664
+spectrum scan num: 39420
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8541259765625] 447083.03125
+df2 [967.355712890625] 343634.59375
+df3 [967.8570556640625] 172463.9375
+----processing Spectrum----
+specturm MS1 idx: 3
+spectrum RT: 25.768833333333337
+spectrum scan num: 39529
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.85302734375] 481432.6875
+df2 [967.3548583984375] 382632.03125
+df3 [967.8557739257812] 197790.421875
+----processing Spectrum----
+specturm MS1 idx: 4
+spectrum RT: 25.837833333333332
+spectrum scan num: 39636
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8541259765625] 422431.875
+df2 [967.3552856445312] 399650.375
+df3 [967.8563232421875] 236267.390625
+----processing Spectrum----
+specturm MS1 idx: 5
+spectrum RT: 25.908666666666665
+spectrum scan num: 39745
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8538818359375] 524987.4375
+df2 [967.35546875] 495546.03125
+df3 [967.8573608398438] 218373.9375
+----processing Spectrum----
+specturm MS1 idx: 6
+spectrum RT: 25.978166666666667
+spectrum scan num: 39852
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8546142578125] 575212.3125
+df2 [967.3564453125] 456613.5
+df3 [967.8567504882812] 255014.984375
+----processing Spectrum----
+specturm MS1 idx: 7
+spectrum RT: 26.049333333333333
+spectrum scan num: 39961
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.85400390625] 555305.625
+df2 [967.3555908203125] 463662.875
+df3 [967.85595703125] 236967.3125
+----processing Spectrum----
+specturm MS1 idx: 8
+spectrum RT: 26.11916666666667
+spectrum scan num: 40068
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8548583984375] 540080.0625
+df2 [967.356201171875] 410165.375
+df3 [967.857177734375] 212705.046875
+----processing Spectrum----
+specturm MS1 idx: 9
+spectrum RT: 26.190833333333334
+spectrum scan num: 40177
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8538818359375] 511268.09375
+df2 [967.3555297851562] 467976.96875
+df3 [967.856689453125] 244351.21875
+----processing Spectrum----
+specturm MS1 idx: 10
+spectrum RT: 26.260833333333334
+spectrum scan num: 40284
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8548583984375] 522206.6875
+df2 [967.356201171875] 443681.34375
+df3 [967.8580932617188] 220392.0625
+----processing Spectrum----
+specturm MS1 idx: 11
+spectrum RT: 26.332
+spectrum scan num: 40393
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8536376953125] 493399.9375
+df2 [967.3552856445312] 412210.65625
+df3 [967.8564453125] 228340.046875
+----processing Spectrum----
+specturm MS1 idx: 12
+spectrum RT: 26.401166666666665
+spectrum scan num: 40500
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.854248046875] 611743.8125
+df2 [967.3560180664062] 472014.0625
+df3 [967.8568115234375] 256464.078125
+----processing Spectrum----
+specturm MS1 idx: 13
+spectrum RT: 26.47233333333333
+spectrum scan num: 40609
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.853515625] 609201.0
+df2 [967.3554077148438] 553616.25
+df3 [967.8563842773438] 288721.75
+----processing Spectrum----
+specturm MS1 idx: 14
+spectrum RT: 26.5415
+spectrum scan num: 40716
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8543701171875] 597904.5
+df2 [967.35595703125] 492576.8125
+df3 [967.857177734375] 260707.75
+----processing Spectrum----
+specturm MS1 idx: 15
+spectrum RT: 26.612166666666667
+spectrum scan num: 40825
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.853515625] 605548.5
+df2 [967.3556518554688] 552345.875
+df3 [967.8570556640625] 300943.96875
+----processing Spectrum----
+specturm MS1 idx: 16
+spectrum RT: 26.681333333333335
+spectrum scan num: 40932
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8541259765625] 568686.0
+df2 [967.3560180664062] 505790.84375
+df3 [967.856689453125] 262073.109375
+----processing Spectrum----
+specturm MS1 idx: 17
+spectrum RT: 26.752666666666666
+spectrum scan num: 41041
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8541259765625] 645161.6875
+df2 [967.355712890625] 506996.03125
+df3 [967.8565063476562] 293820.65625
+----processing Spectrum----
+specturm MS1 idx: 18
+spectrum RT: 26.821833333333334
+spectrum scan num: 41148
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8540649414062] 615592.875
+df2 [967.3564453125] 508945.21875
+df3 [967.8572998046875] 296984.21875
+----processing Spectrum----
+specturm MS1 idx: 19
+spectrum RT: 26.892999999999997
+spectrum scan num: 41257
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8533325195312] 814353.8125
+df2 [967.355224609375] 743914.75
+df3 [967.8565063476562] 375450.90625
+----processing Spectrum----
+specturm MS1 idx: 20
+spectrum RT: 26.962666666666667
+spectrum scan num: 41364
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8543090820312] 1140254.625
+df2 [967.3560180664062] 991789.875
+df3 [967.8574829101562] 574018.5625
+----processing Spectrum----
+specturm MS1 idx: 21
+spectrum RT: 27.034166666666668
+spectrum scan num: 41473
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8529663085938] 2073103.125
+df2 [967.3546752929688] 1665951.5
+df3 [967.855712890625] 977972.1875
+----processing Spectrum----
+specturm MS1 idx: 22
+spectrum RT: 27.103333333333335
+spectrum scan num: 41580
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8538818359375] 3076490.25
+df2 [967.3551635742188] 2643272.5
+df3 [967.8565063476562] 1404353.75
+----processing Spectrum----
+specturm MS1 idx: 23
+spectrum RT: 27.174
+spectrum scan num: 41689
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8532104492188] 4056924.5
+df2 [967.3548583984375] 3470522.25
+df3 [967.8561401367188] 1751843.625
+----processing Spectrum----
+specturm MS1 idx: 24
+spectrum RT: 27.244500000000002
+spectrum scan num: 41796
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8533935546875] 4201809.0
+df2 [967.3549194335938] 3405640.0
+df3 [967.8560180664062] 1888226.625
+----processing Spectrum----
+specturm MS1 idx: 25
+spectrum RT: 27.315166666666666
+spectrum scan num: 41905
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.85302734375] 3196611.25
+df2 [967.3547973632812] 2626931.25
+df3 [967.8558959960938] 1446143.125
+----processing Spectrum----
+specturm MS1 idx: 26
+spectrum RT: 27.384833333333333
+spectrum scan num: 42012
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8538818359375] 1966422.625
+df2 [967.35546875] 1591773.25
+df3 [967.856689453125] 905333.6875
+----processing Spectrum----
+specturm MS1 idx: 27
+spectrum RT: 27.456666666666667
+spectrum scan num: 42121
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8534545898438] 1138393.375
+df2 [967.3551025390625] 1037056.5
+df3 [967.8565673828125] 543270.625
+----processing Spectrum----
+specturm MS1 idx: 28
+spectrum RT: 27.526333333333334
+spectrum scan num: 42228
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8544311523438] 936206.9375
+df2 [967.3558959960938] 830018.8125
+df3 [967.8571166992188] 434246.0625
+----processing Spectrum----
+specturm MS1 idx: 29
+spectrum RT: 27.596999999999998
+spectrum scan num: 42337
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.854248046875] 810153.8125
+df2 [967.3557739257812] 696294.5
+df3 [967.8565063476562] 392384.8125
+----processing Spectrum----
+specturm MS1 idx: 30
+spectrum RT: 27.667666666666666
+spectrum scan num: 42444
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8540649414062] 839455.3125
+df2 [967.3558349609375] 785155.3125
+df3 [967.8570556640625] 378076.5
+----processing Spectrum----
+specturm MS1 idx: 31
+spectrum RT: 27.738333333333333
+spectrum scan num: 42553
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8531494140625] 974024.4375
+df2 [967.3552856445312] 826412.9375
+df3 [967.8564453125] 473158.625
+----processing Spectrum----
+specturm MS1 idx: 32
+spectrum RT: 27.808666666666667
+spectrum scan num: 42660
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8531494140625] 1653057.25
+df2 [967.3549194335938] 1486075.0
+df3 [967.856201171875] 880762.6875
+----processing Spectrum----
+specturm MS1 idx: 33
+spectrum RT: 27.878666666666668
+spectrum scan num: 42769
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8526000976562] 5083246.5
+df2 [967.354248046875] 4260531.5
+df3 [967.855224609375] 2431963.75
+----processing Spectrum----
+specturm MS1 idx: 34
+spectrum RT: 27.947499999999998
+spectrum scan num: 42876
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8526000976562] 10816672.0
+df2 [967.3541259765625] 9171859.0
+df3 [967.855224609375] 5360693.0
+----processing Spectrum----
+specturm MS1 idx: 35
+spectrum RT: 28.01833333333333
+spectrum scan num: 42985
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8526000976562] 22886590.0
+df2 [967.3540649414062] 19750184.0
+df3 [967.8550415039062] 11157642.0
+----processing Spectrum----
+specturm MS1 idx: 36
+spectrum RT: 28.0875
+spectrum scan num: 43092
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8529052734375] 38258748.0
+df2 [967.353759765625] 33855020.0
+df3 [967.8547973632812] 18396872.0
+----processing Spectrum----
+specturm MS1 idx: 37
+spectrum RT: 28.158333333333335
+spectrum scan num: 43201
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8527221679688] 49610172.0
+df2 [967.3538818359375] 42096348.0
+df3 [967.8548583984375] 22140758.0
+----processing Spectrum----
+specturm MS1 idx: 38
+spectrum RT: 28.22683333333333
+spectrum scan num: 43308
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8527221679688] 42905300.0
+df2 [967.3536987304688] 36505676.0
+df3 [967.854736328125] 20687468.0
+----processing Spectrum----
+specturm MS1 idx: 39
+spectrum RT: 28.298166666666667
+spectrum scan num: 43417
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8526000976562] 31974688.0
+df2 [967.3538818359375] 26464762.0
+df3 [967.85498046875] 13995150.0
+----processing Spectrum----
+specturm MS1 idx: 40
+spectrum RT: 28.367666666666665
+spectrum scan num: 43524
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8529663085938] 16558561.0
+df2 [967.3541259765625] 14241405.0
+df3 [967.855224609375] 7419284.0
+----processing Spectrum----
+specturm MS1 idx: 41
+spectrum RT: 28.439166666666665
+spectrum scan num: 43633
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8529663085938] 7571157.0
+df2 [967.3544921875] 6456100.0
+df3 [967.8555297851562] 3285359.0
+----processing Spectrum----
+specturm MS1 idx: 42
+spectrum RT: 28.50883333333333
+spectrum scan num: 43740
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.854248046875] 3075980.25
+df2 [967.3556518554688] 2458870.75
+df3 [967.85693359375] 1343588.625
+----processing Spectrum----
+specturm MS1 idx: 43
+spectrum RT: 28.580499999999997
+spectrum scan num: 43849
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8536376953125] 904620.875
+df2 [967.3555908203125] 755747.1875
+df3 [967.8565063476562] 382914.03125
+----processing Spectrum----
+specturm MS1 idx: 44
+spectrum RT: 28.649833333333333
+spectrum scan num: 43956
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8541870117188] 327540.59375
+df2 [967.3565673828125] 273191.28125
+df3 [967.8583984375] 152428.765625
+----processing Spectrum----
+specturm MS1 idx: 45
+spectrum RT: 28.720666666666666
+spectrum scan num: 44065
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8533935546875] 183023.484375
+df2 [967.3569946289062] 153828.46875
+df3 [967.8566284179688] 69323.015625
+----processing Spectrum----
+specturm MS1 idx: 46
+spectrum RT: 28.7915
+spectrum scan num: 44172
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8556518554688] 113651.515625
+df2 [967.3592529296875] 81337.9296875
+df3 [967.8587036132812] 33496.671875
+----processing Spectrum----
+specturm MS1 idx: 47
+spectrum RT: 28.862333333333332
+spectrum scan num: 44281
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8540649414062] 90070.140625
+df2 [967.3592529296875] 73664.4921875
+df3 [967.8590698242188] 44316.57421875
+----processing Spectrum----
+specturm MS1 idx: 48
+spectrum RT: 28.93316666666667
+spectrum scan num: 44388
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.85546875] 77918.0234375
+df2 [967.358642578125] 77444.6875
+df3 [967.8598022460938] 29711.798828125
+----processing Spectrum----
+specturm MS1 idx: 49
+spectrum RT: 29.004
+spectrum scan num: 44497
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.854736328125] 61338.60546875
+df2 [967.3572998046875] 82336.6953125
+df3 [967.8580322265625] 30933.87109375
+----processing Spectrum----
+specturm MS1 idx: 50
+spectrum RT: 29.074166666666667
+spectrum scan num: 44604
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8551635742188] 63968.65625
+df2 [967.3593139648438] 57500.61328125
+df3 [967.859130859375] 29712.537109375
+----processing Spectrum----
+specturm MS1 idx: 51
+spectrum RT: 29.144833333333334
+spectrum scan num: 44713
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8522338867188] 87828.828125
+df2 [967.3577880859375] 82329.3125
+df3 [967.855224609375] 36630.69921875
+----processing Spectrum----
+specturm MS1 idx: 52
+spectrum RT: 29.215333333333334
+spectrum scan num: 44820
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8543090820312] 74133.2890625
+df2 [967.3599243164062] 53249.078125
+df3 [967.8564453125] 33746.15234375
+----processing Spectrum----
+specturm MS1 idx: 53
+spectrum RT: 29.285166666666665
+spectrum scan num: 44929
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8538208007812] 49220.32421875
+df2 [967.3601684570312] 57011.0859375
+df3 [967.8563842773438] 39559.3984375
+----processing Spectrum----
+specturm MS1 idx: 54
+spectrum RT: 29.355666666666664
+spectrum scan num: 45036
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8560180664062] 61942.515625
+df2 [967.359375] 64747.66015625
+df3 [967.8541259765625] 28666.994140625
+----processing Spectrum----
+specturm MS1 idx: 55
+spectrum RT: 29.425666666666665
+spectrum scan num: 45145
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8533325195312] 68888.9453125
+df2 [967.3619384765625] 71625.5078125
+df3 [967.858642578125] 28790.560546875
+----processing Spectrum----
+specturm MS1 idx: 56
+spectrum RT: 29.49566666666667
+spectrum scan num: 45252
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8546142578125] 62916.296875
+df2 [967.3609008789062] 70385.0546875
+df3 [967.8583374023438] 30045.857421875
+----processing Spectrum----
+specturm MS1 idx: 62
+spectrum RT: 29.9155
+spectrum scan num: 45900
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8554077148438] 48513.16796875
+df2 [967.3612060546875] 46813.81640625
+df3 [967.8614501953125] 25819.505859375
+----processing Spectrum----
+specturm MS1 idx: 0
+spectrum RT: 25.556333333333335
+spectrum scan num: 39204
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9039306640625] 28331.65625
+df2 [645.2396850585938] 21957.37890625
+df3 [645.5733642578125] 9375.5927734375
+----processing Spectrum----
+specturm MS1 idx: 1
+spectrum RT: 25.628
+spectrum scan num: 39313
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9063110351562] 30402.173828125
+df2 [645.2373046875] 20179.20703125
+df3 [645.5737915039062] 21631.638671875
+----processing Spectrum----
+specturm MS1 idx: 2
+spectrum RT: 25.697166666666664
+spectrum scan num: 39420
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9051513671875] 34031.875
+df2 [645.2388305664062] 29633.83984375
+df3 [645.5742797851562] 6373.8701171875
+----processing Spectrum----
+specturm MS1 idx: 3
+spectrum RT: 25.768833333333337
+spectrum scan num: 39529
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.904541015625] 21050.416015625
+df2 [645.2379150390625] 16353.826171875
+df3 [645.5758666992188] 13202.7607421875
+----processing Spectrum----
+specturm MS1 idx: 4
+spectrum RT: 25.837833333333332
+spectrum scan num: 39636
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.90478515625] 29889.513671875
+df2 [645.2405395507812] 20269.57421875
+df3 [645.573486328125] 21827.369140625
+----processing Spectrum----
+specturm MS1 idx: 6
+spectrum RT: 25.978166666666667
+spectrum scan num: 39852
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9042358398438] 37396.96875
+df2 [645.2400512695312] 32528.455078125
+df3 [645.5743408203125] 16173.048828125
+----processing Spectrum----
+specturm MS1 idx: 7
+spectrum RT: 26.049333333333333
+spectrum scan num: 39961
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9059448242188] 11338.2412109375
+df2 [645.2379150390625] 28242.5390625
+df3 [645.5731811523438] 17356.318359375
+----processing Spectrum----
+specturm MS1 idx: 8
+spectrum RT: 26.11916666666667
+spectrum scan num: 40068
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9051513671875] 35964.8203125
+df2 [645.2381591796875] 25936.833984375
+df3 [645.5736083984375] 18658.603515625
+----processing Spectrum----
+specturm MS1 idx: 9
+spectrum RT: 26.190833333333334
+spectrum scan num: 40177
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9039916992188] 55995.62890625
+df2 [645.2413330078125] 27121.546875
+df3 [645.5748901367188] 9821.947265625
+----processing Spectrum----
+specturm MS1 idx: 10
+spectrum RT: 26.260833333333334
+spectrum scan num: 40284
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9055786132812] 33292.85546875
+df2 [645.2371826171875] 26891.00390625
+df3 [645.57373046875] 10905.4453125
+----processing Spectrum----
+specturm MS1 idx: 11
+spectrum RT: 26.332
+spectrum scan num: 40393
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.904296875] 28015.8515625
+df2 [645.2383422851562] 36896.5
+df3 [645.5734252929688] 15383.3740234375
+----processing Spectrum----
+specturm MS1 idx: 12
+spectrum RT: 26.401166666666665
+spectrum scan num: 40500
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9034423828125] 41294.80859375
+df2 [645.2385864257812] 40545.38671875
+df3 [645.5741577148438] 21127.359375
+----processing Spectrum----
+specturm MS1 idx: 13
+spectrum RT: 26.47233333333333
+spectrum scan num: 40609
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9041748046875] 41642.9375
+df2 [645.238525390625] 35816.73046875
+df3 [645.5741577148438] 15711.5517578125
+----processing Spectrum----
+specturm MS1 idx: 14
+spectrum RT: 26.5415
+spectrum scan num: 40716
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.904541015625] 48386.50390625
+df2 [645.2385864257812] 33298.453125
+df3 [645.5731201171875] 23964.166015625
+----processing Spectrum----
+specturm MS1 idx: 15
+spectrum RT: 26.612166666666667
+spectrum scan num: 40825
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9042358398438] 49754.6875
+df2 [645.239013671875] 37992.11328125
+df3 [645.5724487304688] 35664.015625
+----processing Spectrum----
+specturm MS1 idx: 16
+spectrum RT: 26.681333333333335
+spectrum scan num: 40932
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9046020507812] 39532.98046875
+df2 [645.2377319335938] 39318.078125
+df3 [645.573486328125] 19903.17578125
+----processing Spectrum----
+specturm MS1 idx: 17
+spectrum RT: 26.752666666666666
+spectrum scan num: 41041
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9050903320312] 22011.837890625
+df2 [645.23876953125] 47042.3984375
+df3 [645.5736694335938] 26162.69921875
+----processing Spectrum----
+specturm MS1 idx: 18
+spectrum RT: 26.821833333333334
+spectrum scan num: 41148
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.904296875] 37752.9609375
+df2 [645.2389526367188] 35123.0703125
+df3 [645.5732421875] 23341.71484375
+----processing Spectrum----
+specturm MS1 idx: 19
+spectrum RT: 26.892999999999997
+spectrum scan num: 41257
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.904052734375] 57291.609375
+df2 [645.2379150390625] 53565.53125
+df3 [645.5737915039062] 45460.421875
+----processing Spectrum----
+specturm MS1 idx: 20
+spectrum RT: 26.962666666666667
+spectrum scan num: 41364
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9039306640625] 83866.09375
+df2 [645.23828125] 74315.6875
+df3 [645.5734252929688] 47253.46875
+----processing Spectrum----
+specturm MS1 idx: 21
+spectrum RT: 27.034166666666668
+spectrum scan num: 41473
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9036865234375] 191106.25
+df2 [645.2385864257812] 162612.25
+df3 [645.5731811523438] 97398.4453125
+----processing Spectrum----
+specturm MS1 idx: 22
+spectrum RT: 27.103333333333335
+spectrum scan num: 41580
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9041137695312] 219832.453125
+df2 [645.2385864257812] 217239.0
+df3 [645.5728149414062] 132676.78125
+----processing Spectrum----
+specturm MS1 idx: 23
+spectrum RT: 27.174
+spectrum scan num: 41689
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.904052734375] 364811.90625
+df2 [645.23828125] 285894.0
+df3 [645.5731201171875] 176454.390625
+----processing Spectrum----
+specturm MS1 idx: 24
+spectrum RT: 27.244500000000002
+spectrum scan num: 41796
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9039306640625] 376585.28125
+df2 [645.2385864257812] 293993.03125
+df3 [645.5726928710938] 184496.890625
+----processing Spectrum----
+specturm MS1 idx: 25
+spectrum RT: 27.315166666666666
+spectrum scan num: 41905
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9041748046875] 307943.5
+df2 [645.238525390625] 272156.59375
+df3 [645.5726928710938] 98346.328125
+----processing Spectrum----
+specturm MS1 idx: 26
+spectrum RT: 27.384833333333333
+spectrum scan num: 42012
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.904296875] 164026.0625
+df2 [645.2385864257812] 146244.078125
+df3 [645.5731201171875] 67818.0625
+----processing Spectrum----
+specturm MS1 idx: 27
+spectrum RT: 27.456666666666667
+spectrum scan num: 42121
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9049682617188] 82302.2578125
+df2 [645.2383422851562] 86518.5234375
+df3 [645.5750732421875] 40826.45703125
+----processing Spectrum----
+specturm MS1 idx: 28
+spectrum RT: 27.526333333333334
+spectrum scan num: 42228
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9053344726562] 62877.0234375
+df2 [645.23828125] 69849.171875
+df3 [645.5739135742188] 38970.9140625
+----processing Spectrum----
+specturm MS1 idx: 29
+spectrum RT: 27.596999999999998
+spectrum scan num: 42337
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9053344726562] 44949.42578125
+df2 [645.2393188476562] 45106.25390625
+df3 [645.574462890625] 32611.982421875
+----processing Spectrum----
+specturm MS1 idx: 30
+spectrum RT: 27.667666666666666
+spectrum scan num: 42444
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9041748046875] 44149.26171875
+df2 [645.2387084960938] 39106.453125
+df3 [645.5736694335938] 26988.453125
+----processing Spectrum----
+specturm MS1 idx: 31
+spectrum RT: 27.738333333333333
+spectrum scan num: 42553
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9042358398438] 67223.546875
+df2 [645.2388305664062] 68793.390625
+df3 [645.5743408203125] 32679.03515625
+----processing Spectrum----
+specturm MS1 idx: 32
+spectrum RT: 27.808666666666667
+spectrum scan num: 42660
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.90478515625] 123165.4453125
+df2 [645.2388305664062] 149063.5
+df3 [645.5719604492188] 70754.484375
+----processing Spectrum----
+specturm MS1 idx: 33
+spectrum RT: 27.878666666666668
+spectrum scan num: 42769
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9037475585938] 314994.90625
+df2 [645.2379760742188] 383152.84375
+df3 [645.5726318359375] 178794.0625
+----processing Spectrum----
+specturm MS1 idx: 34
+spectrum RT: 27.947499999999998
+spectrum scan num: 42876
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9034423828125] 1026324.8125
+df2 [645.23779296875] 821562.0625
+df3 [645.5719604492188] 534105.0
+----processing Spectrum----
+specturm MS1 idx: 35
+spectrum RT: 28.01833333333333
+spectrum scan num: 42985
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.903564453125] 2060295.75
+df2 [645.2381591796875] 1684185.75
+df3 [645.5722045898438] 1043289.25
+----processing Spectrum----
+specturm MS1 idx: 36
+spectrum RT: 28.0875
+spectrum scan num: 43092
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9032592773438] 3603884.75
+df2 [645.23779296875] 2855359.75
+df3 [645.5718994140625] 1463595.875
+----processing Spectrum----
+specturm MS1 idx: 37
+spectrum RT: 28.158333333333335
+spectrum scan num: 43201
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9035034179688] 4812184.0
+df2 [645.2378540039062] 3849026.5
+df3 [645.5718994140625] 2220559.75
+----processing Spectrum----
+specturm MS1 idx: 38
+spectrum RT: 28.22683333333333
+spectrum scan num: 43308
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.903564453125] 4054086.0
+df2 [645.2376098632812] 3108083.0
+df3 [645.5718383789062] 1588063.125
+----processing Spectrum----
+specturm MS1 idx: 39
+spectrum RT: 28.298166666666667
+spectrum scan num: 43417
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.903564453125] 2546475.25
+df2 [645.2378540039062] 2172292.75
+df3 [645.5718383789062] 1363217.375
+----processing Spectrum----
+specturm MS1 idx: 40
+spectrum RT: 28.367666666666665
+spectrum scan num: 43524
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.903564453125] 1694052.5
+df2 [645.2379760742188] 1455619.25
+df3 [645.5722045898438] 768366.25
+----processing Spectrum----
+specturm MS1 idx: 41
+spectrum RT: 28.439166666666665
+spectrum scan num: 43633
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9037475585938] 712616.75
+df2 [645.2384033203125] 566725.0
+df3 [645.5722045898438] 370123.84375
+----processing Spectrum----
+specturm MS1 idx: 42
+spectrum RT: 28.50883333333333
+spectrum scan num: 43740
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9042358398438] 284198.625
+df2 [645.2387084960938] 256362.484375
+df3 [645.572998046875] 134665.828125
+----processing Spectrum----
+specturm MS1 idx: 43
+spectrum RT: 28.580499999999997
+spectrum scan num: 43849
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9047241210938] 75993.5078125
+df2 [645.2379150390625] 70772.6171875
+df3 [645.5733642578125] 51018.36328125
+----processing Spectrum----
+specturm MS1 idx: 44
+spectrum RT: 28.649833333333333
+spectrum scan num: 43956
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9044799804688] 28170.56640625
+df2 [645.2384643554688] 40631.95703125
+df3 [645.5736694335938] 13237.5615234375
+----processing Spectrum----
+specturm MS1 idx: 50
+spectrum RT: 29.074166666666667
+spectrum scan num: 44604
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9041137695312] 8577.544921875
+df2 [645.2416381835938] 8902.88671875
+df3 [645.5767211914062] 4432.0869140625
+----processing Spectrum----
+specturm MS1 idx: 62
+spectrum RT: 29.9155
+spectrum scan num: 45900
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9055786132812] 12541.8447265625
+df2 [645.23681640625] 17143.857421875
+df3 [645.5714721679688] 7196.451171875
+the selected charge: 2
+df_peak_idx_ms1: 24 aligned peak_idx in MS2 208
+df_peak_idx_ms1: 37 aligned peak_idx in MS2 335
+peak_idx_ms1: 24 |aligned peak# in MS2: 15 |all peak# in MS2: 208
+peak_idx_ms1: 37 |aligned peak# in MS2: 15 |all peak# in MS2: 335
+----processing Spectrum----
+specturm MS1 idx: 0
+spectrum RT: 25.556333333333335
+spectrum scan num: 39204
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.854248046875] 504386.15625
+df2 [967.3563232421875] 428153.1875
+df3 [967.8570556640625] 229890.703125
+----processing Spectrum----
+specturm MS1 idx: 1
+spectrum RT: 25.628
+spectrum scan num: 39313
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.853759765625] 421429.65625
+df2 [967.3555908203125] 388069.75
+df3 [967.8569946289062] 189821.546875
+----processing Spectrum----
+specturm MS1 idx: 2
+spectrum RT: 25.697166666666664
+spectrum scan num: 39420
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8541259765625] 447083.03125
+df2 [967.355712890625] 343634.59375
+df3 [967.8570556640625] 172463.9375
+----processing Spectrum----
+specturm MS1 idx: 3
+spectrum RT: 25.768833333333337
+spectrum scan num: 39529
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.85302734375] 481432.6875
+df2 [967.3548583984375] 382632.03125
+df3 [967.8557739257812] 197790.421875
+----processing Spectrum----
+specturm MS1 idx: 4
+spectrum RT: 25.837833333333332
+spectrum scan num: 39636
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8541259765625] 422431.875
+df2 [967.3552856445312] 399650.375
+df3 [967.8563232421875] 236267.390625
+----processing Spectrum----
+specturm MS1 idx: 5
+spectrum RT: 25.908666666666665
+spectrum scan num: 39745
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8538818359375] 524987.4375
+df2 [967.35546875] 495546.03125
+df3 [967.8573608398438] 218373.9375
+----processing Spectrum----
+specturm MS1 idx: 6
+spectrum RT: 25.978166666666667
+spectrum scan num: 39852
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8546142578125] 575212.3125
+df2 [967.3564453125] 456613.5
+df3 [967.8567504882812] 255014.984375
+----processing Spectrum----
+specturm MS1 idx: 7
+spectrum RT: 26.049333333333333
+spectrum scan num: 39961
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.85400390625] 555305.625
+df2 [967.3555908203125] 463662.875
+df3 [967.85595703125] 236967.3125
+----processing Spectrum----
+specturm MS1 idx: 8
+spectrum RT: 26.11916666666667
+spectrum scan num: 40068
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8548583984375] 540080.0625
+df2 [967.356201171875] 410165.375
+df3 [967.857177734375] 212705.046875
+----processing Spectrum----
+specturm MS1 idx: 9
+spectrum RT: 26.190833333333334
+spectrum scan num: 40177
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8538818359375] 511268.09375
+df2 [967.3555297851562] 467976.96875
+df3 [967.856689453125] 244351.21875
+----processing Spectrum----
+specturm MS1 idx: 10
+spectrum RT: 26.260833333333334
+spectrum scan num: 40284
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8548583984375] 522206.6875
+df2 [967.356201171875] 443681.34375
+df3 [967.8580932617188] 220392.0625
+----processing Spectrum----
+specturm MS1 idx: 11
+spectrum RT: 26.332
+spectrum scan num: 40393
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8536376953125] 493399.9375
+df2 [967.3552856445312] 412210.65625
+df3 [967.8564453125] 228340.046875
+----processing Spectrum----
+specturm MS1 idx: 12
+spectrum RT: 26.401166666666665
+spectrum scan num: 40500
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.854248046875] 611743.8125
+df2 [967.3560180664062] 472014.0625
+df3 [967.8568115234375] 256464.078125
+----processing Spectrum----
+specturm MS1 idx: 13
+spectrum RT: 26.47233333333333
+spectrum scan num: 40609
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.853515625] 609201.0
+df2 [967.3554077148438] 553616.25
+df3 [967.8563842773438] 288721.75
+----processing Spectrum----
+specturm MS1 idx: 14
+spectrum RT: 26.5415
+spectrum scan num: 40716
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8543701171875] 597904.5
+df2 [967.35595703125] 492576.8125
+df3 [967.857177734375] 260707.75
+----processing Spectrum----
+specturm MS1 idx: 15
+spectrum RT: 26.612166666666667
+spectrum scan num: 40825
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.853515625] 605548.5
+df2 [967.3556518554688] 552345.875
+df3 [967.8570556640625] 300943.96875
+----processing Spectrum----
+specturm MS1 idx: 16
+spectrum RT: 26.681333333333335
+spectrum scan num: 40932
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8541259765625] 568686.0
+df2 [967.3560180664062] 505790.84375
+df3 [967.856689453125] 262073.109375
+----processing Spectrum----
+specturm MS1 idx: 17
+spectrum RT: 26.752666666666666
+spectrum scan num: 41041
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8541259765625] 645161.6875
+df2 [967.355712890625] 506996.03125
+df3 [967.8565063476562] 293820.65625
+----processing Spectrum----
+specturm MS1 idx: 18
+spectrum RT: 26.821833333333334
+spectrum scan num: 41148
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8540649414062] 615592.875
+df2 [967.3564453125] 508945.21875
+df3 [967.8572998046875] 296984.21875
+----processing Spectrum----
+specturm MS1 idx: 19
+spectrum RT: 26.892999999999997
+spectrum scan num: 41257
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8533325195312] 814353.8125
+df2 [967.355224609375] 743914.75
+df3 [967.8565063476562] 375450.90625
+----processing Spectrum----
+specturm MS1 idx: 20
+spectrum RT: 26.962666666666667
+spectrum scan num: 41364
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8543090820312] 1140254.625
+df2 [967.3560180664062] 991789.875
+df3 [967.8574829101562] 574018.5625
+----processing Spectrum----
+specturm MS1 idx: 21
+spectrum RT: 27.034166666666668
+spectrum scan num: 41473
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8529663085938] 2073103.125
+df2 [967.3546752929688] 1665951.5
+df3 [967.855712890625] 977972.1875
+----processing Spectrum----
+specturm MS1 idx: 22
+spectrum RT: 27.103333333333335
+spectrum scan num: 41580
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8538818359375] 3076490.25
+df2 [967.3551635742188] 2643272.5
+df3 [967.8565063476562] 1404353.75
+----processing Spectrum----
+specturm MS1 idx: 23
+spectrum RT: 27.174
+spectrum scan num: 41689
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8532104492188] 4056924.5
+df2 [967.3548583984375] 3470522.25
+df3 [967.8561401367188] 1751843.625
+----processing Spectrum----
+specturm MS1 idx: 24
+spectrum RT: 27.244500000000002
+spectrum scan num: 41796
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8533935546875] 4201809.0
+df2 [967.3549194335938] 3405640.0
+df3 [967.8560180664062] 1888226.625
+----processing Spectrum----
+specturm MS1 idx: 25
+spectrum RT: 27.315166666666666
+spectrum scan num: 41905
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.85302734375] 3196611.25
+df2 [967.3547973632812] 2626931.25
+df3 [967.8558959960938] 1446143.125
+----processing Spectrum----
+specturm MS1 idx: 26
+spectrum RT: 27.384833333333333
+spectrum scan num: 42012
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8538818359375] 1966422.625
+df2 [967.35546875] 1591773.25
+df3 [967.856689453125] 905333.6875
+----processing Spectrum----
+specturm MS1 idx: 27
+spectrum RT: 27.456666666666667
+spectrum scan num: 42121
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8534545898438] 1138393.375
+df2 [967.3551025390625] 1037056.5
+df3 [967.8565673828125] 543270.625
+----processing Spectrum----
+specturm MS1 idx: 28
+spectrum RT: 27.526333333333334
+spectrum scan num: 42228
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8544311523438] 936206.9375
+df2 [967.3558959960938] 830018.8125
+df3 [967.8571166992188] 434246.0625
+----processing Spectrum----
+specturm MS1 idx: 29
+spectrum RT: 27.596999999999998
+spectrum scan num: 42337
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.854248046875] 810153.8125
+df2 [967.3557739257812] 696294.5
+df3 [967.8565063476562] 392384.8125
+----processing Spectrum----
+specturm MS1 idx: 30
+spectrum RT: 27.667666666666666
+spectrum scan num: 42444
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8540649414062] 839455.3125
+df2 [967.3558349609375] 785155.3125
+df3 [967.8570556640625] 378076.5
+----processing Spectrum----
+specturm MS1 idx: 31
+spectrum RT: 27.738333333333333
+spectrum scan num: 42553
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8531494140625] 974024.4375
+df2 [967.3552856445312] 826412.9375
+df3 [967.8564453125] 473158.625
+----processing Spectrum----
+specturm MS1 idx: 32
+spectrum RT: 27.808666666666667
+spectrum scan num: 42660
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8531494140625] 1653057.25
+df2 [967.3549194335938] 1486075.0
+df3 [967.856201171875] 880762.6875
+----processing Spectrum----
+specturm MS1 idx: 33
+spectrum RT: 27.878666666666668
+spectrum scan num: 42769
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8526000976562] 5083246.5
+df2 [967.354248046875] 4260531.5
+df3 [967.855224609375] 2431963.75
+----processing Spectrum----
+specturm MS1 idx: 34
+spectrum RT: 27.947499999999998
+spectrum scan num: 42876
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8526000976562] 10816672.0
+df2 [967.3541259765625] 9171859.0
+df3 [967.855224609375] 5360693.0
+----processing Spectrum----
+specturm MS1 idx: 35
+spectrum RT: 28.01833333333333
+spectrum scan num: 42985
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8526000976562] 22886590.0
+df2 [967.3540649414062] 19750184.0
+df3 [967.8550415039062] 11157642.0
+----processing Spectrum----
+specturm MS1 idx: 36
+spectrum RT: 28.0875
+spectrum scan num: 43092
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8529052734375] 38258748.0
+df2 [967.353759765625] 33855020.0
+df3 [967.8547973632812] 18396872.0
+----processing Spectrum----
+specturm MS1 idx: 37
+spectrum RT: 28.158333333333335
+spectrum scan num: 43201
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8527221679688] 49610172.0
+df2 [967.3538818359375] 42096348.0
+df3 [967.8548583984375] 22140758.0
+----processing Spectrum----
+specturm MS1 idx: 38
+spectrum RT: 28.22683333333333
+spectrum scan num: 43308
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8527221679688] 42905300.0
+df2 [967.3536987304688] 36505676.0
+df3 [967.854736328125] 20687468.0
+----processing Spectrum----
+specturm MS1 idx: 39
+spectrum RT: 28.298166666666667
+spectrum scan num: 43417
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8526000976562] 31974688.0
+df2 [967.3538818359375] 26464762.0
+df3 [967.85498046875] 13995150.0
+----processing Spectrum----
+specturm MS1 idx: 40
+spectrum RT: 28.367666666666665
+spectrum scan num: 43524
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8529663085938] 16558561.0
+df2 [967.3541259765625] 14241405.0
+df3 [967.855224609375] 7419284.0
+----processing Spectrum----
+specturm MS1 idx: 41
+spectrum RT: 28.439166666666665
+spectrum scan num: 43633
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8529663085938] 7571157.0
+df2 [967.3544921875] 6456100.0
+df3 [967.8555297851562] 3285359.0
+----processing Spectrum----
+specturm MS1 idx: 42
+spectrum RT: 28.50883333333333
+spectrum scan num: 43740
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.854248046875] 3075980.25
+df2 [967.3556518554688] 2458870.75
+df3 [967.85693359375] 1343588.625
+----processing Spectrum----
+specturm MS1 idx: 43
+spectrum RT: 28.580499999999997
+spectrum scan num: 43849
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8536376953125] 904620.875
+df2 [967.3555908203125] 755747.1875
+df3 [967.8565063476562] 382914.03125
+----processing Spectrum----
+specturm MS1 idx: 44
+spectrum RT: 28.649833333333333
+spectrum scan num: 43956
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8541870117188] 327540.59375
+df2 [967.3565673828125] 273191.28125
+df3 [967.8583984375] 152428.765625
+----processing Spectrum----
+specturm MS1 idx: 45
+spectrum RT: 28.720666666666666
+spectrum scan num: 44065
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8533935546875] 183023.484375
+df2 [967.3569946289062] 153828.46875
+df3 [967.8566284179688] 69323.015625
+----processing Spectrum----
+specturm MS1 idx: 46
+spectrum RT: 28.7915
+spectrum scan num: 44172
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8556518554688] 113651.515625
+df2 [967.3592529296875] 81337.9296875
+df3 [967.8587036132812] 33496.671875
+----processing Spectrum----
+specturm MS1 idx: 47
+spectrum RT: 28.862333333333332
+spectrum scan num: 44281
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8540649414062] 90070.140625
+df2 [967.3592529296875] 73664.4921875
+df3 [967.8590698242188] 44316.57421875
+----processing Spectrum----
+specturm MS1 idx: 48
+spectrum RT: 28.93316666666667
+spectrum scan num: 44388
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.85546875] 77918.0234375
+df2 [967.358642578125] 77444.6875
+df3 [967.8598022460938] 29711.798828125
+----processing Spectrum----
+specturm MS1 idx: 49
+spectrum RT: 29.004
+spectrum scan num: 44497
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.854736328125] 61338.60546875
+df2 [967.3572998046875] 82336.6953125
+df3 [967.8580322265625] 30933.87109375
+----processing Spectrum----
+specturm MS1 idx: 50
+spectrum RT: 29.074166666666667
+spectrum scan num: 44604
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8551635742188] 63968.65625
+df2 [967.3593139648438] 57500.61328125
+df3 [967.859130859375] 29712.537109375
+----processing Spectrum----
+specturm MS1 idx: 51
+spectrum RT: 29.144833333333334
+spectrum scan num: 44713
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8522338867188] 87828.828125
+df2 [967.3577880859375] 82329.3125
+df3 [967.855224609375] 36630.69921875
+----processing Spectrum----
+specturm MS1 idx: 52
+spectrum RT: 29.215333333333334
+spectrum scan num: 44820
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8543090820312] 74133.2890625
+df2 [967.3599243164062] 53249.078125
+df3 [967.8564453125] 33746.15234375
+----processing Spectrum----
+specturm MS1 idx: 53
+spectrum RT: 29.285166666666665
+spectrum scan num: 44929
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8538208007812] 49220.32421875
+df2 [967.3601684570312] 57011.0859375
+df3 [967.8563842773438] 39559.3984375
+----processing Spectrum----
+specturm MS1 idx: 54
+spectrum RT: 29.355666666666664
+spectrum scan num: 45036
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8560180664062] 61942.515625
+df2 [967.359375] 64747.66015625
+df3 [967.8541259765625] 28666.994140625
+----processing Spectrum----
+specturm MS1 idx: 55
+spectrum RT: 29.425666666666665
+spectrum scan num: 45145
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8533325195312] 68888.9453125
+df2 [967.3619384765625] 71625.5078125
+df3 [967.858642578125] 28790.560546875
+----processing Spectrum----
+specturm MS1 idx: 56
+spectrum RT: 29.49566666666667
+spectrum scan num: 45252
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8546142578125] 62916.296875
+df2 [967.3609008789062] 70385.0546875
+df3 [967.8583374023438] 30045.857421875
+----processing Spectrum----
+specturm MS1 idx: 62
+spectrum RT: 29.9155
+spectrum scan num: 45900
+Label MS1 Isotopic_Peak_Intensity
+df1 [966.8554077148438] 48513.16796875
+df2 [967.3612060546875] 46813.81640625
+df3 [967.8614501953125] 25819.505859375
+----processing Spectrum----
+specturm MS1 idx: 0
+spectrum RT: 25.556333333333335
+spectrum scan num: 39204
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9039306640625] 28331.65625
+df2 [645.2396850585938] 21957.37890625
+df3 [645.5733642578125] 9375.5927734375
+----processing Spectrum----
+specturm MS1 idx: 1
+spectrum RT: 25.628
+spectrum scan num: 39313
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9063110351562] 30402.173828125
+df2 [645.2373046875] 20179.20703125
+df3 [645.5737915039062] 21631.638671875
+----processing Spectrum----
+specturm MS1 idx: 2
+spectrum RT: 25.697166666666664
+spectrum scan num: 39420
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9051513671875] 34031.875
+df2 [645.2388305664062] 29633.83984375
+df3 [645.5742797851562] 6373.8701171875
+----processing Spectrum----
+specturm MS1 idx: 3
+spectrum RT: 25.768833333333337
+spectrum scan num: 39529
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.904541015625] 21050.416015625
+df2 [645.2379150390625] 16353.826171875
+df3 [645.5758666992188] 13202.7607421875
+----processing Spectrum----
+specturm MS1 idx: 4
+spectrum RT: 25.837833333333332
+spectrum scan num: 39636
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.90478515625] 29889.513671875
+df2 [645.2405395507812] 20269.57421875
+df3 [645.573486328125] 21827.369140625
+----processing Spectrum----
+specturm MS1 idx: 6
+spectrum RT: 25.978166666666667
+spectrum scan num: 39852
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9042358398438] 37396.96875
+df2 [645.2400512695312] 32528.455078125
+df3 [645.5743408203125] 16173.048828125
+----processing Spectrum----
+specturm MS1 idx: 7
+spectrum RT: 26.049333333333333
+spectrum scan num: 39961
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9059448242188] 11338.2412109375
+df2 [645.2379150390625] 28242.5390625
+df3 [645.5731811523438] 17356.318359375
+----processing Spectrum----
+specturm MS1 idx: 8
+spectrum RT: 26.11916666666667
+spectrum scan num: 40068
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9051513671875] 35964.8203125
+df2 [645.2381591796875] 25936.833984375
+df3 [645.5736083984375] 18658.603515625
+----processing Spectrum----
+specturm MS1 idx: 9
+spectrum RT: 26.190833333333334
+spectrum scan num: 40177
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9039916992188] 55995.62890625
+df2 [645.2413330078125] 27121.546875
+df3 [645.5748901367188] 9821.947265625
+----processing Spectrum----
+specturm MS1 idx: 10
+spectrum RT: 26.260833333333334
+spectrum scan num: 40284
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9055786132812] 33292.85546875
+df2 [645.2371826171875] 26891.00390625
+df3 [645.57373046875] 10905.4453125
+----processing Spectrum----
+specturm MS1 idx: 11
+spectrum RT: 26.332
+spectrum scan num: 40393
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.904296875] 28015.8515625
+df2 [645.2383422851562] 36896.5
+df3 [645.5734252929688] 15383.3740234375
+----processing Spectrum----
+specturm MS1 idx: 12
+spectrum RT: 26.401166666666665
+spectrum scan num: 40500
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9034423828125] 41294.80859375
+df2 [645.2385864257812] 40545.38671875
+df3 [645.5741577148438] 21127.359375
+----processing Spectrum----
+specturm MS1 idx: 13
+spectrum RT: 26.47233333333333
+spectrum scan num: 40609
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9041748046875] 41642.9375
+df2 [645.238525390625] 35816.73046875
+df3 [645.5741577148438] 15711.5517578125
+----processing Spectrum----
+specturm MS1 idx: 14
+spectrum RT: 26.5415
+spectrum scan num: 40716
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.904541015625] 48386.50390625
+df2 [645.2385864257812] 33298.453125
+df3 [645.5731201171875] 23964.166015625
+----processing Spectrum----
+specturm MS1 idx: 15
+spectrum RT: 26.612166666666667
+spectrum scan num: 40825
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9042358398438] 49754.6875
+df2 [645.239013671875] 37992.11328125
+df3 [645.5724487304688] 35664.015625
+----processing Spectrum----
+specturm MS1 idx: 16
+spectrum RT: 26.681333333333335
+spectrum scan num: 40932
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9046020507812] 39532.98046875
+df2 [645.2377319335938] 39318.078125
+df3 [645.573486328125] 19903.17578125
+----processing Spectrum----
+specturm MS1 idx: 17
+spectrum RT: 26.752666666666666
+spectrum scan num: 41041
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9050903320312] 22011.837890625
+df2 [645.23876953125] 47042.3984375
+df3 [645.5736694335938] 26162.69921875
+----processing Spectrum----
+specturm MS1 idx: 18
+spectrum RT: 26.821833333333334
+spectrum scan num: 41148
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.904296875] 37752.9609375
+df2 [645.2389526367188] 35123.0703125
+df3 [645.5732421875] 23341.71484375
+----processing Spectrum----
+specturm MS1 idx: 19
+spectrum RT: 26.892999999999997
+spectrum scan num: 41257
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.904052734375] 57291.609375
+df2 [645.2379150390625] 53565.53125
+df3 [645.5737915039062] 45460.421875
+----processing Spectrum----
+specturm MS1 idx: 20
+spectrum RT: 26.962666666666667
+spectrum scan num: 41364
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9039306640625] 83866.09375
+df2 [645.23828125] 74315.6875
+df3 [645.5734252929688] 47253.46875
+----processing Spectrum----
+specturm MS1 idx: 21
+spectrum RT: 27.034166666666668
+spectrum scan num: 41473
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9036865234375] 191106.25
+df2 [645.2385864257812] 162612.25
+df3 [645.5731811523438] 97398.4453125
+----processing Spectrum----
+specturm MS1 idx: 22
+spectrum RT: 27.103333333333335
+spectrum scan num: 41580
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9041137695312] 219832.453125
+df2 [645.2385864257812] 217239.0
+df3 [645.5728149414062] 132676.78125
+----processing Spectrum----
+specturm MS1 idx: 23
+spectrum RT: 27.174
+spectrum scan num: 41689
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.904052734375] 364811.90625
+df2 [645.23828125] 285894.0
+df3 [645.5731201171875] 176454.390625
+----processing Spectrum----
+specturm MS1 idx: 24
+spectrum RT: 27.244500000000002
+spectrum scan num: 41796
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9039306640625] 376585.28125
+df2 [645.2385864257812] 293993.03125
+df3 [645.5726928710938] 184496.890625
+----processing Spectrum----
+specturm MS1 idx: 25
+spectrum RT: 27.315166666666666
+spectrum scan num: 41905
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9041748046875] 307943.5
+df2 [645.238525390625] 272156.59375
+df3 [645.5726928710938] 98346.328125
+----processing Spectrum----
+specturm MS1 idx: 26
+spectrum RT: 27.384833333333333
+spectrum scan num: 42012
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.904296875] 164026.0625
+df2 [645.2385864257812] 146244.078125
+df3 [645.5731201171875] 67818.0625
+----processing Spectrum----
+specturm MS1 idx: 27
+spectrum RT: 27.456666666666667
+spectrum scan num: 42121
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9049682617188] 82302.2578125
+df2 [645.2383422851562] 86518.5234375
+df3 [645.5750732421875] 40826.45703125
+----processing Spectrum----
+specturm MS1 idx: 28
+spectrum RT: 27.526333333333334
+spectrum scan num: 42228
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9053344726562] 62877.0234375
+df2 [645.23828125] 69849.171875
+df3 [645.5739135742188] 38970.9140625
+----processing Spectrum----
+specturm MS1 idx: 29
+spectrum RT: 27.596999999999998
+spectrum scan num: 42337
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9053344726562] 44949.42578125
+df2 [645.2393188476562] 45106.25390625
+df3 [645.574462890625] 32611.982421875
+----processing Spectrum----
+specturm MS1 idx: 30
+spectrum RT: 27.667666666666666
+spectrum scan num: 42444
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9041748046875] 44149.26171875
+df2 [645.2387084960938] 39106.453125
+df3 [645.5736694335938] 26988.453125
+----processing Spectrum----
+specturm MS1 idx: 31
+spectrum RT: 27.738333333333333
+spectrum scan num: 42553
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9042358398438] 67223.546875
+df2 [645.2388305664062] 68793.390625
+df3 [645.5743408203125] 32679.03515625
+----processing Spectrum----
+specturm MS1 idx: 32
+spectrum RT: 27.808666666666667
+spectrum scan num: 42660
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.90478515625] 123165.4453125
+df2 [645.2388305664062] 149063.5
+df3 [645.5719604492188] 70754.484375
+----processing Spectrum----
+specturm MS1 idx: 33
+spectrum RT: 27.878666666666668
+spectrum scan num: 42769
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9037475585938] 314994.90625
+df2 [645.2379760742188] 383152.84375
+df3 [645.5726318359375] 178794.0625
+----processing Spectrum----
+specturm MS1 idx: 34
+spectrum RT: 27.947499999999998
+spectrum scan num: 42876
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9034423828125] 1026324.8125
+df2 [645.23779296875] 821562.0625
+df3 [645.5719604492188] 534105.0
+----processing Spectrum----
+specturm MS1 idx: 35
+spectrum RT: 28.01833333333333
+spectrum scan num: 42985
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.903564453125] 2060295.75
+df2 [645.2381591796875] 1684185.75
+df3 [645.5722045898438] 1043289.25
+----processing Spectrum----
+specturm MS1 idx: 36
+spectrum RT: 28.0875
+spectrum scan num: 43092
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9032592773438] 3603884.75
+df2 [645.23779296875] 2855359.75
+df3 [645.5718994140625] 1463595.875
+----processing Spectrum----
+specturm MS1 idx: 37
+spectrum RT: 28.158333333333335
+spectrum scan num: 43201
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9035034179688] 4812184.0
+df2 [645.2378540039062] 3849026.5
+df3 [645.5718994140625] 2220559.75
+----processing Spectrum----
+specturm MS1 idx: 38
+spectrum RT: 28.22683333333333
+spectrum scan num: 43308
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.903564453125] 4054086.0
+df2 [645.2376098632812] 3108083.0
+df3 [645.5718383789062] 1588063.125
+----processing Spectrum----
+specturm MS1 idx: 39
+spectrum RT: 28.298166666666667
+spectrum scan num: 43417
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.903564453125] 2546475.25
+df2 [645.2378540039062] 2172292.75
+df3 [645.5718383789062] 1363217.375
+----processing Spectrum----
+specturm MS1 idx: 40
+spectrum RT: 28.367666666666665
+spectrum scan num: 43524
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.903564453125] 1694052.5
+df2 [645.2379760742188] 1455619.25
+df3 [645.5722045898438] 768366.25
+----processing Spectrum----
+specturm MS1 idx: 41
+spectrum RT: 28.439166666666665
+spectrum scan num: 43633
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9037475585938] 712616.75
+df2 [645.2384033203125] 566725.0
+df3 [645.5722045898438] 370123.84375
+----processing Spectrum----
+specturm MS1 idx: 42
+spectrum RT: 28.50883333333333
+spectrum scan num: 43740
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9042358398438] 284198.625
+df2 [645.2387084960938] 256362.484375
+df3 [645.572998046875] 134665.828125
+----processing Spectrum----
+specturm MS1 idx: 43
+spectrum RT: 28.580499999999997
+spectrum scan num: 43849
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9047241210938] 75993.5078125
+df2 [645.2379150390625] 70772.6171875
+df3 [645.5733642578125] 51018.36328125
+----processing Spectrum----
+specturm MS1 idx: 44
+spectrum RT: 28.649833333333333
+spectrum scan num: 43956
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9044799804688] 28170.56640625
+df2 [645.2384643554688] 40631.95703125
+df3 [645.5736694335938] 13237.5615234375
+----processing Spectrum----
+specturm MS1 idx: 50
+spectrum RT: 29.074166666666667
+spectrum scan num: 44604
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9041137695312] 8577.544921875
+df2 [645.2416381835938] 8902.88671875
+df3 [645.5767211914062] 4432.0869140625
+----processing Spectrum----
+specturm MS1 idx: 62
+spectrum RT: 29.9155
+spectrum scan num: 45900
+Label MS1 Isotopic_Peak_Intensity
+df1 [644.9055786132812] 12541.8447265625
+df2 [645.23681640625] 17143.857421875
+df3 [645.5714721679688] 7196.451171875
+the selected charge: 2
+df_peak_idx_ms1: 24 aligned peak_idx in MS2 208
+df_peak_idx_ms1: 37 aligned peak_idx in MS2 335
+***************looking for compound*********************
+cpd_addon 5_2_0_0-0
+path exists: ./ExampleDataset/Results/stagger_Nglycan_ExampleData/5_2_0_0-0
+input file name: ./ExampleDataset/Data/stagger_Nglycan_ExampleData.mzXML
+output path: ./ExampleDataset/Results/stagger_Nglycan_ExampleData/5_2_0_0-0
+mass range: 600.0 inf
+time range: 0.0 60.0
+ms2_mass_list: [911.3351, 749.2822, 731.2717, 690.2451, 587.2294, 569.2188, 528.1923, 425.1766, 407.166, 366.1395, 325.1129, 222.0972, 204.0866, 186.0761, 163.0601]
+minimum matched count in ms2: 5
+path exists: ./ExampleDataset/Results/stagger_Nglycan_ExampleData/5_2_0_0-0
+the selected charge: 1
+the selected charge: 1
+***************looking for compound*********************
+cpd_addon 2_2_0_0-0
+path exists: ./ExampleDataset/Results/stagger_Nglycan_ExampleData/2_2_0_0-0
+input file name: ./ExampleDataset/Data/stagger_Nglycan_ExampleData.mzXML
+output path: ./ExampleDataset/Results/stagger_Nglycan_ExampleData/2_2_0_0-0
+mass range: 600.0 inf
+time range: 0.0 60.0
+ms2_mass_list: [587.2294, 569.2188, 546.2029, 528.1923, 425.1766, 407.166, 384.15, 366.1395, 348.1289, 343.1235, 325.1129, 222.0972, 204.0866, 186.0761, 163.0601]
+minimum matched count in ms2: 5
+path exists: ./ExampleDataset/Results/stagger_Nglycan_ExampleData/2_2_0_0-0
+the selected charge: 1
+the selected charge: 1
+***************looking for compound*********************
+cpd_addon 5_4_0_0-0
+path exists: ./ExampleDataset/Results/stagger_Nglycan_ExampleData/5_4_0_0-0
+input file name: ./ExampleDataset/Data/stagger_Nglycan_ExampleData.mzXML
+output path: ./ExampleDataset/Results/stagger_Nglycan_ExampleData/5_4_0_0-0
+mass range: 600.0 inf
+time range: 0.0 60.0
+ms2_mass_list: [1258.4567, 1096.4039, 1055.3773, 911.3351, 893.3245, 749.2822, 731.2717, 690.2451, 587.2294, 569.2188, 528.1923, 425.1766, 366.1395, 222.0972, 204.0866]
+minimum matched count in ms2: 5
+path exists: ./ExampleDataset/Results/stagger_Nglycan_ExampleData/5_4_0_0-0
+----processing Spectrum----
+specturm MS1 idx: 34
+spectrum RT: 27.947499999999998
+spectrum scan num: 42876
+Label MS1 Isotopic_Peak_Intensity
+df1 [821.3043212890625] 103791.328125
+df2 [821.8073120117188] 59324.68359375
+df3 [822.3084716796875] 28349.001953125
+----processing Spectrum----
+specturm MS1 idx: 35
+spectrum RT: 28.01833333333333
+spectrum scan num: 42985
+Label MS1 Isotopic_Peak_Intensity
+df1 [821.3052978515625] 147607.140625
+df2 [821.8037719726562] 123769.390625
+df3 [822.309814453125] 66104.6015625
+----processing Spectrum----
+specturm MS1 idx: 36
+spectrum RT: 28.0875
+spectrum scan num: 43092
+Label MS1 Isotopic_Peak_Intensity
+df1 [821.3045654296875] 212585.921875
+df2 [821.8045043945312] 191352.015625
+df3 [822.3092041015625] 78015.25
+----processing Spectrum----
+specturm MS1 idx: 37
+spectrum RT: 28.158333333333335
+spectrum scan num: 43201
+Label MS1 Isotopic_Peak_Intensity
+df1 [821.304931640625] 323781.375
+df2 [821.8070678710938] 185320.5625
+df3 [822.3052368164062] 58816.828125
+----processing Spectrum----
+specturm MS1 idx: 38
+spectrum RT: 28.22683333333333
+spectrum scan num: 43308
+Label MS1 Isotopic_Peak_Intensity
+df1 [821.3069458007812] 176299.875
+df2 [821.80615234375] 196860.578125
+df3 [822.30615234375] 67041.265625
+----processing Spectrum----
+specturm MS1 idx: 39
+spectrum RT: 28.298166666666667
+spectrum scan num: 43417
+Label MS1 Isotopic_Peak_Intensity
+df1 [821.3086547851562] 133741.03125
+df2 [821.8085327148438] 120839.890625
+df3 [822.305908203125] 43348.08203125
+----processing Spectrum----
+specturm MS1 idx: 40
+spectrum RT: 28.367666666666665
+spectrum scan num: 43524
+Label MS1 Isotopic_Peak_Intensity
+df1 [821.3040161132812] 97050.421875
+df2 [821.8029174804688] 66579.2109375
+df3 [822.3086547851562] 47734.93359375
+the selected charge: 2
+df_peak_idx_ms1: 37 aligned peak_idx in MS2 88
+peak_idx_ms1: 37 |aligned peak# in MS2: 15 |all peak# in MS2: 88
+----processing Spectrum----
+specturm MS1 idx: 34
+spectrum RT: 27.947499999999998
+spectrum scan num: 42876
+Label MS1 Isotopic_Peak_Intensity
+df1 [821.3043212890625] 103791.328125
+df2 [821.8073120117188] 59324.68359375
+df3 [822.3084716796875] 28349.001953125
+----processing Spectrum----
+specturm MS1 idx: 35
+spectrum RT: 28.01833333333333
+spectrum scan num: 42985
+Label MS1 Isotopic_Peak_Intensity
+df1 [821.3052978515625] 147607.140625
+df2 [821.8037719726562] 123769.390625
+df3 [822.309814453125] 66104.6015625
+----processing Spectrum----
+specturm MS1 idx: 36
+spectrum RT: 28.0875
+spectrum scan num: 43092
+Label MS1 Isotopic_Peak_Intensity
+df1 [821.3045654296875] 212585.921875
+df2 [821.8045043945312] 191352.015625
+df3 [822.3092041015625] 78015.25
+----processing Spectrum----
+specturm MS1 idx: 37
+spectrum RT: 28.158333333333335
+spectrum scan num: 43201
+Label MS1 Isotopic_Peak_Intensity
+df1 [821.304931640625] 323781.375
+df2 [821.8070678710938] 185320.5625
+df3 [822.3052368164062] 58816.828125
+----processing Spectrum----
+specturm MS1 idx: 38
+spectrum RT: 28.22683333333333
+spectrum scan num: 43308
+Label MS1 Isotopic_Peak_Intensity
+df1 [821.3069458007812] 176299.875
+df2 [821.80615234375] 196860.578125
+df3 [822.30615234375] 67041.265625
+----processing Spectrum----
+specturm MS1 idx: 39
+spectrum RT: 28.298166666666667
+spectrum scan num: 43417
+Label MS1 Isotopic_Peak_Intensity
+df1 [821.3086547851562] 133741.03125
+df2 [821.8085327148438] 120839.890625
+df3 [822.305908203125] 43348.08203125
+----processing Spectrum----
+specturm MS1 idx: 40
+spectrum RT: 28.367666666666665
+spectrum scan num: 43524
+Label MS1 Isotopic_Peak_Intensity
+df1 [821.3040161132812] 97050.421875
+df2 [821.8029174804688] 66579.2109375
+df3 [822.3086547851562] 47734.93359375
+the selected charge: 2
+df_peak_idx_ms1: 37 aligned peak_idx in MS2 88
+***************looking for compound*********************
+cpd_addon 3_4_1_0-0
+path exists: ./ExampleDataset/Results/stagger_Nglycan_ExampleData/3_4_1_0-0
+input file name: ./ExampleDataset/Data/stagger_Nglycan_ExampleData.mzXML
+output path: ./ExampleDataset/Results/stagger_Nglycan_ExampleData/3_4_1_0-0
+mass range: 600.0 inf
+time range: 0.0 60.0
+ms2_mass_list: [1039.3824, 911.3351, 895.3401, 893.3245, 836.303, 749.2822, 731.2717, 690.2451, 674.2502, 587.2294, 528.1923, 425.1766, 366.1395, 350.1446, 222.0972]
+minimum matched count in ms2: 5
+path exists: ./ExampleDataset/Results/stagger_Nglycan_ExampleData/3_4_1_0-0
+the selected charge: 1
+the selected charge: 1
+***************looking for compound*********************
+cpd_addon 5_4_1_1-0
+path exists: ./ExampleDataset/Results/stagger_Nglycan_ExampleData/5_4_1_1-0
+input file name: ./ExampleDataset/Data/stagger_Nglycan_ExampleData.mzXML
+output path: ./ExampleDataset/Results/stagger_Nglycan_ExampleData/5_4_1_1-0
+mass range: 600.0 inf
+time range: 0.0 60.0
+ms2_mass_list: [1201.4352, 1057.393, 1055.3773, 1039.3824, 911.3351, 895.3401, 893.3245, 749.2822, 690.2451, 657.2349, 528.1923, 512.1974, 366.1395, 292.1027, 204.0866]
+minimum matched count in ms2: 5
+path exists: ./ExampleDataset/Results/stagger_Nglycan_ExampleData/5_4_1_1-0
+----processing Spectrum----
+specturm MS1 idx: 1
+spectrum RT: 25.628
+spectrum scan num: 39313
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8868408203125] 30008.8828125
+df2 [1040.3917236328125] 32461.78515625
+df3 [1040.8848876953125] 16022.888671875
+----processing Spectrum----
+specturm MS1 idx: 2
+spectrum RT: 25.697166666666664
+spectrum scan num: 39420
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8861083984375] 34592.7421875
+df2 [1040.3895263671875] 23926.40234375
+df3 [1040.89306640625] 10583.5908203125
+----processing Spectrum----
+specturm MS1 idx: 3
+spectrum RT: 25.768833333333337
+spectrum scan num: 39529
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8883056640625] 22617.244140625
+df2 [1040.3836669921875] 29772.462890625
+df3 [1040.888916015625] 16461.16796875
+----processing Spectrum----
+specturm MS1 idx: 6
+spectrum RT: 25.978166666666667
+spectrum scan num: 39852
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.88525390625] 38395.84375
+df2 [1040.38818359375] 33258.03125
+df3 [1040.889892578125] 17128.88671875
+----processing Spectrum----
+specturm MS1 idx: 7
+spectrum RT: 26.049333333333333
+spectrum scan num: 39961
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.885498046875] 44189.19140625
+df2 [1040.3839111328125] 31888.26171875
+df3 [1040.8870849609375] 19769.69140625
+----processing Spectrum----
+specturm MS1 idx: 8
+spectrum RT: 26.11916666666667
+spectrum scan num: 40068
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.884033203125] 32344.8203125
+df2 [1040.3875732421875] 29792.853515625
+df3 [1040.888916015625] 10764.2265625
+----processing Spectrum----
+specturm MS1 idx: 9
+spectrum RT: 26.190833333333334
+spectrum scan num: 40177
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8829345703125] 37539.44921875
+df2 [1040.387939453125] 30034.83203125
+df3 [1040.88916015625] 16501.837890625
+----processing Spectrum----
+specturm MS1 idx: 10
+spectrum RT: 26.260833333333334
+spectrum scan num: 40284
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.88525390625] 31802.275390625
+df2 [1040.3865966796875] 21862.8984375
+df3 [1040.890625] 16414.03125
+----processing Spectrum----
+specturm MS1 idx: 11
+spectrum RT: 26.332
+spectrum scan num: 40393
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.882568359375] 17446.744140625
+df2 [1040.385498046875] 31653.517578125
+df3 [1040.889404296875] 10915.451171875
+----processing Spectrum----
+specturm MS1 idx: 12
+spectrum RT: 26.401166666666665
+spectrum scan num: 40500
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.884033203125] 30875.62890625
+df2 [1040.387451171875] 36781.1328125
+df3 [1040.8890380859375] 14288.9306640625
+----processing Spectrum----
+specturm MS1 idx: 13
+spectrum RT: 26.47233333333333
+spectrum scan num: 40609
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8822021484375] 69225.7578125
+df2 [1040.3851318359375] 54424.2578125
+df3 [1040.8875732421875] 32407.728515625
+----processing Spectrum----
+specturm MS1 idx: 14
+spectrum RT: 26.5415
+spectrum scan num: 40716
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8837890625] 145164.734375
+df2 [1040.385986328125] 114513.125
+df3 [1040.886962890625] 65183.52734375
+----processing Spectrum----
+specturm MS1 idx: 15
+spectrum RT: 26.612166666666667
+spectrum scan num: 40825
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8826904296875] 249139.578125
+df2 [1040.3851318359375] 242876.34375
+df3 [1040.8856201171875] 148687.015625
+----processing Spectrum----
+specturm MS1 idx: 16
+spectrum RT: 26.681333333333335
+spectrum scan num: 40932
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.88330078125] 314586.03125
+df2 [1040.385009765625] 317291.875
+df3 [1040.8868408203125] 205729.921875
+----processing Spectrum----
+specturm MS1 idx: 17
+spectrum RT: 26.752666666666666
+spectrum scan num: 41041
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8831787109375] 408645.4375
+df2 [1040.3843994140625] 404075.4375
+df3 [1040.8863525390625] 241909.6875
+----processing Spectrum----
+specturm MS1 idx: 18
+spectrum RT: 26.821833333333334
+spectrum scan num: 41148
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.88330078125] 341634.3125
+df2 [1040.3851318359375] 346420.84375
+df3 [1040.886474609375] 179005.5625
+----processing Spectrum----
+specturm MS1 idx: 19
+spectrum RT: 26.892999999999997
+spectrum scan num: 41257
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8831787109375] 249605.578125
+df2 [1040.3841552734375] 197604.6875
+df3 [1040.8857421875] 115772.3515625
+----processing Spectrum----
+specturm MS1 idx: 20
+spectrum RT: 26.962666666666667
+spectrum scan num: 41364
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8836669921875] 118691.265625
+df2 [1040.384765625] 119785.390625
+df3 [1040.887451171875] 72742.7890625
+----processing Spectrum----
+specturm MS1 idx: 21
+spectrum RT: 27.034166666666668
+spectrum scan num: 41473
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.88330078125] 70532.140625
+df2 [1040.3861083984375] 46672.9921875
+df3 [1040.883544921875] 23955.037109375
+----processing Spectrum----
+specturm MS1 idx: 22
+spectrum RT: 27.103333333333335
+spectrum scan num: 41580
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.886474609375] 24906.76953125
+df2 [1040.3905029296875] 21146.677734375
+df3 [1040.8900146484375] 11861.7607421875
+----processing Spectrum----
+specturm MS1 idx: 23
+spectrum RT: 27.174
+spectrum scan num: 41689
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8843994140625] 35026.25
+df2 [1040.3885498046875] 15963.1142578125
+df3 [1040.8887939453125] 18918.962890625
+----processing Spectrum----
+specturm MS1 idx: 28
+spectrum RT: 27.526333333333334
+spectrum scan num: 42228
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.882568359375] 61720.6328125
+df2 [1040.38623046875] 52166.55859375
+df3 [1040.882080078125] 32577.08203125
+----processing Spectrum----
+specturm MS1 idx: 29
+spectrum RT: 27.596999999999998
+spectrum scan num: 42337
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8831787109375] 272792.625
+df2 [1040.3848876953125] 281948.34375
+df3 [1040.886474609375] 138450.828125
+----processing Spectrum----
+specturm MS1 idx: 30
+spectrum RT: 27.667666666666666
+spectrum scan num: 42444
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8831787109375] 921070.125
+df2 [1040.384765625] 923617.625
+df3 [1040.8861083984375] 531076.8125
+----processing Spectrum----
+specturm MS1 idx: 31
+spectrum RT: 27.738333333333333
+spectrum scan num: 42553
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8826904296875] 2556703.75
+df2 [1040.3843994140625] 2309438.75
+df3 [1040.8856201171875] 1296486.625
+----processing Spectrum----
+specturm MS1 idx: 32
+spectrum RT: 27.808666666666667
+spectrum scan num: 42660
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8828125] 5456969.5
+df2 [1040.3839111328125] 5146855.5
+df3 [1040.8851318359375] 3053224.0
+----processing Spectrum----
+specturm MS1 idx: 33
+spectrum RT: 27.878666666666668
+spectrum scan num: 42769
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.882080078125] 9437822.0
+df2 [1040.3834228515625] 8674735.0
+df3 [1040.8846435546875] 4959031.5
+----processing Spectrum----
+specturm MS1 idx: 34
+spectrum RT: 27.947499999999998
+spectrum scan num: 42876
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8819580078125] 9601588.0
+df2 [1040.38330078125] 8782100.0
+df3 [1040.884521484375] 5194263.5
+----processing Spectrum----
+specturm MS1 idx: 35
+spectrum RT: 28.01833333333333
+spectrum scan num: 42985
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.881591796875] 8118970.5
+df2 [1040.3831787109375] 6998816.0
+df3 [1040.8843994140625] 4149745.25
+----processing Spectrum----
+specturm MS1 idx: 36
+spectrum RT: 28.0875
+spectrum scan num: 43092
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8814697265625] 5265391.0
+df2 [1040.3829345703125] 5099996.5
+df3 [1040.8841552734375] 2933120.25
+----processing Spectrum----
+specturm MS1 idx: 37
+spectrum RT: 28.158333333333335
+spectrum scan num: 43201
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8812255859375] 2718569.25
+df2 [1040.38330078125] 2597297.75
+df3 [1040.8843994140625] 1438503.375
+----processing Spectrum----
+specturm MS1 idx: 38
+spectrum RT: 28.22683333333333
+spectrum scan num: 43308
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.881103515625] 1232685.0
+df2 [1040.3834228515625] 1227762.625
+df3 [1040.884033203125] 706735.8125
+----processing Spectrum----
+specturm MS1 idx: 39
+spectrum RT: 28.298166666666667
+spectrum scan num: 43417
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8819580078125] 713876.1875
+df2 [1040.3841552734375] 645900.5625
+df3 [1040.8841552734375] 309100.34375
+----processing Spectrum----
+specturm MS1 idx: 40
+spectrum RT: 28.367666666666665
+spectrum scan num: 43524
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8822021484375] 489981.3125
+df2 [1040.383056640625] 343348.75
+df3 [1040.88427734375] 196002.734375
+----processing Spectrum----
+specturm MS1 idx: 41
+spectrum RT: 28.439166666666665
+spectrum scan num: 43633
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8829345703125] 367679.09375
+df2 [1040.3843994140625] 325421.65625
+df3 [1040.8853759765625] 140971.4375
+----processing Spectrum----
+specturm MS1 idx: 42
+spectrum RT: 28.50883333333333
+spectrum scan num: 43740
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8831787109375] 360417.75
+df2 [1040.3846435546875] 318511.71875
+df3 [1040.8865966796875] 168634.859375
+----processing Spectrum----
+specturm MS1 idx: 43
+spectrum RT: 28.580499999999997
+spectrum scan num: 43849
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.883056640625] 286548.0625
+df2 [1040.3843994140625] 236354.078125
+df3 [1040.885986328125] 188755.25
+----processing Spectrum----
+specturm MS1 idx: 44
+spectrum RT: 28.649833333333333
+spectrum scan num: 43956
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8834228515625] 274146.5625
+df2 [1040.3851318359375] 259439.046875
+df3 [1040.8868408203125] 137144.84375
+----processing Spectrum----
+specturm MS1 idx: 45
+spectrum RT: 28.720666666666666
+spectrum scan num: 44065
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8829345703125] 338953.1875
+df2 [1040.38427734375] 263632.65625
+df3 [1040.885986328125] 174933.171875
+----processing Spectrum----
+specturm MS1 idx: 46
+spectrum RT: 28.7915
+spectrum scan num: 44172
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.88330078125] 287537.28125
+df2 [1040.3853759765625] 265882.625
+df3 [1040.88671875] 130629.6796875
+----processing Spectrum----
+specturm MS1 idx: 47
+spectrum RT: 28.862333333333332
+spectrum scan num: 44281
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8829345703125] 291475.90625
+df2 [1040.3843994140625] 225658.03125
+df3 [1040.88623046875] 133481.421875
+----processing Spectrum----
+specturm MS1 idx: 48
+spectrum RT: 28.93316666666667
+spectrum scan num: 44388
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8841552734375] 262085.109375
+df2 [1040.3857421875] 234601.75
+df3 [1040.8865966796875] 129221.046875
+----processing Spectrum----
+specturm MS1 idx: 49
+spectrum RT: 29.004
+spectrum scan num: 44497
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.88330078125] 306892.4375
+df2 [1040.38525390625] 234211.921875
+df3 [1040.886474609375] 150448.484375
+----processing Spectrum----
+specturm MS1 idx: 50
+spectrum RT: 29.074166666666667
+spectrum scan num: 44604
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8841552734375] 287036.375
+df2 [1040.385498046875] 264625.34375
+df3 [1040.88720703125] 153029.8125
+----processing Spectrum----
+specturm MS1 idx: 51
+spectrum RT: 29.144833333333334
+spectrum scan num: 44713
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8834228515625] 302355.96875
+df2 [1040.384521484375] 261592.0625
+df3 [1040.885986328125] 160523.3125
+----processing Spectrum----
+specturm MS1 idx: 52
+spectrum RT: 29.215333333333334
+spectrum scan num: 44820
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8837890625] 300817.21875
+df2 [1040.3853759765625] 314659.46875
+df3 [1040.88671875] 169317.703125
+----processing Spectrum----
+specturm MS1 idx: 53
+spectrum RT: 29.285166666666665
+spectrum scan num: 44929
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8829345703125] 251651.71875
+df2 [1040.384765625] 275820.28125
+df3 [1040.8851318359375] 157476.484375
+----processing Spectrum----
+specturm MS1 idx: 54
+spectrum RT: 29.355666666666664
+spectrum scan num: 45036
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.883056640625] 281665.71875
+df2 [1040.38525390625] 287859.375
+df3 [1040.8861083984375] 134693.3125
+----processing Spectrum----
+specturm MS1 idx: 55
+spectrum RT: 29.425666666666665
+spectrum scan num: 45145
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.883056640625] 312191.96875
+df2 [1040.384521484375] 315321.53125
+df3 [1040.8856201171875] 171223.953125
+----processing Spectrum----
+specturm MS1 idx: 56
+spectrum RT: 29.49566666666667
+spectrum scan num: 45252
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8831787109375] 384149.65625
+df2 [1040.384521484375] 361123.03125
+df3 [1040.885986328125] 192379.21875
+----processing Spectrum----
+specturm MS1 idx: 57
+spectrum RT: 29.566
+spectrum scan num: 45361
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8822021484375] 347441.84375
+df2 [1040.384765625] 305362.40625
+df3 [1040.8853759765625] 146434.390625
+----processing Spectrum----
+specturm MS1 idx: 58
+spectrum RT: 29.636166666666668
+spectrum scan num: 45468
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8828125] 359119.1875
+df2 [1040.3846435546875] 331420.90625
+df3 [1040.8857421875] 228874.9375
+----processing Spectrum----
+specturm MS1 idx: 59
+spectrum RT: 29.706333333333337
+spectrum scan num: 45577
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8822021484375] 329254.40625
+df2 [1040.3836669921875] 351710.90625
+df3 [1040.885498046875] 201033.09375
+----processing Spectrum----
+specturm MS1 idx: 60
+spectrum RT: 29.7755
+spectrum scan num: 45684
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.883056640625] 375090.21875
+df2 [1040.384033203125] 369612.625
+df3 [1040.8858642578125] 217775.359375
+----processing Spectrum----
+specturm MS1 idx: 61
+spectrum RT: 29.846166666666665
+spectrum scan num: 45793
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8824462890625] 467487.78125
+df2 [1040.3839111328125] 357487.6875
+df3 [1040.8865966796875] 250030.28125
+----processing Spectrum----
+specturm MS1 idx: 62
+spectrum RT: 29.9155
+spectrum scan num: 45900
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8831787109375] 424902.46875
+df2 [1040.3846435546875] 413054.1875
+df3 [1040.8861083984375] 249512.796875
+----processing Spectrum----
+specturm MS1 idx: 63
+spectrum RT: 29.98616666666667
+spectrum scan num: 46009
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8826904296875] 440816.0
+df2 [1040.384521484375] 440099.46875
+df3 [1040.8858642578125] 278144.78125
+----processing Spectrum----
+specturm MS1 idx: 64
+spectrum RT: 30.05666666666667
+spectrum scan num: 46116
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8828125] 447640.9375
+df2 [1040.384521484375] 397130.875
+df3 [1040.885986328125] 235025.578125
+----processing Spectrum----
+specturm MS1 idx: 65
+spectrum RT: 30.127
+spectrum scan num: 46225
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8828125] 537056.125
+df2 [1040.3836669921875] 463696.46875
+df3 [1040.8853759765625] 295964.375
+----processing Spectrum----
+specturm MS1 idx: 66
+spectrum RT: 30.19633333333333
+spectrum scan num: 46332
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.883056640625] 614018.125
+df2 [1040.3843994140625] 578754.9375
+df3 [1040.88623046875] 332851.15625
+----processing Spectrum----
+specturm MS1 idx: 67
+spectrum RT: 30.267999999999997
+spectrum scan num: 46441
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8824462890625] 585496.0625
+df2 [1040.38427734375] 579155.3125
+df3 [1040.8861083984375] 257566.3125
+----processing Spectrum----
+specturm MS1 idx: 68
+spectrum RT: 30.337333333333333
+spectrum scan num: 46548
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.88330078125] 850796.375
+df2 [1040.3851318359375] 761078.9375
+df3 [1040.8861083984375] 376897.96875
+----processing Spectrum----
+specturm MS1 idx: 69
+spectrum RT: 30.407500000000002
+spectrum scan num: 46657
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.882568359375] 886704.5
+df2 [1040.3843994140625] 818777.1875
+df3 [1040.8857421875] 438145.25
+----processing Spectrum----
+specturm MS1 idx: 70
+spectrum RT: 30.477833333333333
+spectrum scan num: 46764
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.883056640625] 781528.3125
+df2 [1040.3846435546875] 681833.625
+df3 [1040.886474609375] 428880.0625
+----processing Spectrum----
+specturm MS1 idx: 14
+spectrum RT: 26.5415
+spectrum scan num: 40716
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.591064453125] 49654.0859375
+df2 [693.9259033203125] 49454.0
+df3 [694.2587890625] 21104.64453125
+----processing Spectrum----
+specturm MS1 idx: 15
+spectrum RT: 26.612166666666667
+spectrum scan num: 40825
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5905151367188] 86546.1953125
+df2 [693.9254150390625] 66065.328125
+df3 [694.257568359375] 33324.52734375
+----processing Spectrum----
+specturm MS1 idx: 16
+spectrum RT: 26.681333333333335
+spectrum scan num: 40932
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.59033203125] 124697.9375
+df2 [693.9243774414062] 97712.8984375
+df3 [694.2588500976562] 58678.39453125
+----processing Spectrum----
+specturm MS1 idx: 17
+spectrum RT: 26.752666666666666
+spectrum scan num: 41041
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.59033203125] 136098.265625
+df2 [693.9244995117188] 126206.1953125
+df3 [694.2579956054688] 64127.7421875
+----processing Spectrum----
+specturm MS1 idx: 18
+spectrum RT: 26.821833333333334
+spectrum scan num: 41148
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5908813476562] 98214.2109375
+df2 [693.9246215820312] 89750.125
+df3 [694.259521484375] 54003.13671875
+----processing Spectrum----
+specturm MS1 idx: 19
+spectrum RT: 26.892999999999997
+spectrum scan num: 41257
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5896606445312] 69457.875
+df2 [693.9252319335938] 55034.51171875
+df3 [694.258056640625] 36895.0234375
+----processing Spectrum----
+specturm MS1 idx: 20
+spectrum RT: 26.962666666666667
+spectrum scan num: 41364
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5911254882812] 30129.63671875
+df2 [693.9259033203125] 27603.26171875
+df3 [694.260498046875] 12236.609375
+----processing Spectrum----
+specturm MS1 idx: 29
+spectrum RT: 27.596999999999998
+spectrum scan num: 42337
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5916748046875] 27395.7734375
+df2 [693.9248046875] 24777.009765625
+df3 [694.25732421875] 29395.427734375
+----processing Spectrum----
+specturm MS1 idx: 30
+spectrum RT: 27.667666666666666
+spectrum scan num: 42444
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5906982421875] 96703.265625
+df2 [693.9251708984375] 108441.8828125
+df3 [694.2578125] 68887.890625
+----processing Spectrum----
+specturm MS1 idx: 31
+spectrum RT: 27.738333333333333
+spectrum scan num: 42553
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5896606445312] 233179.046875
+df2 [693.9242553710938] 236943.515625
+df3 [694.258544921875] 173872.5625
+----processing Spectrum----
+specturm MS1 idx: 32
+spectrum RT: 27.808666666666667
+spectrum scan num: 42660
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.589599609375] 648742.0
+df2 [693.9239501953125] 509036.28125
+df3 [694.2581176757812] 396800.375
+----processing Spectrum----
+specturm MS1 idx: 33
+spectrum RT: 27.878666666666668
+spectrum scan num: 42769
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5894165039062] 953600.875
+df2 [693.923828125] 947988.6875
+df3 [694.2578125] 562690.8125
+----processing Spectrum----
+specturm MS1 idx: 34
+spectrum RT: 27.947499999999998
+spectrum scan num: 42876
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5890502929688] 1186493.875
+df2 [693.9234008789062] 1053474.625
+df3 [694.2581787109375] 671444.875
+----processing Spectrum----
+specturm MS1 idx: 35
+spectrum RT: 28.01833333333333
+spectrum scan num: 42985
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.589111328125] 903360.125
+df2 [693.9239501953125] 845607.375
+df3 [694.2578735351562] 606624.3125
+----processing Spectrum----
+specturm MS1 idx: 36
+spectrum RT: 28.0875
+spectrum scan num: 43092
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5886840820312] 585795.5625
+df2 [693.9231567382812] 522896.78125
+df3 [694.258544921875] 378025.09375
+----processing Spectrum----
+specturm MS1 idx: 37
+spectrum RT: 28.158333333333335
+spectrum scan num: 43201
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.58837890625] 342799.21875
+df2 [693.9239501953125] 272635.96875
+df3 [694.259521484375] 213236.546875
+----processing Spectrum----
+specturm MS1 idx: 38
+spectrum RT: 28.22683333333333
+spectrum scan num: 43308
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.58935546875] 120527.4765625
+df2 [693.92431640625] 144573.328125
+df3 [694.2603759765625] 62004.27734375
+----processing Spectrum----
+specturm MS1 idx: 40
+spectrum RT: 28.367666666666665
+spectrum scan num: 43524
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5870361328125] 66286.0078125
+df2 [693.9237060546875] 74810.9609375
+df3 [694.2576904296875] 24136.025390625
+----processing Spectrum----
+specturm MS1 idx: 42
+spectrum RT: 28.50883333333333
+spectrum scan num: 43740
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5903930664062] 52512.11328125
+df2 [693.9251708984375] 30266.583984375
+df3 [694.2581787109375] 28875.6796875
+----processing Spectrum----
+specturm MS1 idx: 43
+spectrum RT: 28.580499999999997
+spectrum scan num: 43849
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5899047851562] 49900.54296875
+df2 [693.9254150390625] 36082.16796875
+df3 [694.2606201171875] 12862.34765625
+----processing Spectrum----
+specturm MS1 idx: 44
+spectrum RT: 28.649833333333333
+spectrum scan num: 43956
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5900268554688] 40318.48828125
+df2 [693.9254150390625] 29745.107421875
+df3 [694.2593383789062] 26799.880859375
+----processing Spectrum----
+specturm MS1 idx: 45
+spectrum RT: 28.720666666666666
+spectrum scan num: 44065
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5912475585938] 35657.5390625
+df2 [693.9246215820312] 50106.0078125
+df3 [694.2577514648438] 25278.7265625
+----processing Spectrum----
+specturm MS1 idx: 46
+spectrum RT: 28.7915
+spectrum scan num: 44172
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.590087890625] 35725.59375
+df2 [693.9260864257812] 46422.328125
+df3 [694.2587280273438] 21701.546875
+----processing Spectrum----
+specturm MS1 idx: 47
+spectrum RT: 28.862333333333332
+spectrum scan num: 44281
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5919799804688] 26332.076171875
+df2 [693.9263305664062] 35640.4296875
+df3 [694.2598266601562] 16546.783203125
+----processing Spectrum----
+specturm MS1 idx: 48
+spectrum RT: 28.93316666666667
+spectrum scan num: 44388
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.58935546875] 49318.55078125
+df2 [693.9267578125] 36695.38671875
+df3 [694.2578125] 18731.150390625
+----processing Spectrum----
+specturm MS1 idx: 49
+spectrum RT: 29.004
+spectrum scan num: 44497
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5905151367188] 30167.267578125
+df2 [693.92431640625] 40727.875
+df3 [694.2603759765625] 16696.21875
+----processing Spectrum----
+specturm MS1 idx: 50
+spectrum RT: 29.074166666666667
+spectrum scan num: 44604
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5896606445312] 24296.330078125
+df2 [693.9251708984375] 34541.36328125
+df3 [694.2603759765625] 22970.451171875
+----processing Spectrum----
+specturm MS1 idx: 51
+spectrum RT: 29.144833333333334
+spectrum scan num: 44713
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5901489257812] 37246.04296875
+df2 [693.9241943359375] 28396.080078125
+df3 [694.2601928710938] 18144.154296875
+----processing Spectrum----
+specturm MS1 idx: 52
+spectrum RT: 29.215333333333334
+spectrum scan num: 44820
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5903930664062] 38261.421875
+df2 [693.92529296875] 39192.9453125
+df3 [694.2590942382812] 23787.427734375
+----processing Spectrum----
+specturm MS1 idx: 53
+spectrum RT: 29.285166666666665
+spectrum scan num: 44929
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5916137695312] 25717.416015625
+df2 [693.9243774414062] 33389.4921875
+df3 [694.2596435546875] 24654.388671875
+----processing Spectrum----
+specturm MS1 idx: 54
+spectrum RT: 29.355666666666664
+spectrum scan num: 45036
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.59033203125] 43262.234375
+df2 [693.9239501953125] 47738.8203125
+df3 [694.260009765625] 25982.166015625
+----processing Spectrum----
+specturm MS1 idx: 55
+spectrum RT: 29.425666666666665
+spectrum scan num: 45145
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5912475585938] 50033.31640625
+df2 [693.9248657226562] 46674.36328125
+df3 [694.259033203125] 32076.390625
+----processing Spectrum----
+specturm MS1 idx: 56
+spectrum RT: 29.49566666666667
+spectrum scan num: 45252
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5897827148438] 57179.26953125
+df2 [693.9248046875] 51097.76953125
+df3 [694.2584228515625] 41708.046875
+----processing Spectrum----
+specturm MS1 idx: 57
+spectrum RT: 29.566
+spectrum scan num: 45361
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5905151367188] 46992.8828125
+df2 [693.9251098632812] 35250.41796875
+df3 [694.2595825195312] 26837.548828125
+----processing Spectrum----
+specturm MS1 idx: 58
+spectrum RT: 29.636166666666668
+spectrum scan num: 45468
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5894775390625] 59978.1171875
+df2 [693.925537109375] 44274.4296875
+df3 [694.2601928710938] 29865.59765625
+----processing Spectrum----
+specturm MS1 idx: 59
+spectrum RT: 29.706333333333337
+spectrum scan num: 45577
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5885009765625] 60375.89453125
+df2 [693.9260864257812] 46163.328125
+df3 [694.2570190429688] 30717.533203125
+----processing Spectrum----
+specturm MS1 idx: 60
+spectrum RT: 29.7755
+spectrum scan num: 45684
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5897216796875] 54712.58984375
+df2 [693.926025390625] 63802.2578125
+df3 [694.2578125] 24152.677734375
+----processing Spectrum----
+specturm MS1 idx: 61
+spectrum RT: 29.846166666666665
+spectrum scan num: 45793
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5887451171875] 48230.38671875
+df2 [693.9256591796875] 28765.02734375
+df3 [694.26025390625] 32745.205078125
+----processing Spectrum----
+specturm MS1 idx: 62
+spectrum RT: 29.9155
+spectrum scan num: 45900
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5905151367188] 69577.609375
+df2 [693.9237670898438] 35068.7734375
+df3 [694.259521484375] 35171.6484375
+----processing Spectrum----
+specturm MS1 idx: 63
+spectrum RT: 29.98616666666667
+spectrum scan num: 46009
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5896606445312] 64912.39453125
+df2 [693.9235229492188] 73361.71875
+df3 [694.2592163085938] 31613.671875
+----processing Spectrum----
+specturm MS1 idx: 64
+spectrum RT: 30.05666666666667
+spectrum scan num: 46116
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5895385742188] 61920.046875
+df2 [693.9249267578125] 50478.33984375
+df3 [694.2581176757812] 37509.4140625
+----processing Spectrum----
+specturm MS1 idx: 65
+spectrum RT: 30.127
+spectrum scan num: 46225
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5889892578125] 55324.14453125
+df2 [693.925048828125] 53095.2265625
+df3 [694.2588500976562] 36579.66015625
+----processing Spectrum----
+specturm MS1 idx: 66
+spectrum RT: 30.19633333333333
+spectrum scan num: 46332
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5896606445312] 80534.8203125
+df2 [693.9248046875] 86071.2578125
+df3 [694.2594604492188] 39999.58984375
+----processing Spectrum----
+specturm MS1 idx: 67
+spectrum RT: 30.267999999999997
+spectrum scan num: 46441
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5896606445312] 89846.4609375
+df2 [693.925537109375] 90191.3046875
+df3 [694.2593994140625] 65012.484375
+----processing Spectrum----
+specturm MS1 idx: 68
+spectrum RT: 30.337333333333333
+spectrum scan num: 46548
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5902709960938] 135584.921875
+df2 [693.9240112304688] 127900.875
+df3 [694.2581787109375] 64937.23046875
+----processing Spectrum----
+specturm MS1 idx: 69
+spectrum RT: 30.407500000000002
+spectrum scan num: 46657
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5903930664062] 170902.171875
+df2 [693.9246215820312] 139546.765625
+df3 [694.2586669921875] 101886.1953125
+----processing Spectrum----
+specturm MS1 idx: 70
+spectrum RT: 30.477833333333333
+spectrum scan num: 46764
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5902099609375] 172065.15625
+df2 [693.9240112304688] 145168.421875
+df3 [694.2597045898438] 104832.3359375
+the selected charge: 2
+df_peak_idx_ms1: 2 aligned peak_idx in MS2 11
+df_peak_idx_ms1: 17 aligned peak_idx in MS2 138
+df_peak_idx_ms1: 34 aligned peak_idx in MS2 298
+peak_idx_ms1: 2 |aligned peak# in MS2: 0 |all peak# in MS2: 11
+peak_idx_ms1: 17 |aligned peak# in MS2: 15 |all peak# in MS2: 138
+peak_idx_ms1: 34 |aligned peak# in MS2: 15 |all peak# in MS2: 298
+----processing Spectrum----
+specturm MS1 idx: 1
+spectrum RT: 25.628
+spectrum scan num: 39313
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8868408203125] 30008.8828125
+df2 [1040.3917236328125] 32461.78515625
+df3 [1040.8848876953125] 16022.888671875
+----processing Spectrum----
+specturm MS1 idx: 2
+spectrum RT: 25.697166666666664
+spectrum scan num: 39420
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8861083984375] 34592.7421875
+df2 [1040.3895263671875] 23926.40234375
+df3 [1040.89306640625] 10583.5908203125
+----processing Spectrum----
+specturm MS1 idx: 3
+spectrum RT: 25.768833333333337
+spectrum scan num: 39529
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8883056640625] 22617.244140625
+df2 [1040.3836669921875] 29772.462890625
+df3 [1040.888916015625] 16461.16796875
+----processing Spectrum----
+specturm MS1 idx: 6
+spectrum RT: 25.978166666666667
+spectrum scan num: 39852
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.88525390625] 38395.84375
+df2 [1040.38818359375] 33258.03125
+df3 [1040.889892578125] 17128.88671875
+----processing Spectrum----
+specturm MS1 idx: 7
+spectrum RT: 26.049333333333333
+spectrum scan num: 39961
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.885498046875] 44189.19140625
+df2 [1040.3839111328125] 31888.26171875
+df3 [1040.8870849609375] 19769.69140625
+----processing Spectrum----
+specturm MS1 idx: 8
+spectrum RT: 26.11916666666667
+spectrum scan num: 40068
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.884033203125] 32344.8203125
+df2 [1040.3875732421875] 29792.853515625
+df3 [1040.888916015625] 10764.2265625
+----processing Spectrum----
+specturm MS1 idx: 9
+spectrum RT: 26.190833333333334
+spectrum scan num: 40177
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8829345703125] 37539.44921875
+df2 [1040.387939453125] 30034.83203125
+df3 [1040.88916015625] 16501.837890625
+----processing Spectrum----
+specturm MS1 idx: 10
+spectrum RT: 26.260833333333334
+spectrum scan num: 40284
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.88525390625] 31802.275390625
+df2 [1040.3865966796875] 21862.8984375
+df3 [1040.890625] 16414.03125
+----processing Spectrum----
+specturm MS1 idx: 11
+spectrum RT: 26.332
+spectrum scan num: 40393
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.882568359375] 17446.744140625
+df2 [1040.385498046875] 31653.517578125
+df3 [1040.889404296875] 10915.451171875
+----processing Spectrum----
+specturm MS1 idx: 12
+spectrum RT: 26.401166666666665
+spectrum scan num: 40500
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.884033203125] 30875.62890625
+df2 [1040.387451171875] 36781.1328125
+df3 [1040.8890380859375] 14288.9306640625
+----processing Spectrum----
+specturm MS1 idx: 13
+spectrum RT: 26.47233333333333
+spectrum scan num: 40609
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8822021484375] 69225.7578125
+df2 [1040.3851318359375] 54424.2578125
+df3 [1040.8875732421875] 32407.728515625
+----processing Spectrum----
+specturm MS1 idx: 14
+spectrum RT: 26.5415
+spectrum scan num: 40716
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8837890625] 145164.734375
+df2 [1040.385986328125] 114513.125
+df3 [1040.886962890625] 65183.52734375
+----processing Spectrum----
+specturm MS1 idx: 15
+spectrum RT: 26.612166666666667
+spectrum scan num: 40825
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8826904296875] 249139.578125
+df2 [1040.3851318359375] 242876.34375
+df3 [1040.8856201171875] 148687.015625
+----processing Spectrum----
+specturm MS1 idx: 16
+spectrum RT: 26.681333333333335
+spectrum scan num: 40932
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.88330078125] 314586.03125
+df2 [1040.385009765625] 317291.875
+df3 [1040.8868408203125] 205729.921875
+----processing Spectrum----
+specturm MS1 idx: 17
+spectrum RT: 26.752666666666666
+spectrum scan num: 41041
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8831787109375] 408645.4375
+df2 [1040.3843994140625] 404075.4375
+df3 [1040.8863525390625] 241909.6875
+----processing Spectrum----
+specturm MS1 idx: 18
+spectrum RT: 26.821833333333334
+spectrum scan num: 41148
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.88330078125] 341634.3125
+df2 [1040.3851318359375] 346420.84375
+df3 [1040.886474609375] 179005.5625
+----processing Spectrum----
+specturm MS1 idx: 19
+spectrum RT: 26.892999999999997
+spectrum scan num: 41257
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8831787109375] 249605.578125
+df2 [1040.3841552734375] 197604.6875
+df3 [1040.8857421875] 115772.3515625
+----processing Spectrum----
+specturm MS1 idx: 20
+spectrum RT: 26.962666666666667
+spectrum scan num: 41364
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8836669921875] 118691.265625
+df2 [1040.384765625] 119785.390625
+df3 [1040.887451171875] 72742.7890625
+----processing Spectrum----
+specturm MS1 idx: 21
+spectrum RT: 27.034166666666668
+spectrum scan num: 41473
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.88330078125] 70532.140625
+df2 [1040.3861083984375] 46672.9921875
+df3 [1040.883544921875] 23955.037109375
+----processing Spectrum----
+specturm MS1 idx: 22
+spectrum RT: 27.103333333333335
+spectrum scan num: 41580
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.886474609375] 24906.76953125
+df2 [1040.3905029296875] 21146.677734375
+df3 [1040.8900146484375] 11861.7607421875
+----processing Spectrum----
+specturm MS1 idx: 23
+spectrum RT: 27.174
+spectrum scan num: 41689
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8843994140625] 35026.25
+df2 [1040.3885498046875] 15963.1142578125
+df3 [1040.8887939453125] 18918.962890625
+----processing Spectrum----
+specturm MS1 idx: 28
+spectrum RT: 27.526333333333334
+spectrum scan num: 42228
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.882568359375] 61720.6328125
+df2 [1040.38623046875] 52166.55859375
+df3 [1040.882080078125] 32577.08203125
+----processing Spectrum----
+specturm MS1 idx: 29
+spectrum RT: 27.596999999999998
+spectrum scan num: 42337
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8831787109375] 272792.625
+df2 [1040.3848876953125] 281948.34375
+df3 [1040.886474609375] 138450.828125
+----processing Spectrum----
+specturm MS1 idx: 30
+spectrum RT: 27.667666666666666
+spectrum scan num: 42444
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8831787109375] 921070.125
+df2 [1040.384765625] 923617.625
+df3 [1040.8861083984375] 531076.8125
+----processing Spectrum----
+specturm MS1 idx: 31
+spectrum RT: 27.738333333333333
+spectrum scan num: 42553
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8826904296875] 2556703.75
+df2 [1040.3843994140625] 2309438.75
+df3 [1040.8856201171875] 1296486.625
+----processing Spectrum----
+specturm MS1 idx: 32
+spectrum RT: 27.808666666666667
+spectrum scan num: 42660
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8828125] 5456969.5
+df2 [1040.3839111328125] 5146855.5
+df3 [1040.8851318359375] 3053224.0
+----processing Spectrum----
+specturm MS1 idx: 33
+spectrum RT: 27.878666666666668
+spectrum scan num: 42769
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.882080078125] 9437822.0
+df2 [1040.3834228515625] 8674735.0
+df3 [1040.8846435546875] 4959031.5
+----processing Spectrum----
+specturm MS1 idx: 34
+spectrum RT: 27.947499999999998
+spectrum scan num: 42876
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8819580078125] 9601588.0
+df2 [1040.38330078125] 8782100.0
+df3 [1040.884521484375] 5194263.5
+----processing Spectrum----
+specturm MS1 idx: 35
+spectrum RT: 28.01833333333333
+spectrum scan num: 42985
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.881591796875] 8118970.5
+df2 [1040.3831787109375] 6998816.0
+df3 [1040.8843994140625] 4149745.25
+----processing Spectrum----
+specturm MS1 idx: 36
+spectrum RT: 28.0875
+spectrum scan num: 43092
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8814697265625] 5265391.0
+df2 [1040.3829345703125] 5099996.5
+df3 [1040.8841552734375] 2933120.25
+----processing Spectrum----
+specturm MS1 idx: 37
+spectrum RT: 28.158333333333335
+spectrum scan num: 43201
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8812255859375] 2718569.25
+df2 [1040.38330078125] 2597297.75
+df3 [1040.8843994140625] 1438503.375
+----processing Spectrum----
+specturm MS1 idx: 38
+spectrum RT: 28.22683333333333
+spectrum scan num: 43308
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.881103515625] 1232685.0
+df2 [1040.3834228515625] 1227762.625
+df3 [1040.884033203125] 706735.8125
+----processing Spectrum----
+specturm MS1 idx: 39
+spectrum RT: 28.298166666666667
+spectrum scan num: 43417
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8819580078125] 713876.1875
+df2 [1040.3841552734375] 645900.5625
+df3 [1040.8841552734375] 309100.34375
+----processing Spectrum----
+specturm MS1 idx: 40
+spectrum RT: 28.367666666666665
+spectrum scan num: 43524
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8822021484375] 489981.3125
+df2 [1040.383056640625] 343348.75
+df3 [1040.88427734375] 196002.734375
+----processing Spectrum----
+specturm MS1 idx: 41
+spectrum RT: 28.439166666666665
+spectrum scan num: 43633
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8829345703125] 367679.09375
+df2 [1040.3843994140625] 325421.65625
+df3 [1040.8853759765625] 140971.4375
+----processing Spectrum----
+specturm MS1 idx: 42
+spectrum RT: 28.50883333333333
+spectrum scan num: 43740
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8831787109375] 360417.75
+df2 [1040.3846435546875] 318511.71875
+df3 [1040.8865966796875] 168634.859375
+----processing Spectrum----
+specturm MS1 idx: 43
+spectrum RT: 28.580499999999997
+spectrum scan num: 43849
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.883056640625] 286548.0625
+df2 [1040.3843994140625] 236354.078125
+df3 [1040.885986328125] 188755.25
+----processing Spectrum----
+specturm MS1 idx: 44
+spectrum RT: 28.649833333333333
+spectrum scan num: 43956
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8834228515625] 274146.5625
+df2 [1040.3851318359375] 259439.046875
+df3 [1040.8868408203125] 137144.84375
+----processing Spectrum----
+specturm MS1 idx: 45
+spectrum RT: 28.720666666666666
+spectrum scan num: 44065
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8829345703125] 338953.1875
+df2 [1040.38427734375] 263632.65625
+df3 [1040.885986328125] 174933.171875
+----processing Spectrum----
+specturm MS1 idx: 46
+spectrum RT: 28.7915
+spectrum scan num: 44172
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.88330078125] 287537.28125
+df2 [1040.3853759765625] 265882.625
+df3 [1040.88671875] 130629.6796875
+----processing Spectrum----
+specturm MS1 idx: 47
+spectrum RT: 28.862333333333332
+spectrum scan num: 44281
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8829345703125] 291475.90625
+df2 [1040.3843994140625] 225658.03125
+df3 [1040.88623046875] 133481.421875
+----processing Spectrum----
+specturm MS1 idx: 48
+spectrum RT: 28.93316666666667
+spectrum scan num: 44388
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8841552734375] 262085.109375
+df2 [1040.3857421875] 234601.75
+df3 [1040.8865966796875] 129221.046875
+----processing Spectrum----
+specturm MS1 idx: 49
+spectrum RT: 29.004
+spectrum scan num: 44497
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.88330078125] 306892.4375
+df2 [1040.38525390625] 234211.921875
+df3 [1040.886474609375] 150448.484375
+----processing Spectrum----
+specturm MS1 idx: 50
+spectrum RT: 29.074166666666667
+spectrum scan num: 44604
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8841552734375] 287036.375
+df2 [1040.385498046875] 264625.34375
+df3 [1040.88720703125] 153029.8125
+----processing Spectrum----
+specturm MS1 idx: 51
+spectrum RT: 29.144833333333334
+spectrum scan num: 44713
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8834228515625] 302355.96875
+df2 [1040.384521484375] 261592.0625
+df3 [1040.885986328125] 160523.3125
+----processing Spectrum----
+specturm MS1 idx: 52
+spectrum RT: 29.215333333333334
+spectrum scan num: 44820
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8837890625] 300817.21875
+df2 [1040.3853759765625] 314659.46875
+df3 [1040.88671875] 169317.703125
+----processing Spectrum----
+specturm MS1 idx: 53
+spectrum RT: 29.285166666666665
+spectrum scan num: 44929
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8829345703125] 251651.71875
+df2 [1040.384765625] 275820.28125
+df3 [1040.8851318359375] 157476.484375
+----processing Spectrum----
+specturm MS1 idx: 54
+spectrum RT: 29.355666666666664
+spectrum scan num: 45036
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.883056640625] 281665.71875
+df2 [1040.38525390625] 287859.375
+df3 [1040.8861083984375] 134693.3125
+----processing Spectrum----
+specturm MS1 idx: 55
+spectrum RT: 29.425666666666665
+spectrum scan num: 45145
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.883056640625] 312191.96875
+df2 [1040.384521484375] 315321.53125
+df3 [1040.8856201171875] 171223.953125
+----processing Spectrum----
+specturm MS1 idx: 56
+spectrum RT: 29.49566666666667
+spectrum scan num: 45252
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8831787109375] 384149.65625
+df2 [1040.384521484375] 361123.03125
+df3 [1040.885986328125] 192379.21875
+----processing Spectrum----
+specturm MS1 idx: 57
+spectrum RT: 29.566
+spectrum scan num: 45361
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8822021484375] 347441.84375
+df2 [1040.384765625] 305362.40625
+df3 [1040.8853759765625] 146434.390625
+----processing Spectrum----
+specturm MS1 idx: 58
+spectrum RT: 29.636166666666668
+spectrum scan num: 45468
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8828125] 359119.1875
+df2 [1040.3846435546875] 331420.90625
+df3 [1040.8857421875] 228874.9375
+----processing Spectrum----
+specturm MS1 idx: 59
+spectrum RT: 29.706333333333337
+spectrum scan num: 45577
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8822021484375] 329254.40625
+df2 [1040.3836669921875] 351710.90625
+df3 [1040.885498046875] 201033.09375
+----processing Spectrum----
+specturm MS1 idx: 60
+spectrum RT: 29.7755
+spectrum scan num: 45684
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.883056640625] 375090.21875
+df2 [1040.384033203125] 369612.625
+df3 [1040.8858642578125] 217775.359375
+----processing Spectrum----
+specturm MS1 idx: 61
+spectrum RT: 29.846166666666665
+spectrum scan num: 45793
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8824462890625] 467487.78125
+df2 [1040.3839111328125] 357487.6875
+df3 [1040.8865966796875] 250030.28125
+----processing Spectrum----
+specturm MS1 idx: 62
+spectrum RT: 29.9155
+spectrum scan num: 45900
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8831787109375] 424902.46875
+df2 [1040.3846435546875] 413054.1875
+df3 [1040.8861083984375] 249512.796875
+----processing Spectrum----
+specturm MS1 idx: 63
+spectrum RT: 29.98616666666667
+spectrum scan num: 46009
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8826904296875] 440816.0
+df2 [1040.384521484375] 440099.46875
+df3 [1040.8858642578125] 278144.78125
+----processing Spectrum----
+specturm MS1 idx: 64
+spectrum RT: 30.05666666666667
+spectrum scan num: 46116
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8828125] 447640.9375
+df2 [1040.384521484375] 397130.875
+df3 [1040.885986328125] 235025.578125
+----processing Spectrum----
+specturm MS1 idx: 65
+spectrum RT: 30.127
+spectrum scan num: 46225
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8828125] 537056.125
+df2 [1040.3836669921875] 463696.46875
+df3 [1040.8853759765625] 295964.375
+----processing Spectrum----
+specturm MS1 idx: 66
+spectrum RT: 30.19633333333333
+spectrum scan num: 46332
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.883056640625] 614018.125
+df2 [1040.3843994140625] 578754.9375
+df3 [1040.88623046875] 332851.15625
+----processing Spectrum----
+specturm MS1 idx: 67
+spectrum RT: 30.267999999999997
+spectrum scan num: 46441
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.8824462890625] 585496.0625
+df2 [1040.38427734375] 579155.3125
+df3 [1040.8861083984375] 257566.3125
+----processing Spectrum----
+specturm MS1 idx: 68
+spectrum RT: 30.337333333333333
+spectrum scan num: 46548
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.88330078125] 850796.375
+df2 [1040.3851318359375] 761078.9375
+df3 [1040.8861083984375] 376897.96875
+----processing Spectrum----
+specturm MS1 idx: 69
+spectrum RT: 30.407500000000002
+spectrum scan num: 46657
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.882568359375] 886704.5
+df2 [1040.3843994140625] 818777.1875
+df3 [1040.8857421875] 438145.25
+----processing Spectrum----
+specturm MS1 idx: 70
+spectrum RT: 30.477833333333333
+spectrum scan num: 46764
+Label MS1 Isotopic_Peak_Intensity
+df1 [1039.883056640625] 781528.3125
+df2 [1040.3846435546875] 681833.625
+df3 [1040.886474609375] 428880.0625
+----processing Spectrum----
+specturm MS1 idx: 14
+spectrum RT: 26.5415
+spectrum scan num: 40716
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.591064453125] 49654.0859375
+df2 [693.9259033203125] 49454.0
+df3 [694.2587890625] 21104.64453125
+----processing Spectrum----
+specturm MS1 idx: 15
+spectrum RT: 26.612166666666667
+spectrum scan num: 40825
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5905151367188] 86546.1953125
+df2 [693.9254150390625] 66065.328125
+df3 [694.257568359375] 33324.52734375
+----processing Spectrum----
+specturm MS1 idx: 16
+spectrum RT: 26.681333333333335
+spectrum scan num: 40932
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.59033203125] 124697.9375
+df2 [693.9243774414062] 97712.8984375
+df3 [694.2588500976562] 58678.39453125
+----processing Spectrum----
+specturm MS1 idx: 17
+spectrum RT: 26.752666666666666
+spectrum scan num: 41041
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.59033203125] 136098.265625
+df2 [693.9244995117188] 126206.1953125
+df3 [694.2579956054688] 64127.7421875
+----processing Spectrum----
+specturm MS1 idx: 18
+spectrum RT: 26.821833333333334
+spectrum scan num: 41148
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5908813476562] 98214.2109375
+df2 [693.9246215820312] 89750.125
+df3 [694.259521484375] 54003.13671875
+----processing Spectrum----
+specturm MS1 idx: 19
+spectrum RT: 26.892999999999997
+spectrum scan num: 41257
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5896606445312] 69457.875
+df2 [693.9252319335938] 55034.51171875
+df3 [694.258056640625] 36895.0234375
+----processing Spectrum----
+specturm MS1 idx: 20
+spectrum RT: 26.962666666666667
+spectrum scan num: 41364
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5911254882812] 30129.63671875
+df2 [693.9259033203125] 27603.26171875
+df3 [694.260498046875] 12236.609375
+----processing Spectrum----
+specturm MS1 idx: 29
+spectrum RT: 27.596999999999998
+spectrum scan num: 42337
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5916748046875] 27395.7734375
+df2 [693.9248046875] 24777.009765625
+df3 [694.25732421875] 29395.427734375
+----processing Spectrum----
+specturm MS1 idx: 30
+spectrum RT: 27.667666666666666
+spectrum scan num: 42444
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5906982421875] 96703.265625
+df2 [693.9251708984375] 108441.8828125
+df3 [694.2578125] 68887.890625
+----processing Spectrum----
+specturm MS1 idx: 31
+spectrum RT: 27.738333333333333
+spectrum scan num: 42553
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5896606445312] 233179.046875
+df2 [693.9242553710938] 236943.515625
+df3 [694.258544921875] 173872.5625
+----processing Spectrum----
+specturm MS1 idx: 32
+spectrum RT: 27.808666666666667
+spectrum scan num: 42660
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.589599609375] 648742.0
+df2 [693.9239501953125] 509036.28125
+df3 [694.2581176757812] 396800.375
+----processing Spectrum----
+specturm MS1 idx: 33
+spectrum RT: 27.878666666666668
+spectrum scan num: 42769
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5894165039062] 953600.875
+df2 [693.923828125] 947988.6875
+df3 [694.2578125] 562690.8125
+----processing Spectrum----
+specturm MS1 idx: 34
+spectrum RT: 27.947499999999998
+spectrum scan num: 42876
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5890502929688] 1186493.875
+df2 [693.9234008789062] 1053474.625
+df3 [694.2581787109375] 671444.875
+----processing Spectrum----
+specturm MS1 idx: 35
+spectrum RT: 28.01833333333333
+spectrum scan num: 42985
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.589111328125] 903360.125
+df2 [693.9239501953125] 845607.375
+df3 [694.2578735351562] 606624.3125
+----processing Spectrum----
+specturm MS1 idx: 36
+spectrum RT: 28.0875
+spectrum scan num: 43092
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5886840820312] 585795.5625
+df2 [693.9231567382812] 522896.78125
+df3 [694.258544921875] 378025.09375
+----processing Spectrum----
+specturm MS1 idx: 37
+spectrum RT: 28.158333333333335
+spectrum scan num: 43201
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.58837890625] 342799.21875
+df2 [693.9239501953125] 272635.96875
+df3 [694.259521484375] 213236.546875
+----processing Spectrum----
+specturm MS1 idx: 38
+spectrum RT: 28.22683333333333
+spectrum scan num: 43308
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.58935546875] 120527.4765625
+df2 [693.92431640625] 144573.328125
+df3 [694.2603759765625] 62004.27734375
+----processing Spectrum----
+specturm MS1 idx: 40
+spectrum RT: 28.367666666666665
+spectrum scan num: 43524
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5870361328125] 66286.0078125
+df2 [693.9237060546875] 74810.9609375
+df3 [694.2576904296875] 24136.025390625
+----processing Spectrum----
+specturm MS1 idx: 42
+spectrum RT: 28.50883333333333
+spectrum scan num: 43740
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5903930664062] 52512.11328125
+df2 [693.9251708984375] 30266.583984375
+df3 [694.2581787109375] 28875.6796875
+----processing Spectrum----
+specturm MS1 idx: 43
+spectrum RT: 28.580499999999997
+spectrum scan num: 43849
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5899047851562] 49900.54296875
+df2 [693.9254150390625] 36082.16796875
+df3 [694.2606201171875] 12862.34765625
+----processing Spectrum----
+specturm MS1 idx: 44
+spectrum RT: 28.649833333333333
+spectrum scan num: 43956
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5900268554688] 40318.48828125
+df2 [693.9254150390625] 29745.107421875
+df3 [694.2593383789062] 26799.880859375
+----processing Spectrum----
+specturm MS1 idx: 45
+spectrum RT: 28.720666666666666
+spectrum scan num: 44065
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5912475585938] 35657.5390625
+df2 [693.9246215820312] 50106.0078125
+df3 [694.2577514648438] 25278.7265625
+----processing Spectrum----
+specturm MS1 idx: 46
+spectrum RT: 28.7915
+spectrum scan num: 44172
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.590087890625] 35725.59375
+df2 [693.9260864257812] 46422.328125
+df3 [694.2587280273438] 21701.546875
+----processing Spectrum----
+specturm MS1 idx: 47
+spectrum RT: 28.862333333333332
+spectrum scan num: 44281
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5919799804688] 26332.076171875
+df2 [693.9263305664062] 35640.4296875
+df3 [694.2598266601562] 16546.783203125
+----processing Spectrum----
+specturm MS1 idx: 48
+spectrum RT: 28.93316666666667
+spectrum scan num: 44388
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.58935546875] 49318.55078125
+df2 [693.9267578125] 36695.38671875
+df3 [694.2578125] 18731.150390625
+----processing Spectrum----
+specturm MS1 idx: 49
+spectrum RT: 29.004
+spectrum scan num: 44497
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5905151367188] 30167.267578125
+df2 [693.92431640625] 40727.875
+df3 [694.2603759765625] 16696.21875
+----processing Spectrum----
+specturm MS1 idx: 50
+spectrum RT: 29.074166666666667
+spectrum scan num: 44604
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5896606445312] 24296.330078125
+df2 [693.9251708984375] 34541.36328125
+df3 [694.2603759765625] 22970.451171875
+----processing Spectrum----
+specturm MS1 idx: 51
+spectrum RT: 29.144833333333334
+spectrum scan num: 44713
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5901489257812] 37246.04296875
+df2 [693.9241943359375] 28396.080078125
+df3 [694.2601928710938] 18144.154296875
+----processing Spectrum----
+specturm MS1 idx: 52
+spectrum RT: 29.215333333333334
+spectrum scan num: 44820
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5903930664062] 38261.421875
+df2 [693.92529296875] 39192.9453125
+df3 [694.2590942382812] 23787.427734375
+----processing Spectrum----
+specturm MS1 idx: 53
+spectrum RT: 29.285166666666665
+spectrum scan num: 44929
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5916137695312] 25717.416015625
+df2 [693.9243774414062] 33389.4921875
+df3 [694.2596435546875] 24654.388671875
+----processing Spectrum----
+specturm MS1 idx: 54
+spectrum RT: 29.355666666666664
+spectrum scan num: 45036
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.59033203125] 43262.234375
+df2 [693.9239501953125] 47738.8203125
+df3 [694.260009765625] 25982.166015625
+----processing Spectrum----
+specturm MS1 idx: 55
+spectrum RT: 29.425666666666665
+spectrum scan num: 45145
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5912475585938] 50033.31640625
+df2 [693.9248657226562] 46674.36328125
+df3 [694.259033203125] 32076.390625
+----processing Spectrum----
+specturm MS1 idx: 56
+spectrum RT: 29.49566666666667
+spectrum scan num: 45252
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5897827148438] 57179.26953125
+df2 [693.9248046875] 51097.76953125
+df3 [694.2584228515625] 41708.046875
+----processing Spectrum----
+specturm MS1 idx: 57
+spectrum RT: 29.566
+spectrum scan num: 45361
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5905151367188] 46992.8828125
+df2 [693.9251098632812] 35250.41796875
+df3 [694.2595825195312] 26837.548828125
+----processing Spectrum----
+specturm MS1 idx: 58
+spectrum RT: 29.636166666666668
+spectrum scan num: 45468
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5894775390625] 59978.1171875
+df2 [693.925537109375] 44274.4296875
+df3 [694.2601928710938] 29865.59765625
+----processing Spectrum----
+specturm MS1 idx: 59
+spectrum RT: 29.706333333333337
+spectrum scan num: 45577
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5885009765625] 60375.89453125
+df2 [693.9260864257812] 46163.328125
+df3 [694.2570190429688] 30717.533203125
+----processing Spectrum----
+specturm MS1 idx: 60
+spectrum RT: 29.7755
+spectrum scan num: 45684
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5897216796875] 54712.58984375
+df2 [693.926025390625] 63802.2578125
+df3 [694.2578125] 24152.677734375
+----processing Spectrum----
+specturm MS1 idx: 61
+spectrum RT: 29.846166666666665
+spectrum scan num: 45793
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5887451171875] 48230.38671875
+df2 [693.9256591796875] 28765.02734375
+df3 [694.26025390625] 32745.205078125
+----processing Spectrum----
+specturm MS1 idx: 62
+spectrum RT: 29.9155
+spectrum scan num: 45900
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5905151367188] 69577.609375
+df2 [693.9237670898438] 35068.7734375
+df3 [694.259521484375] 35171.6484375
+----processing Spectrum----
+specturm MS1 idx: 63
+spectrum RT: 29.98616666666667
+spectrum scan num: 46009
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5896606445312] 64912.39453125
+df2 [693.9235229492188] 73361.71875
+df3 [694.2592163085938] 31613.671875
+----processing Spectrum----
+specturm MS1 idx: 64
+spectrum RT: 30.05666666666667
+spectrum scan num: 46116
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5895385742188] 61920.046875
+df2 [693.9249267578125] 50478.33984375
+df3 [694.2581176757812] 37509.4140625
+----processing Spectrum----
+specturm MS1 idx: 65
+spectrum RT: 30.127
+spectrum scan num: 46225
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5889892578125] 55324.14453125
+df2 [693.925048828125] 53095.2265625
+df3 [694.2588500976562] 36579.66015625
+----processing Spectrum----
+specturm MS1 idx: 66
+spectrum RT: 30.19633333333333
+spectrum scan num: 46332
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5896606445312] 80534.8203125
+df2 [693.9248046875] 86071.2578125
+df3 [694.2594604492188] 39999.58984375
+----processing Spectrum----
+specturm MS1 idx: 67
+spectrum RT: 30.267999999999997
+spectrum scan num: 46441
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5896606445312] 89846.4609375
+df2 [693.925537109375] 90191.3046875
+df3 [694.2593994140625] 65012.484375
+----processing Spectrum----
+specturm MS1 idx: 68
+spectrum RT: 30.337333333333333
+spectrum scan num: 46548
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5902709960938] 135584.921875
+df2 [693.9240112304688] 127900.875
+df3 [694.2581787109375] 64937.23046875
+----processing Spectrum----
+specturm MS1 idx: 69
+spectrum RT: 30.407500000000002
+spectrum scan num: 46657
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5903930664062] 170902.171875
+df2 [693.9246215820312] 139546.765625
+df3 [694.2586669921875] 101886.1953125
+----processing Spectrum----
+specturm MS1 idx: 70
+spectrum RT: 30.477833333333333
+spectrum scan num: 46764
+Label MS1 Isotopic_Peak_Intensity
+df1 [693.5902099609375] 172065.15625
+df2 [693.9240112304688] 145168.421875
+df3 [694.2597045898438] 104832.3359375
+the selected charge: 2
+df_peak_idx_ms1: 2 aligned peak_idx in MS2 11
+df_peak_idx_ms1: 17 aligned peak_idx in MS2 138
+df_peak_idx_ms1: 34 aligned peak_idx in MS2 298
+seq_threshold@0.02fdr: 0.13333333333333333
+int_threshold@0.02fdr: 0.02498416009585576
+saving scores in pickle...
+Running time: 36.857903125 Seconds

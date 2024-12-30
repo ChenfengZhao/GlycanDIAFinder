@@ -154,16 +154,16 @@ def find_filter_peaks(args, rt_list, intensity_list, sigma=1.0, min_height=0, th
     max_intensity = intensity_filt_arr.max()
     min_intensity = max(min_height, threshold * max_intensity)
 
-    if args.debug_mode:
-        print("max_intensity", max_intensity)
-        print("min_intensity:", min_intensity)
+    # if args.debug_mode:
+    #     print("max_intensity", max_intensity)
+    #     print("min_intensity:", min_intensity)
 
     # find all the peaks
     peak_idx_arr, find_peak_prop_dict = find_peaks(intensity_filt_arr)
 
-    if args.debug_mode:
-        print("indices of all the peaks::", peak_idx_arr)
-        print("find_peak_prop_dict:", find_peak_prop_dict)
+    # if args.debug_mode:
+    #     print("indices of all the peaks::", peak_idx_arr)
+    #     print("find_peak_prop_dict:", find_peak_prop_dict)
 
     # find prominance to find left and right baselines
     # base_arr is idx array
@@ -220,10 +220,10 @@ def check_peaks_distance(args, peak_idx_list, rt_list, intensity_filt_arr, delta
     intensity_peak2_arr = intensity_peak_filt_arr[1:]
     delta_intensity_peak_arr = np.subtract(intensity_peak2_arr, intensity_peak1_arr)
 
-    if args.debug_mode:
-        print(rt_peak1_arr, "\n", rt_peak2_arr)
-        print("delta_rt_peak_arr", delta_rt_peak_arr)
-        print("delta_intensity_peak_arr", delta_intensity_peak_arr)
+    # if args.debug_mode:
+    #     print(rt_peak1_arr, "\n", rt_peak2_arr)
+    #     print("delta_rt_peak_arr", delta_rt_peak_arr)
+    #     print("delta_intensity_peak_arr", delta_intensity_peak_arr)
 
     for i, delta_rt_peak in enumerate(delta_rt_peak_arr):
         if abs(delta_rt_peak) < 0.2:
@@ -425,9 +425,9 @@ def find_aligned_peaks(args, df_peak_idx_ms1_list, df_peak_scan_num_ms1_list, df
             #     aligned_peak_ms1_2_dict[df_peak_idx_ms1].append(df_peak_idx_ms2_dict[df_ms2][relative_peak_idx])
             
             df_peak_scan_num_ms2_list = df_peak_scan_num_ms2_dict[df_ms2]
-            if args.debug_mode:
-                print("df_peak_scan_num_ms1", df_peak_scan_num_ms1)
-                print("df_peak_scan_num_ms2_arr", df_ms2, df_peak_scan_num_ms2_list)
+            # if args.debug_mode:
+            #     print("df_peak_scan_num_ms1", df_peak_scan_num_ms1)
+            #     print("df_peak_scan_num_ms2_arr", df_ms2, df_peak_scan_num_ms2_list)
 
             for j, peak_scan_num_ms2 in enumerate(df_peak_scan_num_ms2_list):
 
@@ -445,8 +445,8 @@ def find_aligned_peaks(args, df_peak_idx_ms1_list, df_peak_scan_num_ms1_list, df
         aligned_peak_tot_intenisty_ms2_dict[df_peak_idx_ms1] = sum(aligned_peak_intensity_list)
 
 
-        if args.debug_mode:
-           print("df_peak_idx_ms1:", df_peak_idx_ms1, len(aligned_peak_ms1_2_dict[df_peak_idx_ms1]))
+#        if args.debug_mode:
+#           print("df_peak_idx_ms1:", df_peak_idx_ms1,"aligned MS2 peaks:", len(aligned_peak_ms1_2_dict[df_peak_idx_ms1]))
     
     return aligned_peak_ms1_2_dict, aligned_peak_tot_intenisty_ms2_dict
 
@@ -523,10 +523,10 @@ def search_ms1(args, spectrums_ms1_list, z, cpd_list, adduct_mass):
         df2 = (sum(np.multiply(cpd_list, const_list)) + 18.01056 - adduct_mass * z + 1.0034 + addon_mass) / z
         df3 = (sum(np.multiply(cpd_list, const_list)) + 18.01056 - adduct_mass * z + 2.006 + addon_mass) / z
 
-    if args.debug_mode:
-        print("df1:", df1)
-        print("df2:", df2)
-        print("df3:", df3)
+    # if args.debug_mode:
+    #     print("df1:", df1)
+    #     print("df2:", df2)
+    #     print("df3:", df3)
 
     df_list = [df1, df2, df3]
 
@@ -535,10 +535,10 @@ def search_ms1(args, spectrums_ms1_list, z, cpd_list, adduct_mass):
     delta_mz2 = args.ppm_ms1 * df2 / 1e6
     delta_mz3 = args.ppm_ms1 * df3 / 1e6
 
-    if args.debug_mode:
-        print("delta_mz1:", delta_mz1)
-        print("delta_mz2:", delta_mz2)
-        print("delta_mz3:", delta_mz3)
+    # if args.debug_mode:
+    #     print("delta_mz1:", delta_mz1)
+    #     print("delta_mz2:", delta_mz2)
+    #     print("delta_mz3:", delta_mz3)
 
 
     rt_list = []
@@ -601,6 +601,7 @@ def search_ms1(args, spectrums_ms1_list, z, cpd_list, adduct_mass):
                 scan_num_list.append(int(scan_num_spec_ms1))
 
                 if args.debug_mode:
+                    print("----processing Spectrum----")
                     print("specturm MS1 idx:", spec_ms1_idx)
                     print("spectrum RT:", rt_spec_ms1)
                     print("spectrum scan num:", scan_num_spec_ms1)
@@ -612,9 +613,11 @@ def search_ms1(args, spectrums_ms1_list, z, cpd_list, adduct_mass):
                 # df1_intensity = spectrum_ms1.peaks.intensities[df1_idx]
                 df1_intensity = np.sum([spectrum_ms1.peaks.intensities[df1_idx] for df1_idx in df1_idx_arr])
                 df1_intensity_list.append(df1_intensity)
-
+                
+                    
                 if args.debug_mode:
-                    print("df1", df1_idx_arr, [spectrum_ms1.peaks.mz[df1_idx] for df1_idx in df1_idx_arr], df1_intensity)
+                    print('Label MS1 Isotopic_Peak_Intensity')
+                    print("df1",  [spectrum_ms1.peaks.mz[df1_idx] for df1_idx in df1_idx_arr], df1_intensity)
             
             else:
                 # record RT
@@ -640,6 +643,7 @@ def search_ms1(args, spectrums_ms1_list, z, cpd_list, adduct_mass):
                 scan_num_list.append(int(scan_num_spec_ms1))
 
                 if args.debug_mode:
+                    print("----processing Spectrum----")
                     print("specturm MS1 idx:", spec_ms1_idx)
                     print("spectrum RT:", rt_spec_ms1)
                     print("spectrum scan num:", scan_num_spec_ms1)
@@ -659,7 +663,8 @@ def search_ms1(args, spectrums_ms1_list, z, cpd_list, adduct_mass):
                 df1_intensity_list.append(df1_intensity)
 
                 if args.debug_mode:
-                    print("df1", df1_idx_arr, [spectrum_ms1.peaks.mz[df1_idx] for df1_idx in df1_idx_arr], df1_intensity)
+                    print('Label MS1 Isotopic_Peak_Intensity')
+                    print("df1", [spectrum_ms1.peaks.mz[df1_idx] for df1_idx in df1_idx_arr], df1_intensity)
 
                 if len(df2_idx_arr) != 1:
                     print("WARNING: %d df2 is found!" % len(df2_idx_arr), "df2:", [spectrum_ms1.peaks.mz[x] for x in df2_idx_arr])
@@ -671,7 +676,7 @@ def search_ms1(args, spectrums_ms1_list, z, cpd_list, adduct_mass):
                 df2_intensity_list.append(df2_intensity)
 
                 if args.debug_mode:
-                    print("df2", df2_idx_arr, [spectrum_ms1.peaks.mz[df2_idx] for df2_idx in df2_idx_arr], df2_intensity)
+                    print("df2", [spectrum_ms1.peaks.mz[df2_idx] for df2_idx in df2_idx_arr], df2_intensity)
                 
                 if len(df3_idx_arr) != 1:
                     print("WARNING: %d df3 is found!" % len(df3_idx_arr), "df3:", [spectrum_ms1.peaks.mz[x] for x in df3_idx_arr])
@@ -682,7 +687,7 @@ def search_ms1(args, spectrums_ms1_list, z, cpd_list, adduct_mass):
                 df3_intensity_list.append(df3_intensity)
 
                 if args.debug_mode:
-                    print("df3", df3_idx_arr, [spectrum_ms1.peaks.mz[df3_idx] for df3_idx in df3_idx_arr], df3_intensity)
+                    print("df3",  [spectrum_ms1.peaks.mz[df3_idx] for df3_idx in df3_idx_arr], df3_intensity)
             
             else:
                 # record RT
@@ -720,8 +725,8 @@ def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, prec
 
     min_height = args.min_height
     threshold = args.threshold
-    if args.debug_mode:
-        print("minimum height:", min_height, "minimum relative height:", threshold)
+    # if args.debug_mode:
+    #     print("minimum height:", min_height, "minimum relative height:", threshold)
 
 
     
@@ -745,16 +750,16 @@ def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, prec
     if len(cpd_list) < 5:
         cpd_list = cpd_list + [0] * (5 - len(cpd_list))
     
-    if args.debug_mode:
-        print("cpd list:", cpd_list)
+    # if args.debug_mode:
+    #     print("cpd list:", cpd_list)
 
     # generate adduct_mass
     # adduct : mass
     adduct_tab = {"H": 1.00728, "Na": 22.98922, "K": 38.96316, "NH4": 18.03383}
     adduct_mass = adduct_tab[args.adduct]
 
-    if args.debug_mode:
-        print("adduct, mass:", args.adduct, adduct_mass)
+    # if args.debug_mode:
+    #     print("adduct, mass:", args.adduct, adduct_mass)
 
     # create default(list) to hold ms1 searching results
     df_list_dict = defaultdict(list) # z : df_list
@@ -774,12 +779,12 @@ def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, prec
         charge_str_list = args.charge_range.split(",")
         charge_list = list(map(int, charge_str_list))
     
-    if args.debug_mode:
-        print("Charge Range:", charge_list)
+    # if args.debug_mode:
+    #     print("Charge Range:", charge_list)
 
     # for z in range(1, args.charge + 1):
     for z in charge_list:
-        print("Search MS1 for Charge", z)
+        # print("Search MS1 for Charge", z)
         df_list, rt_list, scan_num_list, df1_intensity_list, df2_intensity_list, df3_intensity_list = search_ms1(args, spectrums_ms1_list, z, cpd_list, adduct_mass)
 
         if df_list[0] < args.min_mass or df_list[0] > args.max_mass:
@@ -795,8 +800,8 @@ def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, prec
         # select the z as z_fin with max df1 intensity
         max_df1_intensity = max(df1_intensity_list)
 
-        if args.debug_mode:
-            print("z, max_df1_intensity:", z, max_df1_intensity)
+        # if args.debug_mode:
+        #     print("z, max_df1_intensity:", z, max_df1_intensity)
 
         if max_df1_intensity > max_intensity:
             max_intensity = max_df1_intensity
@@ -814,7 +819,7 @@ def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, prec
     df1 = df_list[0]
     df2 = df_list[1]
     df3 = df_list[2]
-    print("selected ms1_mass:", df1, df2, df3)
+    # print("selected ms1_mass:", df1, df2, df3)
 
     rt_list = rt_list_dict[z_fin]
     scan_num_list = scan_num_list_dict[z_fin]
@@ -828,9 +833,9 @@ def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, prec
     # find peaks and filter invalid peaks for df1
     df1_peak_idx_ms1_list, df1_intensity_filt_arr, df1_peak_baseline_list = find_filter_peaks(args, rt_list, df1_intensity_list, sigma, min_height, threshold, delta)
 
-    if args.debug_mode:
-        print("df1_peak_idx_ms1_list:", df1_peak_idx_ms1_list)
-        print("df1_baseline_list:", df1_peak_baseline_list)
+    # if args.debug_mode:
+    #     print("df1_peak_idx_ms1_list:", df1_peak_idx_ms1_list)
+    #     print("df1_baseline_list:", df1_peak_baseline_list)
 
     # check the distance of adjacent peaks
     # df1_peak_idx_ms1_list = check_peaks_distance(args, df1_peak_idx_filt_list, rt_list, df1_intensity_filt_arr, delta)
@@ -877,26 +882,26 @@ def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, prec
     # find the nearest precursor_mz to df
     precursor_mz_list = find_nearest_precursor_mz(df1, precMZ_spectID_dict)
 
-    if args.debug_mode:
-        print("prec_mz_list:", precursor_mz_list)
-        print("len(df_ms2_list):", len(df_ms2_list))
+    # if args.debug_mode:
+    #     print("prec_mz_list:", precursor_mz_list)
+    #     print("len(df_ms2_list):", len(df_ms2_list))
 
     # delta_mz list for all the df
     delta_mz_ms2_list = [10 * df / 1e6 for df in df_ms2_list]
 
     for precursor_mz in  precursor_mz_list:
-        if args.debug_mode:
-            print("processing precursor_mz=%f" % precursor_mz)
+        # if args.debug_mode:
+        #     print("processing precursor_mz=%f" % precursor_mz)
 
         spec_ms2_idx_list = precMZ_spectID_dict[precursor_mz]
 
-        if args.debug_mode:
-            print("len(spec_ms2_idx_list):",len(spec_ms2_idx_list))
+        # if args.debug_mode:
+        #     print("len(spec_ms2_idx_list):",len(spec_ms2_idx_list))
 
         df_intensity_dict, df_rt_dict, df_scan_num_dict = extract_info_ms2(df_ms2_list, delta_mz_ms2_list, spec_ms2_idx_list, spectrums_ms2_list, df_cnt_min)
 
-        if args.debug_mode:
-            print("len(df_intensity_dict)", len(df_intensity_dict))
+        # if args.debug_mode:
+        #     print("len(df_intensity_dict)", len(df_intensity_dict))
         
         df_peak_idx_ms2_dict = defaultdict(list) # df : list of peak indices in MS2 
         df_intensity_filt_dict = defaultdict(list) # df : list of filtered intensity
@@ -905,8 +910,8 @@ def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, prec
         df_peak_scan_num_ms2_dict = defaultdict(list) # df : list of peaks's scan number
 
         for df in df_intensity_dict.keys():
-            if args.debug_mode:
-                print(df, len(df_intensity_dict[df]))
+            # if args.debug_mode:
+            #     print(df, len(df_intensity_dict[df]))
 
             # find peaks and filter invalid peaks for df
             df_peak_idx_filt_list, df_intensity_filt_arr, df_peak_baseline_list = find_filter_peaks(args, df_rt_dict[df], df_intensity_dict[df], sigma, delta=delta)
@@ -924,8 +929,8 @@ def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, prec
             # dict of list of scan num for each df in ms2 (df : list of peak's scan number)
             df_peak_scan_num_ms2_dict[df] = [df_scan_num_dict[df][peak_idx] for peak_idx in df_peak_idx_filt_list]
 
-            if args.debug_mode:
-                print("df_peak_idx_filt_list:", df_peak_idx_filt_list)
+            # if args.debug_mode:
+            #     print("df_peak_idx_filt_list:", df_peak_idx_filt_list)
         
         # draw figures
         plt.figure()
@@ -981,6 +986,7 @@ def align_peaks_matchms_batch(args, spectrums_ms1_list, spectrums_ms2_list, prec
                 f.write("TITLE=%s\n" % (args.cpd + "-" + args.addon_mass + "(%d)" % i))
                 f.write("PEPMASS=%f\n" % (df1))
                 f.write("CHARGE=%d+\n" % (z_fin))
+                f.write("MS1_IDX=%d\n" % (peak_idx_ms1))
                 f.write("RETENTIONTIME=%f\n" % (rt_list[peak_idx_ms1]))
                 # write ms2 peaks
                 for j, peak_idx_ms2 in enumerate(aligned_peak_mz_list_dict[peak_idx_ms1]):
@@ -1262,9 +1268,9 @@ def find_aligned_peaks_all(args, df_peak_idx_ms1_list, df_peak_scan_num_ms1_list
 
             
             df_peak_scan_num_ms2_list = df_peak_scan_num_ms2_dict[df_ms2]
-            if args.debug_mode:
-                print("df_peak_scan_num_ms1", df_peak_scan_num_ms1)
-                print("df_peak_scan_num_ms2_arr", df_ms2, df_peak_scan_num_ms2_list)
+            # if args.debug_mode:
+            #     print("df_peak_scan_num_ms1", df_peak_scan_num_ms1)
+            #     print("df_peak_scan_num_ms2_arr", df_ms2, df_peak_scan_num_ms2_list)
 
             for j, peak_scan_num_ms2 in enumerate(df_peak_scan_num_ms2_list):
 
@@ -1284,8 +1290,8 @@ def find_aligned_peaks_all(args, df_peak_idx_ms1_list, df_peak_scan_num_ms1_list
         aligned_peak_tot_intenisty_ms2_dict[df_peak_idx_ms1] = sum(aligned_peak_intensity_list)
 
 
-        if args.debug_mode:
-           print("df_peak_idx_ms1:", df_peak_idx_ms1, len(aligned_peak_ms1_2_dict[df_peak_idx_ms1]))
+        # if args.debug_mode:
+        #    print("df_peak_idx_ms1:", df_peak_idx_ms1, "aligned peak_idx in MS2",len(aligned_peak_ms1_2_dict[df_peak_idx_ms1]))
     
     return aligned_peak_ms1_2_dict, aligned_peak_tot_intenisty_ms2_dict, aligned_peak_intensity_list_dict,aligned_peak_mz_list_dict    
 
@@ -1383,12 +1389,12 @@ def get_target_decoy_scores(args, spectrums_ms1_list, spectrums_ms2_list, precMZ
         charge_str_list = args.charge_range.split(",")
         charge_list = list(map(int, charge_str_list))
 
-    if args.debug_mode:
-        print("Charge Range:", charge_list)
+    # if args.debug_mode:
+    #     print("Charge Range:", charge_list)
 
     # for z in range(1, args.charge + 1):
     for z in charge_list:
-        print("Search MS1 for Charge", z)
+        # print("Search MS1 for Charge", z)
         df_list, rt_list, scan_num_list, df1_intensity_list, df2_intensity_list, df3_intensity_list = search_ms1(args, spectrums_ms1_list, z, cpd_list, adduct_mass)
 
         if df_list[0] < args.min_mass or df_list[0] > args.max_mass:
@@ -1404,8 +1410,8 @@ def get_target_decoy_scores(args, spectrums_ms1_list, spectrums_ms2_list, precMZ
         # select the z as z_fin with max df1 intensity
         max_df1_intensity = max(df1_intensity_list)
 
-        if args.debug_mode:
-            print("z, max_df1_intensity:", z, max_df1_intensity)
+        # if args.debug_mode:
+        #     print("z, max_df1_intensity:", z, max_df1_intensity)
 
         if max_df1_intensity > max_intensity:
             max_intensity = max_df1_intensity
@@ -1423,7 +1429,7 @@ def get_target_decoy_scores(args, spectrums_ms1_list, spectrums_ms2_list, precMZ
     df1 = df_list[0]
     df2 = df_list[1]
     df3 = df_list[2]
-    print("selected ms1_mass:", df1, df2, df3)
+    # print("selected ms1_mass:", df1, df2, df3)
 
     rt_list = rt_list_dict[z_fin]
     scan_num_list = scan_num_list_dict[z_fin]
@@ -1463,8 +1469,8 @@ def get_target_decoy_scores(args, spectrums_ms1_list, spectrums_ms2_list, precMZ
 
             df_intensity_dict, df_rt_dict, df_scan_num_dict = extract_info_ms2(df_ms2_list, delta_mz_ms2_list, spec_ms2_idx_list, spectrums_ms2_list, df_cnt_min)
 
-            if args.debug_mode:
-                print("len(df_intensity_dict)", len(df_intensity_dict))
+            # if args.debug_mode:
+            #     print("len(df_intensity_dict)", len(df_intensity_dict))
             
             df_peak_idx_ms2_dict = defaultdict(list) # df : list of peak indices in MS2 
             df_intensity_filt_dict = defaultdict(list) # df : list of filtered intensity
@@ -1473,8 +1479,8 @@ def get_target_decoy_scores(args, spectrums_ms1_list, spectrums_ms2_list, precMZ
             df_peak_scan_num_ms2_dict = defaultdict(list) # df : list of peaks's scan number
 
             for df in df_intensity_dict.keys():
-                if args.debug_mode:
-                    print(df, len(df_intensity_dict[df]))
+                # if args.debug_mode:
+                #     print(df, len(df_intensity_dict[df]))
 
                 # find peaks and filter invalid peaks for df
                 df_peak_idx_filt_list, df_intensity_filt_arr, df_peak_baseline_list = find_filter_peaks(args, df_rt_dict[df], df_intensity_dict[df], sigma, delta=delta)
@@ -1492,8 +1498,8 @@ def get_target_decoy_scores(args, spectrums_ms1_list, spectrums_ms2_list, precMZ
                 # dict of list of scan num for each df in ms2 (df : list of peak's scan number)
                 df_peak_scan_num_ms2_dict[df] = [df_scan_num_dict[df][peak_idx] for peak_idx in df_peak_idx_filt_list]
 
-                if args.debug_mode:
-                    print("df_peak_idx_filt_list:", df_peak_idx_filt_list)
+                # if args.debug_mode:
+                #     print("df_peak_idx_filt_list:", df_peak_idx_filt_list)
                     
 
             # check aligned peaks between MS1 and MS2
@@ -1512,8 +1518,8 @@ def get_target_decoy_scores(args, spectrums_ms1_list, spectrums_ms2_list, precMZ
 
         df_intensity_dict, df_rt_dict, df_scan_num_dict = extract_info_ms2(df_ms2_list, delta_mz_ms2_list, spec_ms2_idx_list, spectrums_ms2_list, df_cnt_min)
 
-        if args.debug_mode:
-            print("len(df_intensity_dict)", len(df_intensity_dict))
+        # if args.debug_mode:
+        #     print("len(df_intensity_dict)", len(df_intensity_dict))
         
         df_peak_idx_ms2_dict = defaultdict(list) # df : list of peak indices in MS2 
         df_intensity_filt_dict = defaultdict(list) # df : list of filtered intensity
@@ -1522,8 +1528,8 @@ def get_target_decoy_scores(args, spectrums_ms1_list, spectrums_ms2_list, precMZ
         df_peak_scan_num_ms2_dict = defaultdict(list) # df : list of peaks's scan number
 
         for df in df_intensity_dict.keys():
-            if args.debug_mode:
-                print(df, len(df_intensity_dict[df]))
+            # if args.debug_mode:
+            #     print(df, len(df_intensity_dict[df]))
 
             # find peaks and filter invalid peaks for df
             df_peak_idx_filt_list, df_intensity_filt_arr, df_peak_baseline_list = find_filter_peaks(args, df_rt_dict[df], df_intensity_dict[df], sigma, delta=delta)
@@ -1541,8 +1547,8 @@ def get_target_decoy_scores(args, spectrums_ms1_list, spectrums_ms2_list, precMZ
             # dict of list of scan num for each df in ms2 (df : list of peak's scan number)
             df_peak_scan_num_ms2_dict[df] = [df_scan_num_dict[df][peak_idx] for peak_idx in df_peak_idx_filt_list]
 
-            if args.debug_mode:
-                print("df_peak_idx_filt_list:", df_peak_idx_filt_list)
+            # if args.debug_mode:
+            #     print("df_peak_idx_filt_list:", df_peak_idx_filt_list)
                 
 
         # check aligned peaks between MS1 and MS2

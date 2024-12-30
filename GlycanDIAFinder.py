@@ -36,7 +36,8 @@ if __name__ == "__main__":
     ppm_ms2 = float(cfg_dict["ms2_mass_error_ppm"])
     adduct = cfg_dict["adduct"]
     match_count_ms2 = int(cfg_dict["min_matched_counts"])
-
+    fdr_threshold = float(cfg_dict["fdr_threshold"])
+    debug_mode = cfg_dict["decoy_mode"]
     if "align_tolerance_snum" in cfg_dict.keys():
         align_delta = int(cfg_dict["align_tolerance_snum"])
     else:
@@ -90,10 +91,9 @@ if __name__ == "__main__":
         max_rt = float(cfg_dict["max_time_min"])
     else:
         max_rt = float("inf")
-    if "debug_mode" in cfg_dict.keys():
-        debug_mode = True
-    else:
-        debug_mode = False
+    
+        
+    
 
     for dataset in dataset_list:
         # input full path
@@ -174,7 +174,7 @@ if __name__ == "__main__":
 
             cpd = cpd_addon.split("-")[0]
             addon_mass = cpd_addon.split("-")[1]
-
+            print("***************looking for compound*********************")
             print("cpd_addon", cpd_addon)
 
             # create output paths if not existed
@@ -349,10 +349,10 @@ if __name__ == "__main__":
         decoy_int_score = [decoy_int_score[i] for i in index]
         decoy_seq_score = [decoy_seq_score[i] for i in index]
         # estimate threshold
-        seq_threshold = get_threshold(target_seq_score, decoy_seq_score, fdr_threshold=0.02)
-        int_threshold = get_threshold(target_int_score, decoy_int_score, fdr_threshold=0.02)
-        print("seq_threshold@0.2fdr:", seq_threshold)
-        print("int_threshold@0.2fdr:", int_threshold)
+        seq_threshold = get_threshold(target_seq_score, decoy_seq_score, fdr_threshold=fdr_threshold)
+        int_threshold = get_threshold(target_int_score, decoy_int_score, fdr_threshold=fdr_threshold)
+        print(f"seq_threshold@{fdr_threshold}fdr:", seq_threshold)
+        print(f"int_threshold@{fdr_threshold}fdr:", int_threshold)
 
         import pickle
         print('saving scores in pickle...')
