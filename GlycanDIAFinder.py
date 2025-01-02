@@ -242,7 +242,8 @@ if __name__ == "__main__":
                     # remove the header of the csv file
                     if line_idx == 0:
                         continue
-                    
+                    if not row or len(row) == 0:
+                        continue
                     #isomers
                     isomers_row_list.append(row)
 
