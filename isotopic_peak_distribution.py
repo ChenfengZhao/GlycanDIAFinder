@@ -8,6 +8,8 @@ import re
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 from collections import defaultdict
+from pythoms.molecule import IPMolecule
+from configparser import ConfigParser
 
 def extract_mgf_data(input_folder):
     """
@@ -280,7 +282,7 @@ def normalize_peaks(df, peak_cols, reference_col, new_prefix='norm'):
         # 创建新列
         new_col = f"{new_prefix}_{col}"
         # 避免除以零或 NaN
-        df[new_col] = df[col] / df[reference_col]
+        df[new_col] = (df[col] / df[reference_col])*100
 
     return df
 isotope_data = {
@@ -290,7 +292,6 @@ isotope_data = {
     'N': [(14.0031, 0.99632), (15.0001, 0.00368)],
     # 添加其他元素的数据
 }
-
 def calculate_isotope_peaks_theoretical(formula, charge=1, threshold=0, mass_precision=0.01):
     """
     计算化学式的同位素峰的 m/z 和强度，考虑电荷数。
@@ -360,6 +361,57 @@ def calculate_isotope_peaks_theoretical(formula, charge=1, threshold=0, mass_pre
     return adjusted_peaks
 
 
+def generate_isotope_peaks_theoretical_pythoms(formula: str, charge: int, ipmethod: str = 'isospec', resolution: int = 20000):
+    """
+    生成给定分子式和电荷数的同位素模式峰值列表。
+
+    参数:
+        formula (str): 化学式，例如 "C62H1045"。
+        charge (int): 分子电荷数。
+        ipmethod (str): 同位素模式计算方法，默认为 'isospec'（可选 'combinatorics' 或 'multiplicative'）。
+        resolution (int): 质谱仪分辨率，默认为 20000。
+
+    返回:
+        peaks (list of tuples): 每个峰的 (m/z, intensity)。
+    """
+    # 创建 IPMolecule 对象
+    mol = IPMolecule(
+        formula,
+        charge=charge,
+        ipmethod=ipmethod,
+        resolution=resolution,
+        verbose=True
+    )
+
+    # 获取原始同位素模式
+    mz_values, intensities = mol.raw_isotope_pattern
+
+    # 合并相邻差值小于 0.1 的 m/z 值
+    merged_mz = []
+    merged_intensities = []
+
+    temp_mz = mz_values[0]
+    temp_intensity = intensities[0]
+
+    for i in range(1, len(mz_values)):
+        if abs(mz_values[i] - temp_mz) < 0.1:
+            # 合并当前 m/z 和强度
+            temp_intensity += intensities[i]
+        else:
+            # 保存合并后的值并重置
+            merged_mz.append(temp_mz)
+            merged_intensities.append(temp_intensity)
+            temp_mz = mz_values[i]
+            temp_intensity = intensities[i]
+
+    # 添加最后一个合并的峰
+    merged_mz.append(temp_mz)
+    merged_intensities.append(temp_intensity)
+
+    # 返回峰值列表
+    peaks = list(zip(merged_mz, merged_intensities))
+    return peaks
+
 def parse_molecular_formula(strings):
     # 定义单体的元素组成
     monomers = {
@@ -386,7 +438,9 @@ def parse_molecular_formula(strings):
         for monomer, count in zip(monomers.keys(), counts):
             for element, number in monomers[monomer].items():
                 total_elements[element] += number * count
-
+        # 在总计数中额外加 1 个氢和 2 个氧
+        total_elements['H'] += 2
+        total_elements['O'] += 1
         # 生成化学分子式
         formula = ''.join(f"{el}{total_elements[el]}" for el in sorted(total_elements) if total_elements[el] > 0)
         results.append(formula)
@@ -407,17 +461,17 @@ def plot_isotopic_peaks(data):
 
     # 提取理论同位素数据
     #theo_mz = [data['T_isotopic1'], data['T_isotopic2'], data['T_isotopic3']]
-    theo_intensity = [data['norm_T_isotopic_T_isotopic1_peaks'], data['norm_T_isotopic_T_isotopic2_peaks'],
-                      data['norm_T_isotopic_T_isotopic3_peaks']]
+    theo_intensity = [data['T_isotopic1_peaks'], data['T_isotopic2_peaks'],
+                      data['T_isotopic3_peaks']]
     exp_mz = [float(data['isotopic1']), float(data['isotopic2']), float(data['isotopic3'])]
     theo_mz = [float(data['T_isotopic1']), float(data['T_isotopic2']), float(data['T_isotopic3'])]
 
     # 创建图形和轴
     fig, ax = plt.subplots(figsize=(6, 6))
     # 绘制实验同位素峰的条形图
-    ax.bar(exp_mz, exp_intensity, width=0.01, label='from experiment', alpha=1, color='black')
+    ax.bar(exp_mz, exp_intensity, width=0.01, label='from experiment', alpha=0.8, color='black')
     # 绘制理论同位素峰的条形图
-    ax.bar(theo_mz, theo_intensity, width=0.01, label='from theoretical', alpha=1, color='orange')
+    ax.bar(theo_mz, theo_intensity, width=0.01, label='from theoretical', alpha=0.8, color='orange')
 
 
     # 设置标题和标签
@@ -426,8 +480,8 @@ def plot_isotopic_peaks(data):
     ax.set_xticks(exp_mz)
     ax.set_xticklabels([f'{mz:.4f}' for mz in exp_mz], rotation=45, ha='right')
     ax.set_xlabel('m/z')
-    ax.set_ylabel('Intensity')
-    ax.set_ylim(0, 1)
+    ax.set_ylabel('Relative Intensity')
+    ax.set_ylim(1, 100)
 
     # 设置 x 轴刻度
     #all_mz = sorted(set(exp_mz + theo_mz))
@@ -458,9 +512,9 @@ def calculate_cosine_similarity(row):
     ]
     # 提取向量2
     vector2 = [
-        row['norm_T_isotopic_T_isotopic1_peaks'],
-        row['norm_T_isotopic_T_isotopic2_peaks'],
-        row['norm_T_isotopic_T_isotopic3_peaks']
+        row['T_isotopic1_peaks'],
+        row['T_isotopic1_peaks'],
+        row['T_isotopic1_peaks']
     ]
     cosine_similarity = dot(vector1, vector2) / (norm(vector1) * norm(vector2))
     cosine_similarity = round(cosine_similarity, 3)
@@ -490,16 +544,20 @@ def isotopic_peak_distribution(input_folder,debug_file):
             charge.append(number)  # 将结果添加到列表中
         else:
             charge.append(None)  # 如果没有匹配，存储 None
-    peaks_list = [calculate_isotope_peaks_theoretical(formula, charge=charge[index])[:3] for index,formula in enumerate(formulas)]
 
+    #peaks_list = [calculate_isotope_peaks_theoretical(formula, charge=charge[index])[:3] for index,formula in enumerate(formulas)]
+
+    peaks_list = [generate_isotope_peaks_theoretical_pythoms(formula, charge=charge[index])[:3] for index, formula in
+                  enumerate(formulas)]
+    print(peaks_list)
     for i, peaks in enumerate(peaks_list):
-        debug_df ['T_isotopic1'][i] = peaks[0][0]
+        debug_df ['T_isotopic1'][i] = peaks[0][0] + 1.007276466812
         debug_df['T_isotopic1_peaks'][i] = peaks[0][1]
-        debug_df['T_isotopic2'][i] = peaks[1][0]
+        debug_df['T_isotopic2'][i] = peaks[1][0] + 1.007276466812
         debug_df['T_isotopic2_peaks'][i] = peaks[1][1]
-        debug_df['T_isotopic3'][i] = peaks[2][0]
+        debug_df['T_isotopic3'][i] = peaks[2][0] + 1.007276466812
         debug_df['T_isotopic3_peaks'][i] = peaks[2][1]
-    #print(debug_df.iloc[0])
+
     # 3. 提取peaks绘图并对peaks进行标准化
 
     columns_to_extract = [
@@ -526,8 +584,8 @@ def isotopic_peak_distribution(input_folder,debug_file):
     plot_dat = normalize_peaks(plot_dat, isotopic_peak_cols, 'isotopic1_peak', new_prefix='norm_isotopic')
 
     # 标准化 T_isotopic_peak 列
-    T_isotopic_peak_cols = ['T_isotopic1_peaks', 'T_isotopic2_peaks', 'T_isotopic3_peaks']
-    plot_dat = normalize_peaks(plot_dat, T_isotopic_peak_cols, 'T_isotopic1_peaks', new_prefix='norm_T_isotopic')
+    #T_isotopic_peak_cols = ['T_isotopic1_peaks', 'T_isotopic2_peaks', 'T_isotopic3_peaks']
+    #plot_dat = normalize_peaks(plot_dat, T_isotopic_peak_cols, 'T_isotopic1_peaks', new_prefix='norm_T_isotopic')
     plot_dat['cosine_similarity'] = plot_dat.apply(calculate_cosine_similarity, axis=1)
     plot_dat.to_csv('distribution_plot/isotopic_peak_from_exp_solico.csv', index=False)
     print(plot_dat.iloc[0,])
@@ -539,8 +597,17 @@ def isotopic_peak_distribution(input_folder,debug_file):
 
 # 示例：计算化学式 C6H12O6 的同位素峰
 if __name__ == "__main__":
-    isotopic_peak_distribution(input_folder = "ExampleDataset/Results/stagger_Nglycan_ExampleData/",
-                               debug_file = "debug.txt")
+    cfg = ConfigParser()
+    cfg.read("./isotopic_peak_distribution_config.ini")  # 确保 config.ini 文件与脚本在同一目录下
+    # 提取 'config' 中的参数
+    cfg_dict = dict(cfg.items("config"))
+    print("Configuration loaded:", cfg_dict)
+    input_folder = cfg_dict["input_folder"]
+    debug_file = cfg_dict["debug_file"]
+
+
+    isotopic_peak_distribution(input_folder = input_folder,
+                               debug_file =debug_file)
 
 
 
