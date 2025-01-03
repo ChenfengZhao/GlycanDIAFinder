@@ -1,6 +1,6 @@
 import gradio as gr
 from tree import molecule_breaker
-
+import numpy as np
 res = molecule_breaker("(N(F)(N(H(H)(H))))", 5)
 
 def greet(name, intensity):
