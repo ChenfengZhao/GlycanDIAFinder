@@ -21,7 +21,6 @@ def results_validation(input_folder):
                 new_glycan_com = f'{h_num}_{n_num}_{ff_num}_{aa_num}-0'
                 matching_rows = isomers_df[isomers_df["Cpd-AddOnMass"].str.contains(new_glycan_com, na=False)]
                 reference_RT = isomers_df.iloc[index]["RT"]
-                # 判断匹配行的 RT 是否等于参考值
                 for _, row in matching_rows.iterrows():
                     if row["RT"] == reference_RT:
                         result.append(glycan)

@@ -6,7 +6,7 @@
 
 ## Overview
 
-Glycosylation is a prevalent feature of disease progression, reported in cases of cancer, diabetes, and Alzheimer's disease. The different glycan expressions significantly influence the biological activity of proteins via alternating glycoprotein structure and potentiating the binding of receptors. GlycanDIA Finder is an open-source software tool built upon Python for MS data. Its aim is to automatically analyze Glycosylation with the sensitive data-independent acquisition (DIA) strategy. This tool can be installed on all kinds of platforms (e.g., Linux, macOS, Windows, etc).
+Glycosylation is a prevalent feature of disease progression, reported in cases of cancer, diabetes, and Alzheimer's disease. The different glycan expressions significantly influence the biological activity of proteins via alternating glycoprotein structure and potentiating the binding of receptors. GlycanDIA Finder is an open-source software tool built upon Python for MS data. Its aim is to automatically analyze glycosylation with the sensitive data-independent acquisition (DIA) strategy. This tool can be installed on all kinds of platforms (e.g., Linux, macOS, Windows, etc).
 
 ## Requirements
 
