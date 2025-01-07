@@ -74,14 +74,14 @@ def process_gdb_file(input_file, output_file):
 
 if __name__ == "__main__":
     # 输入文件和输出文件路径
-    O_glycan_input_file = "glyco_library/pGlyco-O-Glycan.gdb"
-    O_glycan_output_file = "glyco_library/O-Glycan.txt"
-    Human_N_glycan_input_file = "glyco_library/pGlyco-N-Human.gdb"
-    Human_N_glycan_output_file = "glyco_library/N-Human.txt"
-    Mouse_N_glycan_input_file = "glyco_library/pGlyco-N-Mouse.gdb"
-    Mouse_N_glycan_output_file = "glyco_library/N-Mouse.txt"
-    Plant_N_glycan_input_file = "glyco_library/pGlyco-N-Plant.gdb"
-    Plant_N_glycan_output_file = "glyco_library/N-Plant.txt"
+    O_glycan_input_file = "pGlyco-O-Glycan.gdb"
+    O_glycan_output_file = "O-Glycan.txt"
+    Human_N_glycan_input_file = "pGlyco-N-Human.gdb"
+    Human_N_glycan_output_file = "N-Human.txt"
+    Mouse_N_glycan_input_file = "pGlyco-N-Mouse.gdb"
+    Mouse_N_glycan_output_file = "N-Mouse.txt"
+    Plant_N_glycan_input_file = "pGlyco-N-Plant.gdb"
+    Plant_N_glycan_output_file = "N-Plant.txt"
 
     process_gdb_file(O_glycan_input_file, O_glycan_output_file)
     process_gdb_file(Human_N_glycan_input_file, Human_N_glycan_output_file)

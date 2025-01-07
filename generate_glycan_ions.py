@@ -5,8 +5,8 @@ import numpy as np
 import pandas as pd
 from tree import molecule_breaker
 from configparser import ConfigParser
-#%%
-# 定义 glyco_mass 字典
+
+
 glyco_mass_native = {
     'N': 203.079372533,
     'H': 162.0528234315,
@@ -19,7 +19,6 @@ glyco_mass_native = {
     'J': 203.079372533 + 18.01056,
     'Q': 162.0528234315 + 18.01056
 }
-
 glyco_mass_reduced = {
     'N': 203.079372533,
     'H': 162.0528234315,
@@ -32,8 +31,6 @@ glyco_mass_reduced = {
     'J': 203.079372533 + 20.02621,
     'Q': 162.0528234315 + 20.02621
 }
-
-# 定义 ATOM_MAPPING
 ATOM_MAPPING = {
     "H": {"C": 6, "H": 10, "O": 5, "N": 0},
     "Q": {"C": 6, "H": 10, "O": 5, "N": 0},
@@ -44,7 +41,6 @@ ATOM_MAPPING = {
     "G": {"C": 11, "H": 17, "O": 9, "N": 1},
     "X": {"C": 5, "H": 8, "O": 4, "N": 0},
 }
-# 定义 molecule_mapping
 molecule_mapping = {
     "H": {"C": 6, "H": 10, "O": 5, "N": 0},
     "Q": {"C": 6, "H": 10, "O": 5, "N": 0},
@@ -66,7 +62,7 @@ def calc_glycan_mass(glycan, glyco_condition=glyco_mass_native):
 
 def parse_nested_structure(structure):
     """
-    解析嵌套的分子式结构，返回每种原子的总数。
+    Parse the  molecular formula structure and return the total count of each atom.
     """
     stack = []
     current_atoms = defaultdict(int)
@@ -95,7 +91,7 @@ def parse_nested_structure(structure):
 
 def format_molecule_formula(atom_count):
     """
-    将原子计数格式化为分子式字符串。
+    Format the atom counts into a molecular formula string.
     """
     formula = ""
     for atom in ["C", "H", "O", "N"]:
@@ -105,14 +101,14 @@ def format_molecule_formula(atom_count):
 
 def calculate_molecule_formula(molecule_name):
     """
-    根据嵌套的分子结构计算分子式。
+    Calculate the molecular formula based on the molecular structure.
     """
     atom_count = parse_nested_structure(molecule_name)
     return format_molecule_formula(atom_count)
 
 def calculate_accurate_mass(formula):
     """
-    计算分子式的精确质量（accurate mass）。
+    accurate mass
     """
     isotope_masses = {
         "C": 12.000000,
@@ -129,24 +125,23 @@ def calculate_accurate_mass(formula):
         if element in isotope_masses:
             accurate_mass += isotope_masses[element] * count
         else:
-            raise ValueError(f"未知元素: {element}")
+            raise ValueError(f"Unknown element: {element}")
     return accurate_mass
 
 def parse_glycan_composition(formula):
     """
-    解析分子结构并统计特定糖基成分的数量。
+    Parse the molecular structure and count the number of specific glycosyl components.
     """
     element_mapping = {
         "H": "H",
-        "Q": "H",  # Q 记为 H
+        "Q": "H",  # Q ---> H
         "N": "N",
-        "J": "N",  # J 记为 N
+        "J": "N",  # J ---> N
         "F": "F",
         "A": "A",
         "G": "G",
         "X": "X"
     }
-
     target_elements = ["H", "N", "F", "A", "G", "X"]
 
     def parse_structure(structure):
@@ -178,7 +173,7 @@ def parse_glycan_composition(formula):
 
 def calculate_product_formula(composition):
     """
-    根据输入的组成（如 J(1)N(1)H(1)）和原子分子式对应关系，计算最终的分子式。
+     J(1)N(1)H(1)--> formula。
     """
     total_atoms = defaultdict(int)
     pattern = r"([A-Z])\((\d+)\)"
@@ -187,7 +182,7 @@ def calculate_product_formula(composition):
     for symbol, count in matches:
         count = int(count)
         if symbol not in molecule_mapping:
-            raise ValueError(f"未知符号: {symbol}")
+            raise ValueError(f"unknown symbol: {symbol}")
         formula = molecule_mapping[symbol]
         for atom, atom_count in formula.items():
             total_atoms[atom] += atom_count * count
@@ -197,28 +192,21 @@ def calculate_product_formula(composition):
 
 def molecule_product_results(df):
     """
-    处理 DataFrame，计算分子式、质量和其他属性。
+    process DataFrame，calculate molecular formula, mass
     """
-    # 计算分子式
     df['Molecule Formula'] = df['Molecule Structure'].apply(calculate_molecule_formula)
 
-    # 计算分子质量
     df['Molecule Mass (native)'] = df['Molecule Formula'].apply(calculate_accurate_mass) + 18.01056
     df['Molecule Mass (reduced)'] = df['Molecule Formula'].apply(calculate_accurate_mass) + 20.02621
 
-    # 设置产品电荷
     df['Product Charge'] = 1
 
-    # 解析糖基组成
     df['Molecule Name'] = df['Molecule Structure'].apply(parse_glycan_composition)
 
-    # 计算产品分子式
     df['Product Formula'] = df['Product Name'].apply(calculate_product_formula)
 
-    # 定义符号顺序
     symbols = ['H', 'N', 'F', 'A', 'G', 'X']
 
-    # 解析分子名称的函数
     def parse_molecule_name(name):
         counts = {symbol: 0 for symbol in symbols}
         matches = re.findall(r"([A-Z])\((\d+)\)", name)
@@ -229,10 +217,10 @@ def molecule_product_results(df):
             return "_".join(str(counts[symbol]) for symbol in ['H', 'N', 'F', 'A'])
         return "_".join(str(counts[symbol]) for symbol in symbols)
 
-    # 创建 Formula Base
+    #  Formula Base
     df['Formula Base'] = df['Molecule Name'].apply(parse_molecule_name)
 
-    # 根据分子结构分配后缀
+    # Assign suffixes based on the molecular structure.
     def assign_suffix(group):
         if group['Molecule Structure'].nunique() == 1:
             group['Processed Formula'] = group['Formula Base'] + "_a"
@@ -244,10 +232,9 @@ def molecule_product_results(df):
     df = df.groupby('Formula Base', group_keys=False).apply(assign_suffix)
     df.drop(columns=['Formula Base'], inplace=True)
 
-    # 更新分子名称
     df["Molecule Name"] = df['Processed Formula']
 
-    # 重新排序列
+    # reorder
     output_columns = [
         "Molecule Name",
         "Molecule Structure",
@@ -266,7 +253,7 @@ def molecule_product_results(df):
 
 def generate_charge_ms(df, windows_start=600, windows_end=1200):
     """
-    生成指定窗口内的电荷和 m/z 值。
+    generate charge and m/z under specified windows
     """
     rows = []
     for _, row in df.iterrows():
@@ -285,10 +272,8 @@ def generate_charge_ms(df, windows_start=600, windows_end=1200):
                 rows.append(new_row)
             charge_num -= 1
 
-    # 创建一个包含额外列的新 DataFrame
     if rows:
         df_new = pd.DataFrame(rows)
-        # 定义新列的顺序
         new_columns = [
             "Molecule Name",
             "Molecule Structure",
@@ -321,7 +306,7 @@ def generate_charge_ms(df, windows_start=600, windows_end=1200):
 
 def calc_glycan_ions_mass(df, count=2):
     """
-    计算离子质量并将其添加到 DataFrame 中。
+    calculate fragments mass
     """
     records = []
     for _, row in df.iterrows():
@@ -339,22 +324,20 @@ def calc_glycan_ions_mass(df, count=2):
     return pd.DataFrame(records)
 
 def process_glyco_data(input_file, output_file, count=3, windows_start=600, windows_end=1200):
-    """
-    主要处理函数，处理整个工作流程而无需中间临时文件。
-    """
-    # 步骤 1：读取输入文件
+
+    # step 1：read input file
     initial_df = pd.read_csv(input_file, header=None, names=["Molecule Structure"], sep="\t")
 
-    # 步骤 2：计算离子质量
+    # step 2：calculate ions mass
     ions_df = calc_glycan_ions_mass(initial_df, count=count)
 
-    # 步骤 3：处理分子产品结果
+    # step 3：process precursor
     processed_df = molecule_product_results(ions_df)
 
-    # 步骤 4：在指定窗口内生成电荷和 m/z 值
+    # step 4：Generate charges and m/z values within the specified window.
     final_df = generate_charge_ms(processed_df, windows_start=windows_start, windows_end=windows_end)
 
-    # 步骤 5：保存到输出文件
+    # step 5：save results
     final_df.to_csv(output_file, index=False, sep="\t")
     print("done, exit")
 
@@ -365,15 +348,11 @@ if __name__ == "__main__":
     #process_glyco_data("glyco_library/N-Plant.txt", "glyco_library/N-Plant-glycan-ions.txt",count=2,windows_start=600, windows_end=1200)
     #process_glyco_data("glyco_library/O-Glycan.txt", "glyco_library/O-Glycan-ions.txt",count=2,windows_start=600, windows_end=1200)
    # process_glyco_data("glyco_library/test.txt", "glyco_library/output_final.txt",count=3,windows_start=600, windows_end=1200)
-    # 读取配置文件 config.ini
-    cfg = ConfigParser()
-    cfg.read("./glycan_ions_config.ini")  # 确保 config.ini 文件与脚本在同一目录下
 
-    # 提取 'config' 中的参数
+    cfg = ConfigParser()
+    cfg.read("./glycan_ions_config.ini")
     cfg_dict = dict(cfg.items("config"))
     print("Configuration loaded:", cfg_dict)
-
-
 
     input_path = cfg_dict["input_path"]
     output_path = cfg_dict["output_path"]
@@ -381,7 +360,6 @@ if __name__ == "__main__":
     windows_start = int(cfg_dict["windows_start"])
     windows_end = int(cfg_dict["windows_end"])
 
-    # 调用处理函数
     process_glyco_data(
         input_file=input_path,
         output_file=output_path,
