@@ -86,7 +86,30 @@ python3 GlycanDIAFinder.py
 4. The results will be generated under the path defined in the **output_path** of config.ini (e.g., ExampleDataset/Results/ in this example). It contains the individual results of each compound and MS data file, combined results of all the compounds and each MS data file, and combined results of all the compounds and MS data files.
 
 
+## Additional functions
+1. To generate the precursor m/z values within user-defined windows and the corresponding potential fragments for a target glycan, run the following command:
+```
+python3 generate_glycan_ions.py
+```
+Below is an explanation of the parameters in the glycan_ions_config.ini file:
+- **input_path**: Path to the file containing the glycan structure (e.g., *.txt)
+- **output_path**: file to save precursor and fragments information(*.txt)
+- **count**: number of break for  given glycans
+- **windows_start**:  Starting m/z value for the user-defined window
+- **windows_end**:  Ending m/z value for the user-defined window
+2. To validate the search results, theoretical m/z values and peak intensity distributions are calculated. Additionally, similarity plots are generated and visualized based on the results from GlycanDIAFinder.
+```
+python3 isotopic_peak_distribution.py
+```
+Here are the explanation on the parameters in isotopic_peak_distribution_config.ini:
+- **input_folder**: Folder containing the GlycanDIA search results (*.mzXML)
+- **debug_file**: Path to the debug log file (e.g., *.txt)
 
+> **Note**: Ensure that the required Python dependencies are installed before running the script, such as `pythoms`.
+
+The results will be saved in the `distribution_plot` directory, which includes:
+- **Cosine similarity plots** of the peak distributions
+- **Detailed result file** with comprehensive information
 ## License
 [Apache_2.0_license]: http://www.apache.org/licenses/LICENSE-2.0
 

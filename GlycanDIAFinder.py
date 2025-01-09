@@ -6,11 +6,7 @@ import timeit
 from matchms.importing import load_from_mzxml, load_from_mzml
 from matchms import set_matchms_logger_level
 import numpy as np
-
 import matplotlib.pyplot as plt
-
-from collections import defaultdict
-# import argparse
 import gc
 from function import *
 
